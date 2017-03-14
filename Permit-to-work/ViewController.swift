@@ -31,9 +31,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func yesButton(_ sender: Any) {
-
-        
-
+        nextQuestion()
         
     }
     
