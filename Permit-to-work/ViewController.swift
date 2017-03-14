@@ -10,13 +10,10 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let questions = ["Where are you going?", "Do you know what city?", "What are you doing there?", "When do you go?"]
+    let questions = ["Question 1", "Question 2", "Question 3", "Question 4"]
     var currentQuestionIndex = 1
-
-
-    @IBOutlet weak var questionLabel: UILabel!
     
-    @IBAction func noButton(_ sender: Any) {
+    func nextQuestion() {
         if currentQuestionIndex < questions.count {
             questionLabel.text = questions[currentQuestionIndex]
             currentQuestionIndex += 1
@@ -25,16 +22,17 @@ class ViewController: UIViewController {
             print("No more elements to display.")
         }
     }
+
+
+    @IBOutlet weak var questionLabel: UILabel!
+    
+    @IBAction func noButton(_ sender: Any) {
+        nextQuestion()
+    }
     
     @IBAction func yesButton(_ sender: Any) {
-        questionLabel.text = questions[currentQuestionIndex]
-        if currentQuestionIndex < questions.count {
-            questionLabel.text = questions[currentQuestionIndex]
-            currentQuestionIndex += 1
-        } else {
-            questionLabel.text = "you are done"
-            print("No more elements to display.")
-        }
+
+        
 
         
     }
