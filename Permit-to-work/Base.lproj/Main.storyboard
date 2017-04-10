@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,24 +22,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sDZ-U8-S8j">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sDZ-U8-S8j">
                                 <rect key="frame" x="16" y="313" width="343" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3O1-tz-m36">
-                                <rect key="frame" x="58" y="609" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3O1-tz-m36">
+                                <rect key="frame" x="61" y="609" width="30" height="30"/>
                                 <state key="normal" title="No"/>
                                 <connections>
                                     <action selector="noButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MSD-5V-MWm"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8rW-PX-lNg">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8rW-PX-lNg">
                                 <rect key="frame" x="284" y="609" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Yes"/>
                                 <connections>
                                     <action selector="yesButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5bk-ho-ndb"/>
@@ -46,6 +44,14 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="sDZ-U8-S8j" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Et0-8r-Csf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8rW-PX-lNg" secondAttribute="trailing" constant="45" id="Ggn-f3-O8y"/>
+                            <constraint firstItem="sDZ-U8-S8j" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="X9x-Hq-Rur"/>
+                            <constraint firstItem="3O1-tz-m36" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="45" id="jEy-YF-bMc"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="8rW-PX-lNg" secondAttribute="bottom" constant="28" id="lFH-ZB-kWr"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3O1-tz-m36" secondAttribute="bottom" constant="28" id="lZl-lR-VkE"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="questionLabel" destination="sDZ-U8-S8j" id="EbH-1U-egX"/>
