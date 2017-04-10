@@ -31,6 +31,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             // Add it to the Array
             else {
                 tasksArray.append(String(i))
+                taskLabel.text = ""
                 
                 // Displaying input text into label
                 refreshTable()
@@ -38,10 +39,25 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        
+        taskLabel.text = ""
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.taskTableView.reloadData()
+    }
+    
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (tasksArray.count)
     }
-    
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
@@ -53,23 +69,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func refreshTable () {
         self.taskTableView.reloadData()
         self.taskTableView.refreshControl?.endRefreshing()
-        print("refreshed")
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        self.taskTableView.reloadData()
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
-    }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
 }
 
