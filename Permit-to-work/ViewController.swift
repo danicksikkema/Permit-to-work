@@ -10,38 +10,19 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let questions = ["Question 1", "Question 2", "Question 3", "Question 4"]
-//    let questions: [(name: String, color: UIColor)] = [("Question 1", UIColor.red), ("Question 2", UIColor.blue)]
-    var currentQuestionIndex = 1
-    
-    // function looping question array
-    func nextQuestion() {
-        if currentQuestionIndex < questions.count {
-            questionLabel.text = questions[currentQuestionIndex]
-            currentQuestionIndex += 1
-        } else {
-            questionLabel.text = "you are done"
-            print("No more questions to display.")
-        }
-    }
+    let tasksFromTemplate = ["Task 1", "Task 2", "Task 3", "Task 4"]
+    var tasks = String()
 
-
-    @IBOutlet weak var questionLabel: UILabel!
+    @IBOutlet weak var taskLabel: UITextField!
     
-    @IBAction func noButton(_ sender: Any) {
-        nextQuestion()
-        print("This question answer is: no.")
-        
-        self.view.backgroundColor = UIColor.red
-
-    }
+    @IBOutlet weak var nameLabel: UILabel!
     
-    @IBAction func yesButton(_ sender: Any) {
-        nextQuestion()
-        print("This question answer is: yes.")
+    @IBAction func addTaskButton(_ sender: Any) {
+        //getting input from Text Field
+        tasks = taskLabel.text!
         
-        self.view.backgroundColor = UIColor.red
-        
+        //Displaying input text into label
+        nameLabel.text = tasks
     }
     
     override func viewDidLoad() {
@@ -49,7 +30,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         // set first question in label on loading
-        questionLabel.text = questions.first
+//        questionLabel.text = questions.first
         
     }
 
