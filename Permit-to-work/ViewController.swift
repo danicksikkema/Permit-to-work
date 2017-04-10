@@ -15,8 +15,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     @IBOutlet weak var taskLabel: UITextField!
     
-    @IBOutlet weak var nameLabel: UILabel!
-    
     @IBOutlet weak var taskTableView: UITableView!
     
     @IBAction func addTaskButton(_ sender: Any) {
@@ -35,7 +33,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 tasksArray.append(String(i))
                 
                 // Displaying input text into label
-                nameLabel.text = String(describing: tasksArray)
+                refreshTable()
             }
         }
     }
@@ -50,6 +48,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.textLabel?.text = tasksArray[indexPath.row]
         
         return (cell)
+    }
+    
+    func refreshTable () {
+        self.taskTableView.reloadData()
+        self.taskTableView.refreshControl?.endRefreshing()
+        print("refreshed")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.taskTableView.reloadData()
     }
     
     override func viewDidLoad() {
