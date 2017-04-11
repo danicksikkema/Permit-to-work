@@ -10,27 +10,33 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    let tasksFromTemplate = ["Task 1", "Task 2", "Task 3", "Task 4"]
-    var tasksArray: [String] = []
+    // List of steps from template model
+    let templates = Templates.instantie
+    
+    // List of tasks filled in by employee
+    var stepsArray: [String] = []
 
     @IBOutlet weak var taskLabel: UITextField!
     
     @IBOutlet weak var taskTableView: UITableView!
     
+    @IBAction func compareArrayButton(_ sender: Any) {
+        
+    }
     @IBAction func addTaskButton(_ sender: Any) {
         
         // Getting input from Text Field
-        let taskValue = [taskLabel.text!]
+        let stepValue = [taskLabel.text!]
         
         // Task for loop
-        for i in taskValue {
+        for i in stepValue {
             // If textlabel is empty do nothing
             if i == "" {
                 print("textlabel is empty")
             }
             // Add it to the Array
             else {
-                tasksArray.append(String(i))
+                stepsArray.append(String(i))
                 taskLabel.text = ""
                 
                 // Displaying input text into label
@@ -43,7 +49,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        taskLabel.text = ""
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,13 +60,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.taskTableView.reloadData()
     }
     
+//    func areArrayTasksEqual(tasksFromTemplate:[Person], tasksArray: [Person]) -> Bool {
+//        
+//    }
+    
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (tasksArray.count)
+        return (stepsArray.count)
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
-        cell.textLabel?.text = tasksArray[indexPath.row]
+        
+        cell.textLabel?.text = stepsArray[indexPath.row]
         
         return (cell)
     }
@@ -70,8 +80,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.taskTableView.reloadData()
         self.taskTableView.refreshControl?.endRefreshing()
     }
-    
-
     
 }
 

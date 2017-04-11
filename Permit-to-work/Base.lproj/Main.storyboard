@@ -44,10 +44,10 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tZ5-nu-BsW">
-                                <rect key="frame" x="0.0" y="28" width="375" height="593"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="557"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="593" id="Rd2-s1-dg3"/>
+                                    <constraint firstAttribute="height" constant="557" id="Rd2-s1-dg3"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="ChO-7O-g44">
@@ -64,21 +64,42 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="tHc-qb-ytb"/>
                                 </connections>
                             </tableView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FyY-Hk-lDj">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Permit to work" id="ilL-cQ-dX9">
+                                        <barButtonItem key="rightBarButtonItem" id="EtR-jv-wdC">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="p83-WZ-UC0">
+                                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Check"/>
+                                            </button>
+                                            <connections>
+                                                <action selector="compareArrayButton:" destination="BYZ-38-t0r" id="q5E-jl-inc"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="FyY-Hk-lDj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="5fB-ta-v0M"/>
                             <constraint firstItem="tZ5-nu-BsW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="6dd-UL-TZL"/>
                             <constraint firstItem="gXe-hq-o3N" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="8eZ-aG-Zuk"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qyI-on-ohp" secondAttribute="bottom" constant="8" id="Ayh-tN-QU8"/>
+                            <constraint firstItem="tZ5-nu-BsW" firstAttribute="top" secondItem="FyY-Hk-lDj" secondAttribute="bottom" id="Dmm-3t-Nbm"/>
+                            <constraint firstItem="FyY-Hk-lDj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="IvY-HM-hB6"/>
                             <constraint firstItem="gXe-hq-o3N" firstAttribute="leading" secondItem="qyI-on-ohp" secondAttribute="trailing" constant="8" id="K9c-6R-R5U"/>
                             <constraint firstItem="gXe-hq-o3N" firstAttribute="top" secondItem="tZ5-nu-BsW" secondAttribute="bottom" constant="8" id="NMa-V2-KKj"/>
                             <constraint firstAttribute="trailing" secondItem="tZ5-nu-BsW" secondAttribute="trailing" id="QQJ-MQ-g5U"/>
                             <constraint firstItem="qyI-on-ohp" firstAttribute="top" secondItem="tZ5-nu-BsW" secondAttribute="bottom" constant="8" id="Y3r-cH-WaO"/>
                             <constraint firstItem="gXe-hq-o3N" firstAttribute="leading" secondItem="qyI-on-ohp" secondAttribute="trailing" constant="8" id="aXB-Oo-yfT"/>
-                            <constraint firstItem="tZ5-nu-BsW" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="iGm-Zl-y6d"/>
+                            <constraint firstItem="tZ5-nu-BsW" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="44" id="iGm-Zl-y6d"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gXe-hq-o3N" secondAttribute="bottom" constant="8" id="pn0-Rb-1XN"/>
                             <constraint firstItem="qyI-on-ohp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="r8G-zr-UKa"/>
                             <constraint firstItem="tZ5-nu-BsW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rwO-FP-1D5"/>
+                            <constraint firstAttribute="trailing" secondItem="FyY-Hk-lDj" secondAttribute="trailing" id="uV2-G6-628"/>
                         </constraints>
                     </view>
                     <connections>
