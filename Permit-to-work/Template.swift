@@ -9,11 +9,11 @@
 import Foundation
 
 class Step {
-    var task : String = ""
+    var stepDescription : String = ""
     var danger : String = ""
     
-    init(task: String, danger: String) {
-        self.task = task
+    init(stepDescription: String, danger: String) {
+        self.stepDescription = stepDescription
         self.danger = danger
     }
 }
@@ -31,11 +31,11 @@ class Template {
 class Templates {
     var allTemplates : [Template]
     
-    static let instantie : Templates = Templates()
+    static let instance : Templates = Templates()
     
     private init() {
         allTemplates = [
-            Template(name: "template 1", templateStep: Step (task: "task 1", danger: "danger 1"))
+            Template(name: "template 1", templateStep: Step (stepDescription: "description 1", danger: "danger 1"))
         ]
     }
 

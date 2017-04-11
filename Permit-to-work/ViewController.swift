@@ -10,11 +10,11 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    // List of steps from template model
-    let templates = Templates.instantie
+    // List of steps with steps and dangers from template model.
+    let template: [String: String] = ["description 1": "danger 1", "description 2": "danger 2"]
     
-    // List of tasks filled in by employee
-    var stepsArray: [String] = []
+    // List of permit with filled in steps and dangers by employee.
+    var permit: [String] = []
 
     @IBOutlet weak var taskLabel: UITextField!
     
@@ -25,21 +25,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     @IBAction func addTaskButton(_ sender: Any) {
         
-        // Getting input from Text Field
-        let stepValue = [taskLabel.text!]
+        // Getting input from Text Field.
+        let stepDescription = [taskLabel.text!]
         
-        // Task for loop
-        for i in stepValue {
-            // If textlabel is empty do nothing
+        // For loop to add a description to permit array.
+        for i in stepDescription {
+            // If textlabel is empty do nothing.
             if i == "" {
                 print("textlabel is empty")
             }
-            // Add it to the Array
+            // Add it to the Array.
             else {
-                stepsArray.append(String(i))
+                permit.append(String(i))
                 taskLabel.text = ""
                 
-                // Displaying input text into label
+                // Displaying input text into label.
                 refreshTable()
             }
         }
@@ -65,13 +65,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //    }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (stepsArray.count)
+        return (permit.count)
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
         
-        cell.textLabel?.text = stepsArray[indexPath.row]
+        cell.textLabel?.text = permit[indexPath.row]
         
         return (cell)
     }
