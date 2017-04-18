@@ -8,47 +8,38 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    // List of steps with steps and dangers from template model.
-    let template: [String: String] = ["description 1": "danger 1", "description 2": "danger 2"]
+    @IBOutlet weak var stepTableView: UITableView!
     
-    // List of permit with filled in steps and dangers by employee.
-    var permit: [String] = []
-
+    @IBOutlet weak var dangerLabel: UITextField!
     @IBOutlet weak var taskLabel: UITextField!
-    
-    @IBOutlet weak var taskTableView: UITableView!
     
     @IBAction func compareArrayButton(_ sender: Any) {
         
     }
-    @IBAction func addTaskButton(_ sender: Any) {
+    
+    @IBAction func addStepButton(_ sender: Any) {
+        let newPermitStep = PermitStep (stepDescription: taskLabel.text!, stepDanger: dangerLabel.text!)
         
-        // Getting input from Text Field.
-        let stepDescription = [taskLabel.text!]
-        
-        // For loop to add a description to permit array.
-        for i in stepDescription {
-            // If textlabel is empty do nothing.
-            if i == "" {
-                print("textlabel is empty")
-            }
-            // Add it to the Array.
-            else {
-                permit.append(String(i))
-                taskLabel.text = ""
-                
-                // Displaying input text into label.
-                refreshTable()
-            }
+        let permitSteps = PermitSteps.instance
+
+        if (taskLabel.text?.characters.count)! > 0 && (dangerLabel.text?.characters.count)! >= 0 {
+            permitSteps.addNewPermitStep(permitStep: newPermitStep)
+            refreshTable()
+            clearStepLabels()
+        }
+            
+        else {
+            alertMissingTaskMessage ()
         }
     }
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+     
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,28 +48,49 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.taskTableView.reloadData()
+        self.stepTableView.reloadData()
     }
-    
-//    func areArrayTasksEqual(tasksFromTemplate:[Person], tasksArray: [Person]) -> Bool {
-//        
-//    }
-    
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (permit.count)
-    }
-    
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
+
         
-        cell.textLabel?.text = permit[indexPath.row]
-        
-        return (cell)
-    }
-    
     func refreshTable () {
-        self.taskTableView.reloadData()
-        self.taskTableView.refreshControl?.endRefreshing()
+        self.stepTableView.reloadData()
+        self.stepTableView.refreshControl?.endRefreshing()
+    }
+    
+    func clearStepLabels () {
+        // Empty the labels.
+        taskLabel.text = ""
+        dangerLabel.text = ""
+    }
+    
+    func alertMissingTaskMessage () {
+        let alertController = UIAlertController(title: "Missing task input", message: "Did you forget to fill in taskfield?", preferredStyle: .alert)
+        
+        let defaultAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alertController.addAction(defaultAction)
+        
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    let permitSteps = PermitSteps.instance
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return permitSteps.allPermitSteps.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: "cell")
+        
+        let permitStep = permitSteps.allPermitSteps[indexPath.row]
+        
+        cell.textLabel?.text = permitStep.stepDescription
+        cell.detailTextLabel?.text = permitStep.stepDanger
+        return cell
     }
     
 }
