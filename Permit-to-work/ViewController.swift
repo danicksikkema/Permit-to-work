@@ -18,7 +18,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var taskLabel: UITextField!
     
     @IBAction func compareArrayButton(_ sender: Any) {
-        permitSteps.compareArray()
+        // Create array of strings (stepDescription) with objects from class.
+        let stepDescriptionArray = permitSteps.allPermitSteps.map({ (permitstep: PermitStep) -> String in
+            permitstep.stepDescription
+        })
+        
+        print(stepDescriptionArray)
+        
+        // Create array of strings (stepDanger) with objects from class.
+        let stepDangerArray = permitSteps.allPermitSteps.map({ (permitstep: PermitStep) -> String in
+            permitstep.stepDanger
+        })
+        
+        print(stepDangerArray)
     }
 
     @IBAction func addStepButton(_ sender: Any) {

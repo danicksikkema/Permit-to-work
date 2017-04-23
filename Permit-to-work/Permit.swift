@@ -25,21 +25,13 @@ class PermitSteps {
     
     private init() {
         // Voorbeeld
-//        allPermitSteps = [PermitStep(stepDescription: "description", stepDanger: "danger")]
+//        allPermitSteps = [PermitStep(id: 1, stepDescription: "description", stepDanger: "danger")]
     }
     
     func addNewPermitStep (permitStep : PermitStep) {
         allPermitSteps.append (permitStep)
     }
-    
-    // Need to fix this
-    func compareArray () {
-        for step in allPermitSteps {
-            if step.stepDescription == "description2" {
-                print ("true")
-            } else {
-                print ("false")
-            }
-        }
-    }
 }
+
+
+
