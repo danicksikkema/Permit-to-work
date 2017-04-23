@@ -10,36 +10,35 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    var permitSteps = PermitSteps.instance
+   
     @IBOutlet weak var stepTableView: UITableView!
     
     @IBOutlet weak var dangerLabel: UITextField!
     @IBOutlet weak var taskLabel: UITextField!
     
     @IBAction func compareArrayButton(_ sender: Any) {
-        
+        permitSteps.compareArray()
     }
-    
+
     @IBAction func addStepButton(_ sender: Any) {
         let newPermitStep = PermitStep (stepDescription: taskLabel.text!, stepDanger: dangerLabel.text!)
-        
-        let permitSteps = PermitSteps.instance
 
         if (taskLabel.text?.characters.count)! > 0 && (dangerLabel.text?.characters.count)! >= 0 {
             permitSteps.addNewPermitStep(permitStep: newPermitStep)
+
             refreshTable()
             clearStepLabels()
-        }
             
-        else {
+        } else {
             alertMissingTaskMessage ()
         }
     }
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-     
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -72,7 +71,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         present(alertController, animated: true, completion: nil)
     }
     
-    let permitSteps = PermitSteps.instance
+    // Func to delete value in row
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.delete {
+            permitSteps.allPermitSteps.remove(at: indexPath.row)
+            
+            refreshTable()
+        }
+
+    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         

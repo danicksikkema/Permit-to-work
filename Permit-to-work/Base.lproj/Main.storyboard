@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -27,7 +27,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="2LT-6o-sTR"/>
                                 </constraints>
-                                <state key="normal" title="Add task"/>
+                                <state key="normal" title="Add step"/>
                                 <connections>
                                     <action selector="addStepButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bY4-wB-3th"/>
                                 </connections>
@@ -41,10 +41,10 @@
                                                 <rect key="frame" x="276" y="7" width="83" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Check"/>
+                                                <connections>
+                                                    <action selector="compareArrayButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3SJ-r0-SHM"/>
+                                                </connections>
                                             </button>
-                                            <connections>
-                                                <action selector="compareArrayButton:" destination="BYZ-38-t0r" id="q5E-jl-inc"/>
-                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>

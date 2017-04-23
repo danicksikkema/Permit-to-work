@@ -13,8 +13,8 @@ class PermitStep {
     var stepDanger : String = ""
     
     init(stepDescription: String, stepDanger: String) {
-        self.stepDescription = stepDescription
-        self.stepDanger = stepDanger
+        self.stepDescription = stepDescription 
+        self.stepDanger = stepDanger 
     }
 }
 
@@ -24,10 +24,22 @@ class PermitSteps {
     static let instance : PermitSteps = PermitSteps()
     
     private init() {
-
+        // Voorbeeld
+//        allPermitSteps = [PermitStep(stepDescription: "description", stepDanger: "danger")]
     }
     
     func addNewPermitStep (permitStep : PermitStep) {
         allPermitSteps.append (permitStep)
+    }
+    
+    // Need to fix this
+    func compareArray () {
+        for step in allPermitSteps {
+            if step.stepDescription == "description2" {
+                print ("true")
+            } else {
+                print ("false")
+            }
+        }
     }
 }
