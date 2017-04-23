@@ -19,18 +19,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @IBAction func compareArrayButton(_ sender: Any) {
         // Create array of strings (stepDescription) with objects from class.
-        let stepDescriptionArray = permitSteps.allPermitSteps.map({ (permitstep: PermitStep) -> String in
-            permitstep.stepDescription
+        let stepsArray = permitSteps.allPermitSteps.map({ (permitstep: PermitStep) -> [String] in
+            [permitstep.stepDescription, permitstep.stepDanger]
         })
         
-        print(stepDescriptionArray)
-        
-        // Create array of strings (stepDanger) with objects from class.
-        let stepDangerArray = permitSteps.allPermitSteps.map({ (permitstep: PermitStep) -> String in
-            permitstep.stepDanger
-        })
-        
-        print(stepDangerArray)
+        print(stepsArray)
     }
 
     @IBAction func addStepButton(_ sender: Any) {

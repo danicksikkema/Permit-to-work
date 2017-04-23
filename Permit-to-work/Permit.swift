@@ -25,7 +25,7 @@ class PermitSteps {
     
     private init() {
         // Voorbeeld
-//        allPermitSteps = [PermitStep(id: 1, stepDescription: "description", stepDanger: "danger")]
+//        allPermitSteps = [PermitStep(stepDescription: "description", stepDanger: "danger")]
     }
     
     func addNewPermitStep (permitStep : PermitStep) {
