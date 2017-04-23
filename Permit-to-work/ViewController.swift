@@ -11,26 +11,29 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
     
     var permitSteps = PermitSteps.instance
+    
+    let templateSteps = [["description1", "danger1"], ["description2", "danger2"], ["description3", "danger3"], ["description4", "danger4"]]
    
     @IBOutlet weak var stepTableView: UITableView!
     
     @IBOutlet weak var dangerLabel: UITextField!
     @IBOutlet weak var taskLabel: UITextField!
     
-    @IBAction func compareArrayButton(_ sender: Any) {
-        // Create array of strings (stepDescription) with objects from class.
-        let stepsArray = permitSteps.allPermitSteps.map({ (permitstep: PermitStep) -> [String] in
-            [permitstep.stepDescription, permitstep.stepDanger]
-        })
+    @IBAction func saveButton(_ sender: Any) {
+        compareArray ()
         
-        print(stepsArray)
-    }
+        //        let checkIndex = zip(templateSteps, userSteps).enumerated().filter {$1.0 != $1.1}.map {$0.0}
+        //        print(checkIndex)
 
+    }
+    
     @IBAction func addStepButton(_ sender: Any) {
         let newPermitStep = PermitStep (stepDescription: taskLabel.text!, stepDanger: dangerLabel.text!)
 
         if (taskLabel.text?.characters.count)! > 0 && (dangerLabel.text?.characters.count)! >= 0 {
             permitSteps.addNewPermitStep(permitStep: newPermitStep)
+            // Check if filled in answer is the same as in the template.
+            compareArray ()
 
             refreshTable()
             clearStepLabels()
@@ -56,6 +59,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func viewWillAppear(_ animated: Bool) {
         self.stepTableView.reloadData()
+        
     }
     
     // Hide keyboard when touchesBegan
@@ -82,6 +86,27 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // Empty the labels.
         taskLabel.text = ""
         dangerLabel.text = ""
+    }
+    
+    func compareArray () {
+        // Get object array -> array of strings
+        let userSteps = permitSteps.allPermitSteps.map({ (permitstep: PermitStep) -> [String] in
+            [permitstep.stepDescription, permitstep.stepDanger]
+        })
+        
+        // Compare elements from both arrays, and when elements are not equal give a warning message.
+        for (e1, e2) in zip(templateSteps, userSteps) {
+            if "\(e1)".lowercased().range(of: "\(e2)") != nil {
+                // do nothing
+            } else {
+                let alertController = UIAlertController(title: "Reminder", message: "Did you forget this part: \(e1)?", preferredStyle: .alert)
+                
+                let defaultAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                alertController.addAction(defaultAction)
+                
+                present(alertController, animated: true, completion: nil)
+            }
+        }
     }
     
     func alertMissingTaskMessage () {
