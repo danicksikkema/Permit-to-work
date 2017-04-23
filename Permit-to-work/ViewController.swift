@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
     
     var permitSteps = PermitSteps.instance
    
@@ -39,6 +39,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        self.dangerLabel.delegate = self
+        self.taskLabel.delegate = self
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,6 +51,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func viewWillAppear(_ animated: Bool) {
         self.stepTableView.reloadData()
+    }
+    
+    // Hide keyboard when touchesBegan
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        self.view.endEditing(true)
+        
+    }
+    
+    // Hide keyboard when textfield returns
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        
+        return true
     }
 
         
