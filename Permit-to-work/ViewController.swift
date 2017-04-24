@@ -21,10 +21,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @IBAction func saveButton(_ sender: Any) {
         compareArray ()
-        
-        //        let checkIndex = zip(templateSteps, userSteps).enumerated().filter {$1.0 != $1.1}.map {$0.0}
-        //        print(checkIndex)
-
+        findFaultLabel ()
     }
     
     @IBAction func addStepButton(_ sender: Any) {
@@ -33,7 +30,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         if (taskLabel.text?.characters.count)! > 0 && (dangerLabel.text?.characters.count)! >= 0 {
             permitSteps.addNewPermitStep(permitStep: newPermitStep)
-            // Check if filled in answer is the same as in the template.
 
             refreshTable()
             clearStepLabels()
@@ -103,27 +99,90 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 
                 // If not equal, give a warming message.
                 if (e1) != (e2) {
-                    print("Niet gelijk")
+                    notEqualMessage ()
                     
-                // When equal do nothing.
+                // When equal, give succes message.
+                } else if (e1) == (e2)  {
+                    equalSucceesMessage ()
                 } else {
-                    print("Gelijk")
+                break
                 }
             }
         }
             
         // If userSteps has more steps than template, check with user if this is correct.
         else if templateSteps.count < userSteps.count {
-            print("Je hebt meer stappen toegevoegd klopt dit?")
+            moreStepsMessage ()
             
         // Steps are missing, give a warning message.
         } else {
-            print("Er missen stappen")
+            lessStepsMessage ()
+        }
+    }
+    
+    func findFaultLabel () {
+        let userSteps = permitSteps.allPermitSteps.map({ (permitstep: PermitStep) -> [String] in
+            [permitstep.stepDescription!, permitstep.stepDanger!]
+        })
+        
+        let checkIndex = zip(templateSteps, userSteps).enumerated().filter {$1.0 != $1.1}.map {$0.0}
+        
+        print(checkIndex)
+        for getal in checkIndex {
+            
+            switch getal {
+            case 0:
+                print("Fout zit in label 1")
+            case 1:
+                print("Fout zit in label 2")
+            case 2:
+                print("Fout zit in label 3")
+            case 3:
+                print("Fout zit in label 4")
+            default:
+                print("Geen fouten")
+            }
         }
     }
     
     func alertMissingTaskMessage () {
         let alertController = UIAlertController(title: "Missing task input", message: "Did you forget to fill in taskfield?", preferredStyle: .alert)
+        
+        let defaultAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alertController.addAction(defaultAction)
+        
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    func notEqualMessage () {
+        let alertController = UIAlertController(title: "Incorrect input", message: "The input of description or danger does not match the template", preferredStyle: .alert)
+        
+        let defaultAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alertController.addAction(defaultAction)
+        
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    func equalSucceesMessage () {
+        let alertController = UIAlertController(title: "Good job!", message: "You succesfully filled in the workplan!", preferredStyle: .alert)
+        
+        let defaultAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alertController.addAction(defaultAction)
+        
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    func moreStepsMessage () {
+        let alertController = UIAlertController(title: "More steps", message: "There are more steps than necessary, is this correct?.", preferredStyle: .alert)
+        
+        let defaultAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alertController.addAction(defaultAction)
+        
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    func lessStepsMessage () {
+        let alertController = UIAlertController(title: "Missings steps", message: "You forgot a step.", preferredStyle: .alert)
         
         let defaultAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
         alertController.addAction(defaultAction)
@@ -138,9 +197,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             refreshTable()
         }
-
     }
-    
     
     func numberOfSections(in tableView: UITableView) -> Int {
         
