@@ -95,24 +95,30 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             [permitstep.stepDescription!, permitstep.stepDanger!]
         })
         
+        // Check if userSteps has the same amount of steps as template.
         if templateSteps.count == userSteps.count {
         
-            // Compare elements from both arrays, and when elements are not equal give a warning message.
+            // If true, compare elements from both arrays.
             for (e1, e2) in zip(templateSteps, userSteps) {
-            
+                
+                // If not equal, give a warming message.
                 if (e1) != (e2) {
-                    print("niet gelijk")
+                    print("Niet gelijk")
                     
+                // When equal do nothing.
                 } else {
-                    print("gelijk")
+                    print("Gelijk")
                 }
             }
         }
-        
+            
+        // If userSteps has more steps than template, check with user if this is correct.
         else if templateSteps.count < userSteps.count {
             print("Je hebt meer stappen toegevoegd klopt dit?")
+            
+        // Steps are missing, give a warning message.
         } else {
-            print("er missen stappen")
+            print("Er missen stappen")
         }
     }
     
