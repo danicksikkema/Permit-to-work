@@ -9,8 +9,8 @@
 import Foundation
 
 class PermitStep {
-    var stepDescription : String = ""
-    var stepDanger : String = ""
+    var stepDescription : String?
+    var stepDanger : String?
     
     init(stepDescription: String, stepDanger: String) {
         self.stepDescription = stepDescription 
