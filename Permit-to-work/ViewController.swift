@@ -92,7 +92,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         })
         
         // Check if userSteps has the same amount of steps as template.
-        if templateSteps.count == userSteps.count {
+        if templateSteps.count <= userSteps.count {
         
             // If true, compare elements from both arrays.
             for (e1, e2) in zip(templateSteps, userSteps) {
@@ -100,24 +100,23 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 // If not equal, give a warming message.
                 if (e1) != (e2) {
                     notEqualMessage ()
-                    
+                }
+                
                 // When equal, give succes message.
-                } else if (e1) == (e2)  {
+                else if (e1) == (e2)  {
                     equalSucceesMessage ()
+
                 } else {
-                break
+                    break
                 }
             }
         }
-            
-        // If userSteps has more steps than template, check with user if this is correct.
-        else if templateSteps.count < userSteps.count {
-            moreStepsMessage ()
-            
+        
         // Steps are missing, give a warning message.
-        } else {
+        else {
             lessStepsMessage ()
         }
+ 
     }
     
     func findFaultLabel () {
@@ -165,15 +164,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func equalSucceesMessage () {
         let alertController = UIAlertController(title: "Good job!", message: "You succesfully filled in the workplan!", preferredStyle: .alert)
-        
-        let defaultAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
-        alertController.addAction(defaultAction)
-        
-        present(alertController, animated: true, completion: nil)
-    }
-    
-    func moreStepsMessage () {
-        let alertController = UIAlertController(title: "More steps", message: "There are more steps than necessary, is this correct?.", preferredStyle: .alert)
         
         let defaultAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
         alertController.addAction(defaultAction)
