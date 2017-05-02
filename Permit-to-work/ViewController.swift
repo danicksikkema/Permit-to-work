@@ -21,10 +21,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @IBAction func saveButton(_ sender: Any) {
         compareArray ()
-        
-        //        let checkIndex = zip(templateSteps, userSteps).enumerated().filter {$1.0 != $1.1}.map {$0.0}
-        //        print(checkIndex)
-
 
         findFaultLabel ()
 
@@ -102,6 +98,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
             // If true, compare elements from both arrays.
             for (e1, e2) in zip(templateSteps, userSteps) {
+                print (e1)
                 
                 // If not equal, give a warming message.
                 if (e1) != (e2) {
@@ -110,7 +107,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 
                 // When equal, give succes message.
                 else if (e1) == (e2)  {
-                    equalSucceesMessage ()
+                    equalSuccesMessage ()
 
                 } else {
                     break
@@ -168,7 +165,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         present(alertController, animated: true, completion: nil)
     }
     
-    func equalSucceesMessage () {
+    func equalSuccesMessage () {
         let alertController = UIAlertController(title: "Good job!", message: "You succesfully filled in the workplan!", preferredStyle: .alert)
         
         let defaultAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
