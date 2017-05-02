@@ -21,6 +21,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @IBAction func saveButton(_ sender: Any) {
         compareArray ()
+        findFaultLabel()
         
         //        let checkIndex = zip(templateSteps, userSteps).enumerated().filter {$1.0 != $1.1}.map {$0.0}
         //        print(checkIndex)
@@ -105,6 +106,31 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 alertController.addAction(defaultAction)
                 
                 present(alertController, animated: true, completion: nil)
+            }
+        }
+    }
+    
+    func findFaultLabel () {
+        let userSteps = permitSteps.allPermitSteps.map({ (permitstep: PermitStep) -> [String] in
+            [permitstep.stepDescription, permitstep.stepDanger]
+        })
+        
+        let checkIndex = zip(templateSteps, userSteps).enumerated().filter {$1.0 != $1.1}.map {$0.0}
+        
+        print(checkIndex)
+        for getal in checkIndex {
+            
+            switch getal {
+            case 0:
+                print("Fout zit in label 1")
+            case 1:
+                print("Fout zit in label 2")
+            case 2:
+                print("Fout zit in label 3")
+            case 3:
+                print("Fout zit in label 4")
+            default:
+                print("Geen fouten")
             }
         }
     }
