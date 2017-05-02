@@ -21,20 +21,21 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @IBAction func saveButton(_ sender: Any) {
         compareArray ()
-        findFaultLabel()
         
         //        let checkIndex = zip(templateSteps, userSteps).enumerated().filter {$1.0 != $1.1}.map {$0.0}
         //        print(checkIndex)
 
+
+        findFaultLabel ()
+
     }
     
     @IBAction func addStepButton(_ sender: Any) {
-        let newPermitStep = PermitStep (stepDescription: taskLabel.text!, stepDanger: dangerLabel.text!)
 
+        let newPermitStep = PermitStep (stepDescription: taskLabel.text!, stepDanger: dangerLabel.text!)
+        
         if (taskLabel.text?.characters.count)! > 0 && (dangerLabel.text?.characters.count)! >= 0 {
             permitSteps.addNewPermitStep(permitStep: newPermitStep)
-            // Check if filled in answer is the same as in the template.
-            compareArray ()
 
             refreshTable()
             clearStepLabels()
@@ -42,6 +43,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         } else {
             alertMissingTaskMessage ()
         }
+
     }
     
     override func viewDidLoad() {
@@ -92,27 +94,40 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func compareArray () {
         // Get object array -> array of strings
         let userSteps = permitSteps.allPermitSteps.map({ (permitstep: PermitStep) -> [String] in
-            [permitstep.stepDescription, permitstep.stepDanger]
+            [permitstep.stepDescription!, permitstep.stepDanger!]
         })
         
-        // Compare elements from both arrays, and when elements are not equal give a warning message.
-        for (e1, e2) in zip(templateSteps, userSteps) {
-            if "\(e1)".lowercased().range(of: "\(e2)") != nil {
-                // do nothing
-            } else {
-                let alertController = UIAlertController(title: "Reminder", message: "Did you forget this part: \(e1)?", preferredStyle: .alert)
+        // Check if userSteps has the same amount of steps as template.
+        if templateSteps.count <= userSteps.count {
+        
+            // If true, compare elements from both arrays.
+            for (e1, e2) in zip(templateSteps, userSteps) {
                 
-                let defaultAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
-                alertController.addAction(defaultAction)
+                // If not equal, give a warming message.
+                if (e1) != (e2) {
+                    notEqualMessage ()
+                }
                 
-                present(alertController, animated: true, completion: nil)
+                // When equal, give succes message.
+                else if (e1) == (e2)  {
+                    equalSucceesMessage ()
+
+                } else {
+                    break
+                }
             }
         }
+        
+        // Steps are missing, give a warning message.
+        else {
+            lessStepsMessage ()
+        }
+ 
     }
     
     func findFaultLabel () {
         let userSteps = permitSteps.allPermitSteps.map({ (permitstep: PermitStep) -> [String] in
-            [permitstep.stepDescription, permitstep.stepDanger]
+            [permitstep.stepDescription!, permitstep.stepDanger!]
         })
         
         let checkIndex = zip(templateSteps, userSteps).enumerated().filter {$1.0 != $1.1}.map {$0.0}
@@ -144,6 +159,33 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         present(alertController, animated: true, completion: nil)
     }
     
+    func notEqualMessage () {
+        let alertController = UIAlertController(title: "Incorrect input", message: "The input of description or danger does not match the template", preferredStyle: .alert)
+        
+        let defaultAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alertController.addAction(defaultAction)
+        
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    func equalSucceesMessage () {
+        let alertController = UIAlertController(title: "Good job!", message: "You succesfully filled in the workplan!", preferredStyle: .alert)
+        
+        let defaultAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alertController.addAction(defaultAction)
+        
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    func lessStepsMessage () {
+        let alertController = UIAlertController(title: "Missings steps", message: "You forgot a step.", preferredStyle: .alert)
+        
+        let defaultAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alertController.addAction(defaultAction)
+        
+        present(alertController, animated: true, completion: nil)
+    }
+    
     // Func to delete value in row
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
@@ -151,7 +193,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             refreshTable()
         }
-
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
