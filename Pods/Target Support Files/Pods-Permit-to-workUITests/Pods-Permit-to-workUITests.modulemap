@@ -1,0 +1,6 @@
+framework module Pods_Permit_to_workUITests {
+  umbrella header "Pods-Permit-to-workUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
