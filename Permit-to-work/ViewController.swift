@@ -20,10 +20,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var taskLabel: UITextField!
     
     @IBAction func saveButton(_ sender: Any) {
-        compareArray ()
-
-        findFaultLabel ()
-
+        compareList ()
     }
     
     @IBAction func addStepButton(_ sender: Any) {
@@ -39,7 +36,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         } else {
             alertMissingTaskMessage ()
         }
-
     }
     
     override func viewDidLoad() {
@@ -50,7 +46,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.taskLabel.delegate = self
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -87,62 +83,22 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         dangerLabel.text = ""
     }
     
-    func compareArray () {
+    func compareList () {
+        
         // Get object array -> array of strings
         let userSteps = permitSteps.allPermitSteps.map({ (permitstep: PermitStep) -> [String] in
             [permitstep.stepDescription!, permitstep.stepDanger!]
         })
         
-        // Check if userSteps has the same amount of steps as template.
-        if templateSteps.count <= userSteps.count {
+        // Zip templateSteps and userSteps in pairs and filter only the pairs who are not equal.
+        let zippedSteps = zip(templateSteps, userSteps).enumerated().filter {$1.0 != $1.1}.map {$0.offset}
         
-            // If true, compare elements from both arrays.
-            for (e1, e2) in zip(templateSteps, userSteps) {
-                print (e1)
-                
-                // If not equal, give a warming message.
-                if (e1) != (e2) {
-                    notEqualMessage ()
+        // Print the rows which contain the not equal values.
+        for zippedStep in zippedSteps {
+            for i in 0..<zippedSteps.count {
+                if zippedStep == i {
+                    print ("fout zit in label \(i + 1)")
                 }
-                
-                // When equal, give succes message.
-                else if (e1) == (e2)  {
-                    equalSuccesMessage ()
-
-                } else {
-                    break
-                }
-            }
-        }
-        
-        // Steps are missing, give a warning message.
-        else {
-            lessStepsMessage ()
-        }
- 
-    }
-    
-    func findFaultLabel () {
-        let userSteps = permitSteps.allPermitSteps.map({ (permitstep: PermitStep) -> [String] in
-            [permitstep.stepDescription!, permitstep.stepDanger!]
-        })
-        
-        let checkIndex = zip(templateSteps, userSteps).enumerated().filter {$1.0 != $1.1}.map {$0.0}
-        
-        print(checkIndex)
-        for getal in checkIndex {
-            
-            switch getal {
-            case 0:
-                print("Fout zit in label 1")
-            case 1:
-                print("Fout zit in label 2")
-            case 2:
-                print("Fout zit in label 3")
-            case 3:
-                print("Fout zit in label 4")
-            default:
-                print("Geen fouten")
             }
         }
     }
@@ -166,16 +122,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func equalSuccesMessage () {
-        let alertController = UIAlertController(title: "Good job!", message: "You succesfully filled in the workplan!", preferredStyle: .alert)
-        
-        let defaultAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
-        alertController.addAction(defaultAction)
-        
-        present(alertController, animated: true, completion: nil)
-    }
-    
-    func lessStepsMessage () {
-        let alertController = UIAlertController(title: "Missings steps", message: "You forgot a step.", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Good job!", message: "The task you filled in is correct!", preferredStyle: .alert)
         
         let defaultAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
         alertController.addAction(defaultAction)
