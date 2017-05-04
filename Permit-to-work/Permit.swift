@@ -31,6 +31,16 @@ class Permit {
     }
 }
 
+class Permits {
+    var allPermits : [Permit] = []
+    
+    static let instance : Permits = Permits()
+    
+    private init() {
+    
+    }
+}
+
 class PermitSteps {
     var allPermitSteps : [PermitStep] = []
     

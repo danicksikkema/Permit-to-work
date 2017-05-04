@@ -11,6 +11,8 @@
 		074DB6EA1EBA7D6600B665AF /* Template.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074DB6E91EBA7D6600B665AF /* Template.swift */; };
 		074DB6EC1EBB2E4100B665AF /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074DB6EB1EBB2E4100B665AF /* MainNavigationController.swift */; };
 		074DB6EE1EBB317500B665AF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074DB6ED1EBB317500B665AF /* LoginViewController.swift */; };
+		074DB6F01EBB4B8700B665AF /* NewPermitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074DB6EF1EBB4B8700B665AF /* NewPermitViewController.swift */; };
+		074DB6F21EBB4B9F00B665AF /* newPermitStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074DB6F11EBB4B9F00B665AF /* newPermitStepViewController.swift */; };
 		07AC7D2F1E7870640082412C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AC7D2E1E7870640082412C /* AppDelegate.swift */; };
 		07AC7D311E7870640082412C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AC7D301E7870640082412C /* ViewController.swift */; };
 		07AC7D341E7870640082412C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07AC7D321E7870640082412C /* Main.storyboard */; };
@@ -45,6 +47,8 @@
 		074DB6E91EBA7D6600B665AF /* Template.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Template.swift; sourceTree = "<group>"; };
 		074DB6EB1EBB2E4100B665AF /* MainNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		074DB6ED1EBB317500B665AF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		074DB6EF1EBB4B8700B665AF /* NewPermitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPermitViewController.swift; sourceTree = "<group>"; };
+		074DB6F11EBB4B9F00B665AF /* newPermitStepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newPermitStepViewController.swift; sourceTree = "<group>"; };
 		07AC7D2B1E7870640082412C /* Permit-to-work.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Permit-to-work.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07AC7D2E1E7870640082412C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07AC7D301E7870640082412C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +130,8 @@
 				074DB6E91EBA7D6600B665AF /* Template.swift */,
 				07AC7D2E1E7870640082412C /* AppDelegate.swift */,
 				07AC7D301E7870640082412C /* ViewController.swift */,
+				074DB6EF1EBB4B8700B665AF /* NewPermitViewController.swift */,
+				074DB6F11EBB4B9F00B665AF /* newPermitStepViewController.swift */,
 				07AC7D321E7870640082412C /* Main.storyboard */,
 				074DB6ED1EBB317500B665AF /* LoginViewController.swift */,
 				074DB6EB1EBB2E4100B665AF /* MainNavigationController.swift */,
@@ -465,7 +471,9 @@
 				074DB6EC1EBB2E4100B665AF /* MainNavigationController.swift in Sources */,
 				07AC7D311E7870640082412C /* ViewController.swift in Sources */,
 				074DB6EA1EBA7D6600B665AF /* Template.swift in Sources */,
+				074DB6F01EBB4B8700B665AF /* NewPermitViewController.swift in Sources */,
 				07AC7D2F1E7870640082412C /* AppDelegate.swift in Sources */,
+				074DB6F21EBB4B9F00B665AF /* newPermitStepViewController.swift in Sources */,
 				07342A031E9BF91400BAE46F /* Permit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
