@@ -39,6 +39,10 @@ class Permits {
     private init() {
     
     }
+    
+    func addNewPermit (permit : Permit) {
+        allPermits.append (permit)
+    }
 }
 
 class PermitSteps {
