@@ -10,6 +10,14 @@ import Foundation
 import UIKit
 
 class NewPermitViewController : UIViewController {
+
+    
+    @IBOutlet weak var textfieldName: UITextField!
+    
+    @IBAction func nextButton(_ sender: Any) {
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

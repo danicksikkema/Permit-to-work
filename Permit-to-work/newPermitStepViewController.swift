@@ -103,6 +103,36 @@ class NewPermitStepViewController : UIViewController, UITableViewDataSource, UIT
         }
     }
     
+    // Func to delete value in row
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.delete {
+            permitSteps.allPermitSteps.remove(at: indexPath.row)
+            
+            refreshTable()
+        }
+    }
+    
+    // Functions for tableview
+    func numberOfSections(in tableView: UITableView) -> Int {
+        
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return permitSteps.allPermitSteps.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: "cell")
+        
+        let permitStep = permitSteps.allPermitSteps[indexPath.row]
+        
+        cell.textLabel?.text = permitStep.stepDescription
+        cell.detailTextLabel?.text = permitStep.stepDanger
+        return cell
+    }
+    
+    // AlertMessages
     
     func alertMissingTaskMessage () {
         let alertController = UIAlertController(title: "Missing task input", message: "Did you forget to fill in taskfield?", preferredStyle: .alert)
@@ -129,34 +159,6 @@ class NewPermitStepViewController : UIViewController, UITableViewDataSource, UIT
         alertController.addAction(defaultAction)
         
         present(alertController, animated: true, completion: nil)
-    }
-    
-    // Func to delete value in row
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == UITableViewCellEditingStyle.delete {
-            permitSteps.allPermitSteps.remove(at: indexPath.row)
-            
-            refreshTable()
-        }
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return permitSteps.allPermitSteps.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: "cell")
-        
-        let permitStep = permitSteps.allPermitSteps[indexPath.row]
-        
-        cell.textLabel?.text = permitStep.stepDescription
-        cell.detailTextLabel?.text = permitStep.stepDanger
-        return cell
     }
 
 }

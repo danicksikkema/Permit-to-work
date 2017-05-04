@@ -140,7 +140,7 @@
                                     <constraint firstAttribute="height" constant="30" id="OCt-Xt-0C6"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add a danger." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lx0-Uw-cXp">
@@ -149,7 +149,7 @@
                                     <constraint firstAttribute="height" constant="30" id="7ie-we-hnT"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QOW-pE-NcW">
@@ -237,23 +237,46 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Wq-2x-JzT">
-                                <rect key="frame" x="155" y="318" width="65" height="30"/>
+                                <rect key="frame" x="139" y="313" width="97" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <state key="normal" title="Volgende"/>
                                 <connections>
+                                    <action selector="nextButton:" destination="9Mm-g1-SV1" eventType="touchUpInside" id="ZiV-GN-D6V"/>
                                     <segue destination="BYZ-38-t0r" kind="show" id="Qqm-oK-GCr"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0p3-Em-dBE">
+                                <rect key="frame" x="16" y="275" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Geef de permit een naam" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="32o-I9-WGV">
+                                <rect key="frame" x="85" y="236" width="204.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="2Wq-2x-JzT" firstAttribute="centerX" secondItem="hpU-BV-BK6" secondAttribute="centerX" id="08L-mu-hDl"/>
+                            <constraint firstItem="0p3-Em-dBE" firstAttribute="trailing" secondItem="hpU-BV-BK6" secondAttribute="trailingMargin" id="65F-U5-QuF"/>
+                            <constraint firstItem="0p3-Em-dBE" firstAttribute="top" secondItem="32o-I9-WGV" secondAttribute="bottom" constant="18" id="B5y-Fm-COY"/>
+                            <constraint firstItem="32o-I9-WGV" firstAttribute="centerX" secondItem="hpU-BV-BK6" secondAttribute="centerX" id="WmA-KT-8tP"/>
+                            <constraint firstItem="0p3-Em-dBE" firstAttribute="centerX" secondItem="hpU-BV-BK6" secondAttribute="centerX" id="fzU-Qf-tcr"/>
+                            <constraint firstItem="0p3-Em-dBE" firstAttribute="leading" secondItem="hpU-BV-BK6" secondAttribute="leadingMargin" id="hne-wh-zHI"/>
+                            <constraint firstItem="2Wq-2x-JzT" firstAttribute="top" secondItem="0p3-Em-dBE" secondAttribute="bottom" constant="8" id="isC-HA-xsl"/>
                             <constraint firstItem="2Wq-2x-JzT" firstAttribute="centerY" secondItem="hpU-BV-BK6" secondAttribute="centerY" id="jNk-WK-ZUJ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textfieldName" destination="0p3-Em-dBE" id="xYZ-pt-lzD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pas-sY-ECi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="127" y="133"/>
+            <point key="canvasLocation" x="125.59999999999999" y="132.68365817091455"/>
         </scene>
     </scenes>
 </document>
