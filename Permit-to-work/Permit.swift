@@ -27,6 +27,7 @@ class Permit {
     init (permitName: String, permitType: Int, permitStep : PermitStep? = nil) {
         self.permitName = permitName
         self.permitType = permitType
+        self.permitStep = permitStep
     }
 }
 
