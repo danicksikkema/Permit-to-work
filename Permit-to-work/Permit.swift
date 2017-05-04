@@ -14,8 +14,19 @@ class PermitStep {
     var stepDanger : String?
     
     init(stepDescription: String, stepDanger: String) {
-        self.stepDescription = stepDescription 
-        self.stepDanger = stepDanger 
+        self.stepDescription = stepDescription
+        self.stepDanger = stepDanger
+    }
+}
+
+class Permit {
+    var permitName : String?
+    var permitType : Int?
+    var permitStep : PermitStep?
+    
+    init (permitName: String, permitType: Int, permitStep : PermitStep? = nil) {
+        self.permitName = permitName
+        self.permitType = permitType
     }
 }
 
@@ -25,8 +36,7 @@ class PermitSteps {
     static let instance : PermitSteps = PermitSteps()
     
     private init() {
-        // Voorbeeld
-//        allPermitSteps = [PermitStep(stepDescription: "description", stepDanger: "danger")]
+
     }
     
     func addNewPermitStep (permitStep : PermitStep) {

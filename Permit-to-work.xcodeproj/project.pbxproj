@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		07342A031E9BF91400BAE46F /* Permit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07342A021E9BF91400BAE46F /* Permit.swift */; };
+		074DB6EA1EBA7D6600B665AF /* Template.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074DB6E91EBA7D6600B665AF /* Template.swift */; };
 		07AC7D2F1E7870640082412C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AC7D2E1E7870640082412C /* AppDelegate.swift */; };
 		07AC7D311E7870640082412C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AC7D301E7870640082412C /* ViewController.swift */; };
 		07AC7D341E7870640082412C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07AC7D321E7870640082412C /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		07342A021E9BF91400BAE46F /* Permit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Permit.swift; sourceTree = "<group>"; };
+		074DB6E91EBA7D6600B665AF /* Template.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Template.swift; sourceTree = "<group>"; };
 		07AC7D2B1E7870640082412C /* Permit-to-work.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Permit-to-work.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07AC7D2E1E7870640082412C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07AC7D301E7870640082412C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				07342A021E9BF91400BAE46F /* Permit.swift */,
+				074DB6E91EBA7D6600B665AF /* Template.swift */,
 				07AC7D2E1E7870640082412C /* AppDelegate.swift */,
 				07AC7D301E7870640082412C /* ViewController.swift */,
 				07AC7D321E7870640082412C /* Main.storyboard */,
@@ -453,6 +456,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07AC7D311E7870640082412C /* ViewController.swift in Sources */,
+				074DB6EA1EBA7D6600B665AF /* Template.swift in Sources */,
 				07AC7D2F1E7870640082412C /* AppDelegate.swift in Sources */,
 				07342A031E9BF91400BAE46F /* Permit.swift in Sources */,
 			);
