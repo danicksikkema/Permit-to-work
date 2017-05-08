@@ -40,10 +40,43 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="LFy-gf-NAW" kind="show" identifier="toonPermit" id="KUa-r0-4A7"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bol-v8-a0p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-782" y="133"/>
+        </scene>
+        <!--showPermit-->
+        <scene sceneID="yXw-OK-Z20">
+            <objects>
+                <viewController storyboardIdentifier="PermitViewController" title="showPermit" useStoryboardIdentifierAsRestorationIdentifier="YES" id="LFy-gf-NAW" customClass="PermitViewController" customModule="Permit_to_work" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iTM-sT-bzE"/>
+                        <viewControllerLayoutGuide type="bottom" id="CTK-tb-7SP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="In1-yi-bus">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E6w-Fe-Z7g">
+                                <rect key="frame" x="16" y="114" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="namePermitLabel" destination="E6w-Fe-Z7g" id="SaQ-qT-Kxl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OsS-EH-McN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-783.20000000000005" y="900.89955022488766"/>
         </scene>
         <!--Login-->
         <scene sceneID="VwZ-CW-3X5">

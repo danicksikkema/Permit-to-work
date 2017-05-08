@@ -46,4 +46,20 @@ class PermitsTableViewController : UITableViewController {
         
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let permit : Permit = permits.allPermits[indexPath.row]
+        
+        self.performSegue(withIdentifier: "toonPermit", sender: permit)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toonPermit" {
+            let permit = sender as! Permit?
+            let PermitViewController = segue.destination as!
+            PermitViewController
+            
+            PermitViewController.activePermit = permit
+        }
+    }
 }

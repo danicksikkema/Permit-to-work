@@ -20,6 +20,7 @@ class NewPermitViewController : UIViewController {
         
         if (textfieldName.text?.characters.count)! > 0 {
             permits.addNewPermit(permit: newPermit)
+            textfieldName.text = ""
             print("opgeslagen")
             
         } else {
