@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		07342A031E9BF91400BAE46F /* Permit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07342A021E9BF91400BAE46F /* Permit.swift */; };
 		074806FA1EC06A4000D4B576 /* PermitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074806F91EC06A4000D4B576 /* PermitViewController.swift */; };
+		074806FC1EC093AF00D4B576 /* PermitStepsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074806FB1EC093AF00D4B576 /* PermitStepsViewController.swift */; };
 		074DB6EA1EBA7D6600B665AF /* Template.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074DB6E91EBA7D6600B665AF /* Template.swift */; };
 		074DB6EC1EBB2E4100B665AF /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074DB6EB1EBB2E4100B665AF /* MainNavigationController.swift */; };
 		074DB6EE1EBB317500B665AF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074DB6ED1EBB317500B665AF /* LoginViewController.swift */; };
@@ -47,6 +48,7 @@
 /* Begin PBXFileReference section */
 		07342A021E9BF91400BAE46F /* Permit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Permit.swift; sourceTree = "<group>"; };
 		074806F91EC06A4000D4B576 /* PermitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermitViewController.swift; sourceTree = "<group>"; };
+		074806FB1EC093AF00D4B576 /* PermitStepsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermitStepsViewController.swift; sourceTree = "<group>"; };
 		074DB6E91EBA7D6600B665AF /* Template.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Template.swift; sourceTree = "<group>"; };
 		074DB6EB1EBB2E4100B665AF /* MainNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		074DB6ED1EBB317500B665AF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				074DB6EF1EBB4B8700B665AF /* NewPermitViewController.swift */,
 				074DB6F11EBB4B9F00B665AF /* newPermitStepViewController.swift */,
 				07AC7D321E7870640082412C /* Main.storyboard */,
+				074806FB1EC093AF00D4B576 /* PermitStepsViewController.swift */,
 				074DB6F31EBB56C500B665AF /* PermitsTableViewController.swift */,
 				074806F91EC06A4000D4B576 /* PermitViewController.swift */,
 				074DB6ED1EBB317500B665AF /* LoginViewController.swift */,
@@ -481,6 +484,7 @@
 				074DB6EA1EBA7D6600B665AF /* Template.swift in Sources */,
 				074DB6F01EBB4B8700B665AF /* NewPermitViewController.swift in Sources */,
 				07AC7D2F1E7870640082412C /* AppDelegate.swift in Sources */,
+				074806FC1EC093AF00D4B576 /* PermitStepsViewController.swift in Sources */,
 				074DB6F21EBB4B9F00B665AF /* newPermitStepViewController.swift in Sources */,
 				07342A031E9BF91400BAE46F /* Permit.swift in Sources */,
 			);

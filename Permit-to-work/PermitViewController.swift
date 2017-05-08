@@ -12,6 +12,9 @@ import UIKit
 class PermitViewController: UIViewController {
     @IBOutlet weak var namePermitLabel: UILabel!
     
+    @IBAction func showPermitSteps(_ sender: Any) {
+        
+    }
     var activePermit : Permit?
 
     

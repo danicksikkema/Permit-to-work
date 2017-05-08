@@ -67,6 +67,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pjs-DD-mc7">
+                                <rect key="frame" x="233" y="109" width="80" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Show steps"/>
+                                <connections>
+                                    <action selector="showPermitSteps:" destination="LFy-gf-NAW" eventType="touchUpInside" id="fgu-Sb-ZjE"/>
+                                    <segue destination="H5o-qB-DAG" kind="show" identifier="toonPermitSteps" id="iFR-hK-b4y"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -77,6 +86,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OsS-EH-McN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-783.20000000000005" y="900.89955022488766"/>
+        </scene>
+        <!--showPermitSteps-->
+        <scene sceneID="DLN-w9-SQd">
+            <objects>
+                <viewController storyboardIdentifier="PermitStepsViewController" title="showPermitSteps" useStoryboardIdentifierAsRestorationIdentifier="YES" id="H5o-qB-DAG" customClass="PermitStepsViewController" customModule="Permit_to_work" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="51g-54-6sy"/>
+                        <viewControllerLayoutGuide type="bottom" id="fFC-SW-t5e"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Rrp-Tz-0GG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TqE-1a-QVi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="126" y="901"/>
         </scene>
         <!--Login-->
         <scene sceneID="VwZ-CW-3X5">

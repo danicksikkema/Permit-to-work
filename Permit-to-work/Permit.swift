@@ -43,6 +43,18 @@ class Permits {
     func addNewPermit (permit : Permit) {
         allPermits.append (permit)
     }
+    
+    // 1: If json data is picked up from server, save it in json variable. #testlink
+    func getPermitsFromServer () {
+        Alamofire.request("https://muscleweb.herokuapp.com/api/v1/workouts.json").responseJSON { response in
+            
+            if let json = response.result.value {
+                
+                print(json)
+                
+            }
+        }
+    }
 }
 
 class PermitSteps {
