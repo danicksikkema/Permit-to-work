@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class NewPermitViewController : UIViewController {
     var permits = Permits.instance
@@ -16,17 +18,23 @@ class NewPermitViewController : UIViewController {
     
     @IBAction func nextButton(_ sender: Any) {
         
-        let newPermit = Permit (permitName: textfieldName.text!, permitType: 0)
+        let parameters: [String : Any] = ["permitName": "name", "tools": "tools", "type": 4, "danger": "danger"]
         
-        if (textfieldName.text?.characters.count)! > 0 {
-            permits.addNewPermit(permit: newPermit)
-            textfieldName.text = ""
-            print("opgeslagen")
+        Alamofire.request("http://avhx.com/api/tasks", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseString { response in
             
-        } else {
-            print("niet ingevuld")
+            debugPrint(response)
+            
         }
 
+//        let newPermit = Permit (permitName: textfieldName.text!, permitType: 0)
+//        
+//        if (textfieldName.text?.characters.count)! > 0 {
+//            permits.addNewPermit(permit: newPermit)
+//            textfieldName.text = ""
+//            print("opgeslagen")
+//        } else {
+//            print("niet ingevuld")
+//        }
     }
     
     override func viewDidLoad() {

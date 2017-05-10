@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 class PermitStep {
     var stepDescription : String?
@@ -20,14 +21,25 @@ class PermitStep {
 }
 
 class Permit {
-    var permitName : String?
-    var permitType : Int?
+    var permitName : String = ""
+    var permitType : Int = 0
     var permitStep : PermitStep?
     
     init (permitName: String, permitType: Int, permitStep : PermitStep? = nil) {
         self.permitName = permitName
         self.permitType = permitType
         self.permitStep = permitStep
+    }
+    
+    // MELDING: json kan fout zijn, foutmeldingen afhandelen en wat als er een andere waarde is.
+    init (fromJSON: Any) {
+        // 4: Als er een array is dan wordt dit opgesagen als een dictionary met [String : Any]
+        if let permitAsDictionary = fromJSON as? [String: Any] {
+            
+            self.permitName = permitAsDictionary ["permitName"] as! String
+            self.permitType = permitAsDictionary ["type"] as! Int
+            self.permitStep = permitAsDictionary ["steps"] as? PermitStep
+        }
     }
 }
 
@@ -44,16 +56,39 @@ class Permits {
         allPermits.append (permit)
     }
     
-    // 1: If json data is picked up from server, save it in json variable. #testlink
+    // 1: If json data is picked up from server, save it in json variable.
     func getPermitsFromServer () {
-        Alamofire.request("https://muscleweb.herokuapp.com/api/v1/workouts.json").responseJSON { response in
+        Alamofire.request("http://avhx.com/api/v1/permits").responseJSON { response in
             
             if let json = response.result.value {
                 
                 print(json)
-                
+                self.getPermitsFromJSON (json: json)
+
             }
         }
+    }
+    
+//     2: Als het lukt om hieruit een array op te halen, dan wordt dit in de variable klanten opgeslagen.
+    func getPermitsFromJSON (json: Any) {
+        if let permits = json as? [Any] {
+            print ("Er zijn \(permits.count) permits")
+            
+            // 3: Loop door de array van permits en haal ze er uit en sla op als dictionary in variable newPermit.
+            for permitAsJSON in permits {
+                let newPermit = Permit (fromJSON: permitAsJSON)
+
+                // 5: Voeg aan de lijst met klanten, nieuwe klant toe.
+                allPermits.append(newPermit)
+            }
+
+            // 6: Wordt gekoppeld aan de table view en stuurt een sender als er nieuwe klanten zijn.
+            NotificationCenter.default.post(name: Notification.Name("NieuweKlanten"), object: nil)
+        }
+    }
+    
+    func postPermitToServer () {
+        
     }
 }
 

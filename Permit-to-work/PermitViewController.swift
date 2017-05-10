@@ -17,13 +17,9 @@ class PermitViewController: UIViewController {
     }
     var activePermit : Permit?
 
-    
     override func viewWillAppear(_ animated: Bool) {
         if let permit = activePermit {
             namePermitLabel.text = permit.permitName
-            
         }
     }
-    
-    
 }
