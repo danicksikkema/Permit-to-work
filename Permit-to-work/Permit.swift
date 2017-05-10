@@ -23,11 +23,15 @@ class PermitStep {
 class Permit {
     var permitName : String = ""
     var permitType : Int = 0
+    var permitTool : String = ""
+    var permitDanger : String = ""
     var permitStep : PermitStep?
     
-    init (permitName: String, permitType: Int, permitStep : PermitStep? = nil) {
+    init (permitName: String, permitType: Int, permitTool: String, permitDanger : String, permitStep : PermitStep? = nil) {
         self.permitName = permitName
         self.permitType = permitType
+        self.permitTool = permitTool
+        self.permitDanger = permitDanger
         self.permitStep = permitStep
     }
     
@@ -38,6 +42,8 @@ class Permit {
             
             self.permitName = permitAsDictionary ["permitName"] as! String
             self.permitType = permitAsDictionary ["type"] as! Int
+            self.permitTool = permitAsDictionary ["tools"] as! String
+            self.permitDanger = permitAsDictionary ["danger"] as! String
             self.permitStep = permitAsDictionary ["steps"] as? PermitStep
         }
     }

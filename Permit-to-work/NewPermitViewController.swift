@@ -15,26 +15,40 @@ class NewPermitViewController : UIViewController {
     var permits = Permits.instance
     
     @IBOutlet weak var textfieldName: UITextField!
+    @IBOutlet weak var textFieldTools: UITextField!
+    @IBOutlet weak var textFieldType: UITextField!
+    @IBOutlet weak var textFieldDanger: UITextField!
     
     @IBAction func nextButton(_ sender: Any) {
         
-        let parameters: [String : Any] = ["permitName": "name", "tools": "tools", "type": 4, "danger": "danger"]
+        let newPermitParameters: [String : Any] = ["permitName": textfieldName.text!, "tools": textFieldTools.text!, "type": textFieldType.text!, "danger": textFieldDanger.text!]
         
-        Alamofire.request("http://avhx.com/api/tasks", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseString { response in
+        if ((textfieldName.text?.characters.count)! > 0) && ((textFieldTools.text?.characters.count)! > 0) && ((textFieldType.text?.characters.count)! > 0) && ((textFieldDanger.text?.characters.count)! > 0)  {
+        
+            Alamofire.request("http://avhx.com/api/tasks", method: .post, parameters: newPermitParameters, encoding: JSONEncoding.default).responseString { response in
             
-            debugPrint(response)
-            
+                // Empty textfields
+                self.textfieldName.text = ""
+                self.textFieldTools.text = ""
+                self.textFieldType.text = ""
+                self.textFieldDanger.text = ""
+                
+                debugPrint(response)
+                
+                print("opgeslagen")
+            }
+        } else {
+            alertMissingTaskMessage ()
         }
-
-//        let newPermit = Permit (permitName: textfieldName.text!, permitType: 0)
-//        
-//        if (textfieldName.text?.characters.count)! > 0 {
-//            permits.addNewPermit(permit: newPermit)
-//            textfieldName.text = ""
-//            print("opgeslagen")
-//        } else {
-//            print("niet ingevuld")
-//        }
+    }
+    
+    func alertMissingTaskMessage () {
+        let alertController = UIAlertController(title: "Missing task input", message: "Did you forget to fill in taskfield?", preferredStyle: .alert)
+        
+        let defaultAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alertController.addAction(defaultAction)
+        
+        present(alertController, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {

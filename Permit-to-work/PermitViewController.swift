@@ -11,6 +11,9 @@ import UIKit
 
 class PermitViewController: UIViewController {
     @IBOutlet weak var namePermitLabel: UILabel!
+    @IBOutlet weak var toolPermitLabel: UILabel!
+    @IBOutlet weak var typePermitLabel: UILabel!
+    @IBOutlet weak var dangerPermitLabel: UILabel!
     
     @IBAction func showPermitSteps(_ sender: Any) {
         
@@ -20,6 +23,11 @@ class PermitViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         if let permit = activePermit {
             namePermitLabel.text = permit.permitName
+            toolPermitLabel.text = permit.permitTool
+            typePermitLabel.text = "\(permit.permitType)"
+            dangerPermitLabel.text = permit.permitDanger
+            
+            
         }
     }
 }
