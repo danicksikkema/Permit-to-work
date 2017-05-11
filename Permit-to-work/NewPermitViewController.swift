@@ -35,7 +35,9 @@ class NewPermitViewController : UIViewController {
                 
                 debugPrint(response)
                 
-                print("opgeslagen")
+                if let JSON = response.result.value {
+                    print("JSON: \(JSON)")
+                }
             }
         } else {
             alertMissingTaskMessage ()
