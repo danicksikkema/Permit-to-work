@@ -57,7 +57,6 @@ class PermitViewController: UIViewController {
                 if let JSON = response.result.value {
                     print("JSON: \(JSON)")
                 }
-                
             }
         }
     }

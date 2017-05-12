@@ -107,6 +107,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0709C4921EC60F460029AC35 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				074DB6ED1EBB317500B665AF /* LoginViewController.swift */,
+				074DB6EB1EBB2E4100B665AF /* MainNavigationController.swift */,
+				074DB6EF1EBB4B8700B665AF /* NewPermitViewController.swift */,
+				074806F91EC06A4000D4B576 /* PermitViewController.swift */,
+				074DB6F11EBB4B9F00B665AF /* newPermitStepViewController.swift */,
+				074DB6F31EBB56C500B665AF /* PermitsTableViewController.swift */,
+				074806FB1EC093AF00D4B576 /* PermitStepsViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		07AC7D221E7870630082412C = {
 			isa = PBXGroup;
 			children = (
@@ -132,18 +146,12 @@
 		07AC7D2D1E7870640082412C /* Permit-to-work */ = {
 			isa = PBXGroup;
 			children = (
+				0709C4921EC60F460029AC35 /* Controllers */,
 				07342A021E9BF91400BAE46F /* Permit.swift */,
 				074DB6E91EBA7D6600B665AF /* Template.swift */,
 				07AC7D2E1E7870640082412C /* AppDelegate.swift */,
 				07AC7D301E7870640082412C /* ViewController.swift */,
-				074DB6EF1EBB4B8700B665AF /* NewPermitViewController.swift */,
-				074DB6F11EBB4B9F00B665AF /* newPermitStepViewController.swift */,
 				07AC7D321E7870640082412C /* Main.storyboard */,
-				074806FB1EC093AF00D4B576 /* PermitStepsViewController.swift */,
-				074DB6F31EBB56C500B665AF /* PermitsTableViewController.swift */,
-				074806F91EC06A4000D4B576 /* PermitViewController.swift */,
-				074DB6ED1EBB317500B665AF /* LoginViewController.swift */,
-				074DB6EB1EBB2E4100B665AF /* MainNavigationController.swift */,
 				07AC7D351E7870640082412C /* Assets.xcassets */,
 				07AC7D371E7870640082412C /* LaunchScreen.storyboard */,
 				07AC7D3A1E7870640082412C /* Info.plist */,
