@@ -96,9 +96,6 @@ class Permits {
         }
     }
     
-    func postPermitToServer () {
-        
-    }
 }
 
 class PermitSteps {

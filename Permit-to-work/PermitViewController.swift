@@ -6,14 +6,13 @@
 //  Copyright © 2017 danick sikkema. All rights reserved.
 //
 
-import Foundation
 import UIKit
 import Alamofire
-import SwiftyJSON
 
 class PermitViewController: UIViewController {
     
-
+    let permits = Permits.instance
+    
     @IBOutlet weak var idPermitTextField: UITextField!
     @IBOutlet weak var namePermitTextField: UITextField!
     @IBOutlet weak var toolPermitTextField: UITextField!
@@ -24,24 +23,8 @@ class PermitViewController: UIViewController {
         
     }
     
-    @IBAction func EditPermitButton(_ sender: Any) {
-        let editPermitParameters: [String : Any] = ["permitId": idPermitTextField.text!, "permitName": namePermitTextField.text!, "tools": toolPermitTextField.text!, "type": typePermitTextField.text!, "danger": dangerPermitTextField.text!]
-        
-        Alamofire.request("http://avhx.com/api/tasks/28", method: .put, parameters: editPermitParameters, encoding: JSONEncoding.default).responseString { response in
-            
-            print(editPermitParameters)
-            
-            debugPrint(response)
-            
-            if let JSON = response.result.value {
-                print("JSON: \(JSON)")
-            }
-
-        }
-    }
-    
     var activePermit : Permit?
-
+    
     override func viewWillAppear(_ animated: Bool) {
         if let permit = activePermit {
             namePermitTextField.text = permit.permitName
@@ -49,6 +32,33 @@ class PermitViewController: UIViewController {
             typePermitTextField.text = "\(permit.permitType)"
             dangerPermitTextField.text = permit.permitDanger
             idPermitTextField.text = "\(permit.permitId)"
+        }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        
+    }
+    
+    @IBAction func EditPermitButton(_ sender: Any) {
+
+        let editPermitParameters: [String : Any] = ["permitId": idPermitTextField.text!, "permitName": namePermitTextField.text!, "tools": toolPermitTextField.text!, "type": typePermitTextField.text!, "danger": dangerPermitTextField.text!]
+        
+        if let permit = activePermit {
+            let permitId = permit.permitId
+            
+            Alamofire.request("http://avhx.com/api/tasks/\(permitId)", method: .put, parameters: editPermitParameters, encoding: JSONEncoding.default).responseString { response in
+                
+                print(editPermitParameters)
+                
+                debugPrint(response)
+                
+                if let JSON = response.result.value {
+                    print("JSON: \(JSON)")
+                }
+                
+            }
         }
     }
 }

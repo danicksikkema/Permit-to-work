@@ -132,6 +132,7 @@ class NewPermitStepViewController : UIViewController, UITableViewDataSource, UIT
         return cell
     }
     
+    
     // AlertMessages
     
     func alertMissingTaskMessage () {
