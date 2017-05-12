@@ -60,4 +60,16 @@ class PermitViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func deletePermitButton(_ sender: Any) {
+        if let permit = activePermit {
+            let permitId = permit.permitId
+            
+            Alamofire.request("http://avhx.com/api/tasks/\(permitId)", method: .delete, encoding: JSONEncoding.default).responseString { response in
+            
+                debugPrint(response)
+
+            }
+        }
+    }
 }

@@ -120,13 +120,22 @@
                                     <action selector="EditPermitButton:" destination="LFy-gf-NAW" eventType="touchUpInside" id="9gu-fP-wkB"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gfF-wt-3K3">
+                                <rect key="frame" x="141" y="460" width="93" height="30"/>
+                                <state key="normal" title="Delete permit"/>
+                                <connections>
+                                    <action selector="deletePermitButton:" destination="LFy-gf-NAW" eventType="touchUpInside" id="8Zk-6U-GwE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="gfF-wt-3K3" firstAttribute="centerX" secondItem="pjs-DD-mc7" secondAttribute="centerX" id="Bdn-tF-Ad5"/>
                             <constraint firstItem="smE-eB-BvO" firstAttribute="top" secondItem="KC8-i2-Qxr" secondAttribute="bottom" constant="20" id="CdO-3Y-zwI"/>
                             <constraint firstItem="smE-eB-BvO" firstAttribute="trailing" secondItem="In1-yi-bus" secondAttribute="trailingMargin" id="IqV-PL-3Kb"/>
                             <constraint firstItem="8Mx-sf-E1F" firstAttribute="centerX" secondItem="pjs-DD-mc7" secondAttribute="centerX" id="LaO-gi-72H"/>
                             <constraint firstItem="fEv-UE-47W" firstAttribute="leading" secondItem="In1-yi-bus" secondAttribute="leadingMargin" id="NQh-gQ-9ah"/>
+                            <constraint firstItem="gfF-wt-3K3" firstAttribute="top" secondItem="pjs-DD-mc7" secondAttribute="bottom" constant="19" id="NzX-OX-q1W"/>
                             <constraint firstItem="KC8-i2-Qxr" firstAttribute="trailing" secondItem="In1-yi-bus" secondAttribute="trailingMargin" id="U0O-c9-bnu"/>
                             <constraint firstItem="fEv-UE-47W" firstAttribute="centerX" secondItem="8Mx-sf-E1F" secondAttribute="centerX" id="XKv-90-dP6"/>
                             <constraint firstItem="smE-eB-BvO" firstAttribute="leading" secondItem="In1-yi-bus" secondAttribute="leadingMargin" id="Zmf-6n-BfP"/>

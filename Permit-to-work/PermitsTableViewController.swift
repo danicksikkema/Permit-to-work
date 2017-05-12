@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Alamofire
 
 class PermitsTableViewController : UITableViewController {
     
@@ -51,6 +52,18 @@ class PermitsTableViewController : UITableViewController {
         let permit : Permit = permits.allPermits[indexPath.row]
         
         self.performSegue(withIdentifier: "toonPermit", sender: permit)
+    }
+    
+    func refreshTable () {
+        self.tableView.reloadData()
+        self.tableView.refreshControl?.endRefreshing()
+    }
+    
+    // Func to delete value in row
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.delete {
+            
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
