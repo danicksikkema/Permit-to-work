@@ -77,6 +77,7 @@ class Permits {
             }
         }
     }
+
     
 //     2: Als het lukt om hieruit een array op te halen, dan wordt dit in de variable klanten opgeslagen.
     func getPermitsFromJSON (json: Any) {
@@ -92,7 +93,7 @@ class Permits {
             }
 
             // 6: Wordt gekoppeld aan de table view en stuurt een sender als er nieuwe klanten zijn.
-            NotificationCenter.default.post(name: Notification.Name("NieuweKlanten"), object: nil)
+            NotificationCenter.default.post(name: Notification.Name("NewPermits"), object: nil)
         }
     }
     

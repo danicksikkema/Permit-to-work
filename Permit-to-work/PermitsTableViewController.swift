@@ -15,7 +15,12 @@ class PermitsTableViewController : UITableViewController {
     var permits = Permits.instance
     
     override func viewDidLoad() {
-
+        let verversDing = UIRefreshControl()
+        verversDing.addTarget(self, action: #selector(verversTabel), for: UIControlEvents.valueChanged)
+        self.tableView.refreshControl = verversDing
+        
+        // Als er nieuwe klanten zijn worden die ingeladen door de verversTabel functie.
+        NotificationCenter.default.addObserver(self, selector: #selector(verversTabel), name: Notification.Name("NewPermits"), object: nil)
     }
     
     func verversTabel () {
@@ -62,7 +67,7 @@ class PermitsTableViewController : UITableViewController {
     // Func to delete value in row
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
-            
+
         }
     }
     

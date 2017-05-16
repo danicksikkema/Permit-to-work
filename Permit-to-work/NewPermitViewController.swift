@@ -21,7 +21,7 @@ class NewPermitViewController : UIViewController {
     
     @IBAction func nextButton(_ sender: Any) {
         
-        let newPermitParameters: [String : Any] = ["permitName": textfieldName.text!, "tools": textFieldTools.text!, "type": textFieldType.text!, "danger": textFieldDanger.text!]
+        let newPermitParameters: [String : Any] = ["permitName": textfieldName.text!, "tools": textFieldTools.text!, "type": Int((textFieldType?.text!)!)!, "danger": textFieldDanger.text!]
         
         if ((textfieldName.text?.characters.count)! > 0) && ((textFieldTools.text?.characters.count)! > 0) && ((textFieldType.text?.characters.count)! > 0) && ((textFieldDanger.text?.characters.count)! > 0)  {
         
@@ -35,8 +35,11 @@ class NewPermitViewController : UIViewController {
                 
                 debugPrint(response)
                 
-                if let JSON = response.result.value {
-                    print("JSON: \(JSON)")
+                if response.result.value != nil {
+                    let newPermit = Permit (fromJSON: newPermitParameters)
+                    
+                    let permits = Permits.instance
+                    permits.addNewPermit(permit: newPermit)
                 }
             }
         } else {

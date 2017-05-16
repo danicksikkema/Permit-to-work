@@ -43,21 +43,31 @@ class PermitViewController: UIViewController {
     
     @IBAction func EditPermitButton(_ sender: Any) {
 
-        let editPermitParameters: [String : Any] = ["permitId": idPermitTextField.text!, "permitName": namePermitTextField.text!, "tools": toolPermitTextField.text!, "type": typePermitTextField.text!, "danger": dangerPermitTextField.text!]
+        let editPermitParameters: [String : Any] = ["permitId": Int ((idPermitTextField?.text!)!)!, "permitName": namePermitTextField.text!, "tools": toolPermitTextField.text!, "type": Int((typePermitTextField?.text!)!)!, "danger": dangerPermitTextField.text!]
         
         if let permit = activePermit {
             let permitId = permit.permitId
             
             Alamofire.request("http://avhx.com/api/tasks/\(permitId)", method: .put, parameters: editPermitParameters, encoding: JSONEncoding.default).responseString { response in
                 
-                print(editPermitParameters)
-                
                 debugPrint(response)
                 
-                if let JSON = response.result.value {
-                    print("JSON: \(JSON)")
+                if response.result.value != nil {
+                    let newPermit = Permit (fromJSON: editPermitParameters)
+                    
+                    print(newPermit)
+                    
+                    // Permit moet aangepast worden in tableview
+                    
+//                    let permits = Permits.instance
+//                    permits.editPermit(permit: editPermit)
                 }
             }
+            
+            // Go back to
+            let mainNavigationController = storyboard?.instantiateViewController(withIdentifier: "MainNavigationController") as! MainNavigationController
+            
+            present(mainNavigationController, animated: true, completion: nil)
         }
     }
     
@@ -68,6 +78,15 @@ class PermitViewController: UIViewController {
             Alamofire.request("http://avhx.com/api/tasks/\(permitId)", method: .delete, encoding: JSONEncoding.default).responseString { response in
             
                 debugPrint(response)
+                
+                if response.result.value != nil {
+                    // Go back to
+                    let mainNavigationController = self.storyboard?.instantiateViewController(withIdentifier: "MainNavigationController") as! MainNavigationController
+                    
+                    self.present(mainNavigationController, animated: true, completion: nil)
+                    
+                // Permit moet verwijderd worden uit tableview
+                }
 
             }
         }
