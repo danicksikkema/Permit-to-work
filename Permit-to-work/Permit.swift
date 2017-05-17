@@ -86,3 +86,10 @@ class Permits {
         }
     }
 }
+
+// Permit validations
+
+protocol AnswerPermitValidator {
+    func validatePermit (answer: String) -> [String]
+}
+

@@ -33,3 +33,10 @@ class PermitSteps {
         allPermitSteps.append (permitStep)
     }
 }
+
+// PermitSteps validations
+
+protocol AnswerPermitStepValidator {
+    func validateDescription (description: String) -> [String]
+    func validateDanger (danger: String) -> [String]
+}
