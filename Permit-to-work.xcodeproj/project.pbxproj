@@ -23,6 +23,7 @@
 		07AC7D391E7870640082412C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07AC7D371E7870640082412C /* LaunchScreen.storyboard */; };
 		07AC7D441E7870640082412C /* Permit_to_workTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AC7D431E7870640082412C /* Permit_to_workTests.swift */; };
 		07AC7D4F1E7870640082412C /* Permit_to_workUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AC7D4E1E7870640082412C /* Permit_to_workUITests.swift */; };
+		07B5954D1ECCEC0200AA54BC /* PermitSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B5954C1ECCEC0200AA54BC /* PermitSteps.swift */; };
 		3E9E69AF3DBD4BEA6B5C3C76 /* Pods_Permit_to_work.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABFDE749E747AC21F2EF755A /* Pods_Permit_to_work.framework */; };
 		650BA5DDCFDC54BDA6589B93 /* Pods_Permit_to_workTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD3AD2DE6FCF8D68EDEFE843 /* Pods_Permit_to_workTests.framework */; };
 		FCE78AA04FB80F2FEED9ADF9 /* Pods_Permit_to_workUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5C5C592CC23AEBECA0EA6C2 /* Pods_Permit_to_workUITests.framework */; };
@@ -68,6 +69,7 @@
 		07AC7D4A1E7870640082412C /* Permit-to-workUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Permit-to-workUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07AC7D4E1E7870640082412C /* Permit_to_workUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Permit_to_workUITests.swift; sourceTree = "<group>"; };
 		07AC7D501E7870640082412C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		07B5954C1ECCEC0200AA54BC /* PermitSteps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermitSteps.swift; sourceTree = "<group>"; };
 		5B18F46094A18B8CE638E8BB /* Pods-Permit-to-workTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Permit-to-workTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Permit-to-workTests/Pods-Permit-to-workTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5E732A5A36014B3EAC1DA267 /* Pods-Permit-to-workUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Permit-to-workUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Permit-to-workUITests/Pods-Permit-to-workUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6911568266A32F7AE43C6349 /* Pods-Permit-to-workUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Permit-to-workUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Permit-to-workUITests/Pods-Permit-to-workUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 			children = (
 				0709C4921EC60F460029AC35 /* Controllers */,
 				07342A021E9BF91400BAE46F /* Permit.swift */,
+				07B5954C1ECCEC0200AA54BC /* PermitSteps.swift */,
 				074DB6E91EBA7D6600B665AF /* Template.swift */,
 				07AC7D2E1E7870640082412C /* AppDelegate.swift */,
 				07AC7D301E7870640082412C /* ViewController.swift */,
@@ -492,6 +495,7 @@
 				074DB6EA1EBA7D6600B665AF /* Template.swift in Sources */,
 				074DB6F01EBB4B8700B665AF /* NewPermitViewController.swift in Sources */,
 				07AC7D2F1E7870640082412C /* AppDelegate.swift in Sources */,
+				07B5954D1ECCEC0200AA54BC /* PermitSteps.swift in Sources */,
 				074806FC1EC093AF00D4B576 /* PermitStepsViewController.swift in Sources */,
 				074DB6F21EBB4B9F00B665AF /* newPermitStepViewController.swift in Sources */,
 				07342A031E9BF91400BAE46F /* Permit.swift in Sources */,

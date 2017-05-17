@@ -10,16 +10,6 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-class PermitStep {
-    var stepDescription : String?
-    var stepDanger : String?
-    
-    init(stepDescription: String, stepDanger: String) {
-        self.stepDescription = stepDescription
-        self.stepDanger = stepDanger
-    }
-}
-
 class Permit {
     var permitId   : Int = 0
     var permitName : String = ""
@@ -78,7 +68,6 @@ class Permits {
         }
     }
 
-    
 //     2: Als het lukt om hieruit een array op te halen, dan wordt dit in de variable klanten opgeslagen.
     func getPermitsFromJSON (json: Any) {
         if let permits = json as? [Any] {
@@ -96,22 +85,4 @@ class Permits {
             NotificationCenter.default.post(name: Notification.Name("NewPermits"), object: nil)
         }
     }
-    
 }
-
-class PermitSteps {
-    var allPermitSteps : [PermitStep] = []
-    
-    static let instance : PermitSteps = PermitSteps()
-    
-    private init() {
-
-    }
-    
-    func addNewPermitStep (permitStep : PermitStep) {
-        allPermitSteps.append (permitStep)
-    }
-}
-
-
-
