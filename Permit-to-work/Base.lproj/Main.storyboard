@@ -88,15 +88,6 @@
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KC8-i2-Qxr">
                                 <rect key="frame" x="16" y="208" width="343" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="2ym-Ic-BV6"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fEv-UE-47W">
-                                <rect key="frame" x="16" y="318" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -118,28 +109,24 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="8Mx-sf-E1F" firstAttribute="top" secondItem="fEv-UE-47W" secondAttribute="bottom" constant="25" id="1nO-aV-dj8"/>
-                            <constraint firstItem="gfF-wt-3K3" firstAttribute="centerX" secondItem="pjs-DD-mc7" secondAttribute="centerX" id="Bdn-tF-Ad5"/>
-                            <constraint firstItem="fEv-UE-47W" firstAttribute="top" secondItem="KC8-i2-Qxr" secondAttribute="bottom" constant="80" id="Dwf-Pg-8xv"/>
-                            <constraint firstItem="fEv-UE-47W" firstAttribute="trailing" secondItem="KC8-i2-Qxr" secondAttribute="trailing" id="GK1-ro-Sjf"/>
-                            <constraint firstItem="8Mx-sf-E1F" firstAttribute="centerX" secondItem="pjs-DD-mc7" secondAttribute="centerX" id="LaO-gi-72H"/>
-                            <constraint firstItem="gfF-wt-3K3" firstAttribute="top" secondItem="pjs-DD-mc7" secondAttribute="bottom" constant="19" id="NzX-OX-q1W"/>
-                            <constraint firstItem="fEv-UE-47W" firstAttribute="leading" secondItem="KC8-i2-Qxr" secondAttribute="leading" id="Pjp-dc-gDy"/>
-                            <constraint firstItem="KC8-i2-Qxr" firstAttribute="trailing" secondItem="In1-yi-bus" secondAttribute="trailingMargin" id="U0O-c9-bnu"/>
-                            <constraint firstItem="KC8-i2-Qxr" firstAttribute="leading" secondItem="In1-yi-bus" secondAttribute="leadingMargin" id="Zop-7B-bsE"/>
-                            <constraint firstItem="KC8-i2-Qxr" firstAttribute="top" secondItem="hoa-OZ-ybT" secondAttribute="bottom" constant="19" id="alg-f8-e7A"/>
-                            <constraint firstItem="fEv-UE-47W" firstAttribute="centerY" secondItem="In1-yi-bus" secondAttribute="centerY" id="bNg-Vh-nTL"/>
+                            <constraint firstItem="KC8-i2-Qxr" firstAttribute="top" secondItem="hoa-OZ-ybT" secondAttribute="bottom" constant="19" id="4BF-Ut-9Bq"/>
+                            <constraint firstItem="8Mx-sf-E1F" firstAttribute="centerX" secondItem="pjs-DD-mc7" secondAttribute="centerX" id="5vg-6n-eSi"/>
+                            <constraint firstItem="gfF-wt-3K3" firstAttribute="top" secondItem="pjs-DD-mc7" secondAttribute="bottom" constant="19" id="8Wx-ev-q09"/>
+                            <constraint firstItem="pjs-DD-mc7" firstAttribute="top" secondItem="8Mx-sf-E1F" secondAttribute="bottom" constant="8" symbolic="YES" id="TOP-Wb-ehi"/>
+                            <constraint firstItem="KC8-i2-Qxr" firstAttribute="top" secondItem="In1-yi-bus" secondAttribute="top" constant="208" id="U2t-Vp-9pc"/>
+                            <constraint firstItem="KC8-i2-Qxr" firstAttribute="leading" secondItem="hoa-OZ-ybT" secondAttribute="leading" id="avI-Yd-acY"/>
                             <constraint firstItem="U7T-eE-1fN" firstAttribute="trailing" secondItem="In1-yi-bus" secondAttribute="trailingMargin" id="eau-DT-uFc"/>
                             <constraint firstItem="hoa-OZ-ybT" firstAttribute="leading" secondItem="In1-yi-bus" secondAttribute="leadingMargin" id="ftb-Sd-KC7"/>
+                            <constraint firstItem="KC8-i2-Qxr" firstAttribute="centerX" secondItem="8Mx-sf-E1F" secondAttribute="centerX" id="gJt-ys-Duj"/>
                             <constraint firstItem="U7T-eE-1fN" firstAttribute="leading" secondItem="In1-yi-bus" secondAttribute="leadingMargin" id="jnf-ih-kMY"/>
+                            <constraint firstAttribute="bottom" secondItem="pjs-DD-mc7" secondAttribute="bottom" constant="226" id="kq3-9V-pJe"/>
+                            <constraint firstItem="pjs-DD-mc7" firstAttribute="centerX" secondItem="gfF-wt-3K3" secondAttribute="centerX" id="oFf-eG-Std"/>
+                            <constraint firstItem="KC8-i2-Qxr" firstAttribute="trailing" secondItem="hoa-OZ-ybT" secondAttribute="trailing" id="pC8-xx-Y1R"/>
                             <constraint firstItem="hoa-OZ-ybT" firstAttribute="trailing" secondItem="In1-yi-bus" secondAttribute="trailingMargin" id="sp4-eT-fDq"/>
-                            <constraint firstItem="fEv-UE-47W" firstAttribute="centerX" secondItem="8Mx-sf-E1F" secondAttribute="centerX" id="usR-Vh-jy4"/>
-                            <constraint firstItem="pjs-DD-mc7" firstAttribute="top" secondItem="8Mx-sf-E1F" secondAttribute="bottom" constant="8" symbolic="YES" id="y2M-bp-RR3"/>
                             <constraint firstItem="hoa-OZ-ybT" firstAttribute="top" secondItem="U7T-eE-1fN" secondAttribute="bottom" constant="20" id="yN5-Uo-6FJ"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="idPermitTextField" destination="fEv-UE-47W" id="mni-X1-SNF"/>
                         <outlet property="namePermitTextField" destination="U7T-eE-1fN" id="x86-T3-hly"/>
                         <outlet property="toolPermitTextField" destination="hoa-OZ-ybT" id="MaF-vU-Zgb"/>
                         <outlet property="typePermitTextField" destination="KC8-i2-Qxr" id="T9m-mS-hju"/>

@@ -13,7 +13,6 @@ class PermitViewController: UIViewController {
     
     let permits = Permits.instance
     
-    @IBOutlet weak var idPermitTextField: UITextField!
     @IBOutlet weak var namePermitTextField: UITextField!
     @IBOutlet weak var toolPermitTextField: UITextField!
     @IBOutlet weak var typePermitTextField: UITextField!
@@ -29,7 +28,6 @@ class PermitViewController: UIViewController {
             namePermitTextField.text = permit.permitName
             toolPermitTextField.text = permit.permitTool
             typePermitTextField.text = "\(permit.permitType)"
-            idPermitTextField.text = "\(permit.permitId)"
         }
     }
     
@@ -40,11 +38,13 @@ class PermitViewController: UIViewController {
     }
     
     @IBAction func EditPermitButton(_ sender: Any) {
-
-        let editPermitParameters: [String : Any] = ["permitId": Int ((idPermitTextField?.text!)!)!, "permitName": namePermitTextField.text!, "tools": toolPermitTextField.text!, "type": Int((typePermitTextField?.text!)!)!]
         
         if let permit = activePermit {
             let permitId = permit.permitId
+            
+            let editPermitParameters: [String : Any] = ["permitId": permitId, "permitName": namePermitTextField.text!, "tools": toolPermitTextField.text!, "type": Int((typePermitTextField?.text!)!)!]
+            
+            print(editPermitParameters)
             
             Alamofire.request("http://avhx.com/api/tasks/\(permitId)", method: .put, parameters: editPermitParameters, encoding: JSONEncoding.default).responseString { response in
                 
