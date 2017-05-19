@@ -17,7 +17,6 @@ class PermitViewController: UIViewController {
     @IBOutlet weak var namePermitTextField: UITextField!
     @IBOutlet weak var toolPermitTextField: UITextField!
     @IBOutlet weak var typePermitTextField: UITextField!
-    @IBOutlet weak var dangerPermitTextField: UITextField!
     
     @IBAction func showPermitSteps(_ sender: Any) {
         
@@ -30,7 +29,6 @@ class PermitViewController: UIViewController {
             namePermitTextField.text = permit.permitName
             toolPermitTextField.text = permit.permitTool
             typePermitTextField.text = "\(permit.permitType)"
-            dangerPermitTextField.text = permit.permitDanger
             idPermitTextField.text = "\(permit.permitId)"
         }
     }
@@ -43,7 +41,7 @@ class PermitViewController: UIViewController {
     
     @IBAction func EditPermitButton(_ sender: Any) {
 
-        let editPermitParameters: [String : Any] = ["permitId": Int ((idPermitTextField?.text!)!)!, "permitName": namePermitTextField.text!, "tools": toolPermitTextField.text!, "type": Int((typePermitTextField?.text!)!)!, "danger": dangerPermitTextField.text!]
+        let editPermitParameters: [String : Any] = ["permitId": Int ((idPermitTextField?.text!)!)!, "permitName": namePermitTextField.text!, "tools": toolPermitTextField.text!, "type": Int((typePermitTextField?.text!)!)!]
         
         if let permit = activePermit {
             let permitId = permit.permitId

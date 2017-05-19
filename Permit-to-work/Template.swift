@@ -31,6 +31,20 @@ class Template {
     }
 }
 
+class Templates {
+    let PermitTemplate : [(question: String, validator: AnswerPermitValidator)] = [
+        ("Geef de permit een naam", AnswerAlwaysRight()),
+        ("Geef aan welke tools je nodig bent", AnswerAlwaysRight()),
+        ("Geef aan welk type permit", AnswerAlwaysRight())
+    ]
+    
+    static let instance : Templates = Templates()
+    
+    private init() {
+        
+    }
+}
+
 class TemplateSteps {
     var allTemplateSteps : [TemplateStep] = []
     

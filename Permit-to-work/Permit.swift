@@ -15,15 +15,13 @@ class Permit {
     var permitName : String = ""
     var permitType : Int = 0
     var permitTool : String = ""
-    var permitDanger : String = ""
     var permitStep : PermitStep?
     
-    init (permitId: Int, permitName: String, permitType: Int, permitTool: String, permitDanger : String, permitStep : PermitStep? = nil) {
+    init (permitId: Int, permitName: String, permitType: Int, permitTool: String, permitStep : PermitStep? = nil) {
         self.permitId = permitId
         self.permitName = permitName
         self.permitType = permitType
         self.permitTool = permitTool
-        self.permitDanger = permitDanger
         self.permitStep = permitStep
     }
     
@@ -36,7 +34,6 @@ class Permit {
             self.permitName = permitAsDictionary ["permitName"] as! String
             self.permitType = permitAsDictionary ["type"] as! Int
             self.permitTool = permitAsDictionary ["tools"] as! String
-            self.permitDanger = permitAsDictionary ["danger"] as! String
             self.permitStep = permitAsDictionary ["steps"] as? PermitStep
         }
     }
@@ -88,8 +85,18 @@ class Permits {
 }
 
 // Permit validations
-
 protocol AnswerPermitValidator {
     func validatePermit (answer: String) -> [String]
 }
 
+class AnswerAlwaysRight : AnswerPermitValidator  {
+    func validatePermit(answer: String) -> [String] {
+        if answer.isEmpty {
+            return ["Geef de permit een naam."]
+        } else {
+            return ["De naam is ..."]
+        }
+    }
+}
+
+//PermitTemplate[0].question

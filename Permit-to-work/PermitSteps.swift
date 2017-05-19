@@ -40,3 +40,13 @@ protocol AnswerPermitStepValidator {
     func validateDescription (description: String) -> [String]
     func validateDanger (danger: String) -> [String]
 }
+
+
+
+
+
+
+
+
+
+

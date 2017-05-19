@@ -11,53 +11,56 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class NewPermitViewController : UIViewController {
+class NewPermitViewController : UIViewController, UITextFieldDelegate {
     var permits = Permits.instance
+    var templates = Templates.instance
     
     @IBOutlet weak var textfieldName: UITextField!
     @IBOutlet weak var textFieldTools: UITextField!
     @IBOutlet weak var textFieldType: UITextField!
-    @IBOutlet weak var textFieldDanger: UITextField!
+    
+    @IBOutlet weak var nextButton: UIButton!
     
     @IBAction func nextButton(_ sender: Any) {
+        let name = textfieldName.text
+        let tools = textFieldTools.text
+        let type = textFieldType.text
         
-        let newPermitParameters: [String : Any] = ["permitName": textfieldName.text!, "tools": textFieldTools.text!, "type": Int((textFieldType?.text!)!)!, "danger": textFieldDanger.text!]
-        
-        if ((textfieldName.text?.characters.count)! > 0) && ((textFieldTools.text?.characters.count)! > 0) && ((textFieldType.text?.characters.count)! > 0) && ((textFieldDanger.text?.characters.count)! > 0)  {
-        
-            Alamofire.request("http://avhx.com/api/tasks", method: .post, parameters: newPermitParameters, encoding: JSONEncoding.default).responseString { response in
-            
+            if (name?.isEmpty)! || (tools?.isEmpty)! || (type?.isEmpty)! {
+                
+                let alertController = UIAlertController(title: "Missing input", message: "Alle velden moeten ingevuld worden", preferredStyle: .alert)
+                
+                let defaultAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                alertController.addAction(defaultAction)
+                
+                present(alertController, animated: true, completion: nil)
+            } else {
+                let newPermitParameters: [String : Any] = ["permitName": textfieldName.text!, "tools": textFieldTools.text!, "type": Int((textFieldType?.text!)!)!]
+                
+                Alamofire.request("http://avhx.com/api/tasks", method: .post, parameters: newPermitParameters, encoding: JSONEncoding.default).responseString { response in
+                    
+                    debugPrint(response)
+                    
+                    if response.result.value != nil {
+                        let newPermit = Permit (fromJSON: newPermitParameters)
+                        
+                        let permits = Permits.instance
+                        permits.addNewPermit(permit: newPermit)
+                    }
+                }
+                
                 // Empty textfields
                 self.textfieldName.text = ""
                 self.textFieldTools.text = ""
                 self.textFieldType.text = ""
-                self.textFieldDanger.text = ""
-                
-                debugPrint(response)
-                
-                if response.result.value != nil {
-                    let newPermit = Permit (fromJSON: newPermitParameters)
-                    
-                    let permits = Permits.instance
-                    permits.addNewPermit(permit: newPermit)
-                }
+
+                performSegue(withIdentifier: "showPermitStep", sender: sender)
             }
-        } else {
-            alertMissingTaskMessage ()
-        }
-    }
-    
-    func alertMissingTaskMessage () {
-        let alertController = UIAlertController(title: "Missing task input", message: "Did you forget to fill in taskfield?", preferredStyle: .alert)
-        
-        let defaultAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
-        alertController.addAction(defaultAction)
-        
-        present(alertController, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Setting the Delegate for the TextField
+        textfieldName.delegate = self
     }
 }
-
