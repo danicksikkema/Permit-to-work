@@ -30,7 +30,7 @@ class Permit {
         // 4: Als er een array is dan wordt dit opgesagen als een dictionary met [String : Any]
         if let permitAsDictionary = fromJSON as? [String: Any] {
             
-            self.permitId = permitAsDictionary ["permitId"] as! Int
+//            self.permitId = permitAsDictionary ["permitId"] as! Int
             self.permitName = permitAsDictionary ["permitName"] as! String
             self.permitType = permitAsDictionary ["type"] as! Int
             self.permitTool = permitAsDictionary ["tools"] as! String

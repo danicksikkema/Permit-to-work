@@ -44,8 +44,10 @@ class NewPermitViewController : UIViewController, UITextFieldDelegate {
                     if response.result.value != nil {
                         let newPermit = Permit (fromJSON: newPermitParameters)
                         
-                        let permits = Permits.instance
-                        permits.addNewPermit(permit: newPermit)
+                        print(newPermit)
+                        
+//                        let permits = Permits.instance
+//                        permits.addNewPermit(permit: newPermit)
                     }
                 }
                 

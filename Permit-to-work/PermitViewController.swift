@@ -44,8 +44,6 @@ class PermitViewController: UIViewController {
             
             let editPermitParameters: [String : Any] = ["permitId": permitId, "permitName": namePermitTextField.text!, "tools": toolPermitTextField.text!, "type": Int((typePermitTextField?.text!)!)!]
             
-            print(editPermitParameters)
-            
             Alamofire.request("http://avhx.com/api/tasks/\(permitId)", method: .put, parameters: editPermitParameters, encoding: JSONEncoding.default).responseString { response in
                 
                 debugPrint(response)
