@@ -46,8 +46,8 @@ class NewPermitViewController : UIViewController, UITextFieldDelegate {
                         
                         print(newPermit)
                         
-//                        let permits = Permits.instance
-//                        permits.addNewPermit(permit: newPermit)
+                        let permits = Permits.instance
+                        permits.addNewPermit(permit: newPermit)
                     }
                 }
                 
