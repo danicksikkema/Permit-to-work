@@ -16,17 +16,15 @@ class NewPermitViewController : UIViewController, UITextFieldDelegate {
     var templates = Templates.instance
     
     @IBOutlet weak var textfieldName: UITextField!
-    @IBOutlet weak var textFieldTools: UITextField!
     @IBOutlet weak var textFieldType: UITextField!
     
     @IBOutlet weak var nextButton: UIButton!
     
     @IBAction func nextButton(_ sender: Any) {
         let name = textfieldName.text
-        let tools = textFieldTools.text
         let type = textFieldType.text
         
-            if (name?.isEmpty)! || (tools?.isEmpty)! || (type?.isEmpty)! {
+            if (name?.isEmpty)! || (type?.isEmpty)! {
                 
                 let alertController = UIAlertController(title: "Missing input", message: "Alle velden moeten ingevuld worden", preferredStyle: .alert)
                 
@@ -35,25 +33,25 @@ class NewPermitViewController : UIViewController, UITextFieldDelegate {
                 
                 present(alertController, animated: true, completion: nil)
             } else {
-                let newPermitParameters: [String : Any] = ["permitName": textfieldName.text!, "tools": textFieldTools.text!, "type": Int((textFieldType?.text!)!)!]
+                let newPermitParameters: [String : Any] = ["permitName": textfieldName.text!, "permitType": Int((textFieldType?.text!)!)!]
                 
-                Alamofire.request("http://avhx.com/api/tasks", method: .post, parameters: newPermitParameters, encoding: JSONEncoding.default).responseString { response in
+                print(newPermitParameters)
+                
+                Alamofire.request("https://api-permittowork.herokuapp.com/api/v1/permits", method: .post, parameters: newPermitParameters, encoding: JSONEncoding.default).responseString { response in
                     
-                    debugPrint(response)
+                    print(response)
+                    print(response.result)
+                    print(response.result.isSuccess)
                     
-                    if response.result.value != nil {
-                        let newPermit = Permit (fromJSON: newPermitParameters)
-                        
-                        print(newPermit)
-                        
-                        let permits = Permits.instance
-                        permits.addNewPermit(permit: newPermit)
-                    }
                 }
                 
+                let newPermit = Permit (id: 0, permitName: self.textfieldName.text!, permitType: 0)
+                
+                let permits = Permits.instance
+                permits.addNewPermit(permit: newPermit)
+        
                 // Empty textfields
                 self.textfieldName.text = ""
-                self.textFieldTools.text = ""
                 self.textFieldType.text = ""
 
                 performSegue(withIdentifier: "showPermitStep", sender: sender)

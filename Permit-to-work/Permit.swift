@@ -11,17 +11,15 @@ import Alamofire
 import SwiftyJSON
 
 class Permit {
-    var permitId   : Int?
+    var id         : Int = 0
     var permitName : String = ""
     var permitType : Int = 0
-    var permitTool : String = ""
     var permitStep : PermitStep?
     
-    init (permitId: Int?, permitName: String, permitType: Int, permitTool: String, permitStep : PermitStep? = nil) {
-        self.permitId = permitId
+    init (id: Int, permitName: String, permitType: Int, permitStep : PermitStep? = nil) {
+        self.id = id
         self.permitName = permitName
         self.permitType = permitType
-        self.permitTool = permitTool
         self.permitStep = permitStep
     }
     
@@ -30,11 +28,10 @@ class Permit {
         // 4: Als er een array is dan wordt dit opgesagen als een dictionary met [String : Any]
         if let permitAsDictionary = fromJSON as? [String: Any] {
             
-            self.permitId = permitAsDictionary ["permitId"] as? Int
+            self.id = permitAsDictionary ["id"] as! Int
             self.permitName = permitAsDictionary ["permitName"] as! String
-            self.permitType = permitAsDictionary ["type"] as! Int
-            self.permitTool = permitAsDictionary ["tools"] as! String
-            self.permitStep = permitAsDictionary ["steps"] as? PermitStep
+            self.permitType = permitAsDictionary ["permitType"] as! Int
+            self.permitStep = permitAsDictionary ["permitSteps"] as? PermitStep
         }
     }
 }
@@ -48,13 +45,9 @@ class Permits {
     
     }
     
-    func addNewPermit (permit : Permit) {
-        allPermits.append (permit)
-    }
-    
     // 1: If json data is picked up from server, save it in json variable.
     func getPermitsFromServer () {
-        Alamofire.request("http://avhx.com/api/v1/permits").responseJSON { response in
+        Alamofire.request("https://api-permittowork.herokuapp.com/api/v1/permits").responseJSON { response in
             
             if let json = response.result.value {
                 
@@ -82,6 +75,20 @@ class Permits {
             NotificationCenter.default.post(name: Notification.Name("NewPermits"), object: nil)
         }
     }
+    
+    func addNewPermit (permit : Permit) {
+        allPermits.append (permit)
+    }
+    
+    func editPermit (permit : Permit) {
+        allPermits.remove(at: permit.id)
+        allPermits.insert(permit, at: permit.id)
+    }
+    
+    func deletePermit (permit : Permit) {
+        let permitId = permit.id
+//        allPermits.remove(at: permitId)
+    }
 }
 
 // Permit validations
@@ -98,5 +105,3 @@ class AnswerAlwaysRight : AnswerPermitValidator  {
         }
     }
 }
-
-//PermitTemplate[0].question
