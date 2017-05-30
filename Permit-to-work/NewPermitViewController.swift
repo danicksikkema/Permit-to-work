@@ -24,8 +24,9 @@ class NewPermitViewController : UIViewController, UITextFieldDelegate {
     @IBAction func nextButton(_ sender: Any) {
         let name = textfieldName.text
         let type = textFieldType.text
+        let description = textFieldDescription.text
         
-            if (name?.isEmpty)! || (type?.isEmpty)! {
+            if (name?.isEmpty)! || (type?.isEmpty)! || (description?.isEmpty)! {
                 
                 let alertController = UIAlertController(title: "Missing input", message: "Alle velden moeten ingevuld worden", preferredStyle: .alert)
                 

@@ -34,11 +34,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Permits" id="Uq4-vj-AMC">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="nkn-V0-xNL">
-                            <connections>
-                                <segue destination="9Mm-g1-SV1" kind="show" id="ghT-mQ-0U7"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="nkn-V0-xNL"/>
                     </navigationItem>
                     <connections>
                         <segue destination="LFy-gf-NAW" kind="show" identifier="toonPermit" id="KUa-r0-4A7"/>
@@ -46,7 +42,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bol-v8-a0p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1767" y="840"/>
+            <point key="canvasLocation" x="-1767" y="963"/>
         </scene>
         <!--showPermit-->
         <scene sceneID="yXw-OK-Z20">
@@ -126,7 +122,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OsS-EH-McN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-783" y="1011"/>
+            <point key="canvasLocation" x="-847" y="963"/>
         </scene>
         <!--showPermitSteps-->
         <scene sceneID="DLN-w9-SQd">
@@ -144,7 +140,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TqE-1a-QVi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-91" y="1011"/>
+            <point key="canvasLocation" x="-15" y="963"/>
         </scene>
         <!--Login-->
         <scene sceneID="VwZ-CW-3X5">
@@ -203,22 +199,34 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zlm-56-Qfi">
-                                <rect key="frame" x="179" y="322" width="16" height="22"/>
+                                <rect key="frame" x="87" y="322" width="90" height="22"/>
                                 <state key="normal" image="Start_permit"/>
                                 <connections>
                                     <action selector="createPermitButton:" destination="OwN-ac-PIV" eventType="touchUpInside" id="EJR-B4-EOt"/>
                                     <segue destination="9Mm-g1-SV1" kind="show" id="qUa-Km-nqq"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jny-cj-qOs">
+                                <rect key="frame" x="197" y="322" width="90" height="22"/>
+                                <state key="normal" image="Overview_permit"/>
+                                <connections>
+                                    <action selector="createPermitButton:" destination="OwN-ac-PIV" eventType="touchUpInside" id="2Gn-Bh-RgY"/>
+                                    <segue destination="pxC-YL-i9L" kind="show" id="6Q8-qT-4wY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="srk-tT-hLJ" secondAttribute="trailing" id="9uy-hr-Kj4"/>
-                            <constraint firstItem="srk-tT-hLJ" firstAttribute="top" secondItem="CCh-nO-Wcv" secondAttribute="top" id="B8t-MR-av7"/>
-                            <constraint firstItem="zlm-56-Qfi" firstAttribute="centerY" secondItem="CCh-nO-Wcv" secondAttribute="centerY" id="Mn6-gb-sxk"/>
-                            <constraint firstItem="N1g-k0-X1J" firstAttribute="top" secondItem="srk-tT-hLJ" secondAttribute="bottom" id="QkH-7b-6eJ"/>
-                            <constraint firstItem="srk-tT-hLJ" firstAttribute="leading" secondItem="CCh-nO-Wcv" secondAttribute="leading" id="tsL-dS-Mhj"/>
-                            <constraint firstItem="zlm-56-Qfi" firstAttribute="centerX" secondItem="CCh-nO-Wcv" secondAttribute="centerX" id="zg8-eB-ErW"/>
+                            <constraint firstItem="Jny-cj-qOs" firstAttribute="centerY" secondItem="CCh-nO-Wcv" secondAttribute="centerY" id="4Jr-kV-bJp"/>
+                            <constraint firstAttribute="trailing" secondItem="srk-tT-hLJ" secondAttribute="trailing" id="Prw-Eu-6AE"/>
+                            <constraint firstItem="Jny-cj-qOs" firstAttribute="leading" secondItem="zlm-56-Qfi" secondAttribute="trailing" constant="20" id="Pwa-O1-as5"/>
+                            <constraint firstItem="zlm-56-Qfi" firstAttribute="leading" secondItem="CCh-nO-Wcv" secondAttribute="leadingMargin" constant="71" id="Vd9-0G-agf"/>
+                            <constraint firstItem="srk-tT-hLJ" firstAttribute="leading" secondItem="CCh-nO-Wcv" secondAttribute="leading" id="ZpY-g1-CkO"/>
+                            <constraint firstItem="zlm-56-Qfi" firstAttribute="width" secondItem="Jny-cj-qOs" secondAttribute="width" id="afg-X7-9m0"/>
+                            <constraint firstItem="zlm-56-Qfi" firstAttribute="centerY" secondItem="CCh-nO-Wcv" secondAttribute="centerY" id="go5-AC-u3Q"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Jny-cj-qOs" secondAttribute="trailing" constant="72" id="j5h-Qb-1tN"/>
+                            <constraint firstItem="srk-tT-hLJ" firstAttribute="top" secondItem="CCh-nO-Wcv" secondAttribute="top" id="lby-Ql-VOr"/>
+                            <constraint firstItem="N1g-k0-X1J" firstAttribute="top" secondItem="srk-tT-hLJ" secondAttribute="bottom" id="sGl-LL-8LJ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Uxo-1d-iKo"/>
@@ -342,7 +350,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pas-sY-ECi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-44" y="132.68365817091455"/>
+            <point key="canvasLocation" x="-846" y="133"/>
         </scene>
         <!--Protection-->
         <scene sceneID="AvW-AD-BCm">
@@ -360,14 +368,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MTc-Ga-n7e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="742" y="133"/>
+            <point key="canvasLocation" x="-15" y="133"/>
         </scene>
     </scenes>
     <resources>
         <image name="Background" width="1024" height="768"/>
+        <image name="Overview_permit" width="16" height="16"/>
         <image name="Start_permit" width="16" height="16"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="qUa-Km-nqq"/>
-    </inferredMetricsTieBreakers>
 </document>
