@@ -314,7 +314,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Kmw-b3-Wtn">
-                                <rect key="frame" x="61" y="339" width="902" height="273"/>
+                                <rect key="frame" x="61" y="339" width="902" height="295"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.24313725490196078" green="0.3411764705882353" blue="0.49803921568627452" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" red="0.59215686274509804" green="0.72549019607843135" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -406,12 +406,19 @@
                                     <action selector="helpButton:" destination="9Mm-g1-SV1" eventType="touchUpInside" id="D6W-OV-1Oa"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="STEP BY STEP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D7M-VF-wyp">
+                                <rect key="frame" x="421" y="28" width="182.5" height="33.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="textColor" red="1" green="0.99626988169999997" blue="0.98774594069999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Progressbar" translatesAutoresizingMaskIntoConstraints="NO" id="Ruw-xR-0d5">
-                                <rect key="frame" x="207" y="661" width="611" height="62"/>
+                                <rect key="frame" x="207" y="671" width="611" height="62"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Wq-2x-JzT">
-                                <rect key="frame" x="846" y="661" width="117" height="46"/>
+                                <rect key="frame" x="846" y="671" width="117" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="Next">
                                     <color key="titleColor" red="0.59215686270000001" green="0.72549019609999998" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -420,15 +427,8 @@
                                     <action selector="nextButton:" destination="9Mm-g1-SV1" eventType="touchUpInside" id="ZiV-GN-D6V"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="STEP BY STEP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D7M-VF-wyp">
-                                <rect key="frame" x="421" y="28" width="182.5" height="33.5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <color key="textColor" red="1" green="0.99626988169999997" blue="0.98774594069999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ypH-iw-8Kl">
-                                <rect key="frame" x="211" y="665" width="52" height="54"/>
+                                <rect key="frame" x="211" y="675" width="52" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Step1" translatesAutoresizingMaskIntoConstraints="NO" id="Pr1-le-EMR">
@@ -475,25 +475,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="ZYQ-1e-QuU">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Progressbar" translatesAutoresizingMaskIntoConstraints="NO" id="GA4-B0-XXa">
-                                <rect key="frame" x="207" y="662" width="611" height="62"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Step2" translatesAutoresizingMaskIntoConstraints="NO" id="7Cr-N1-cIa">
-                                <rect key="frame" x="348.5" y="666" width="52" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gyK-rt-LVD">
-                                <rect key="frame" x="846" y="662" width="117" height="46"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="Next">
-                                    <color key="titleColor" red="0.59215686270000001" green="0.72549019609999998" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="nextButton:" destination="9Mm-g1-SV1" eventType="touchUpInside" id="6Kc-Fz-yWM"/>
-                                    <segue destination="U3L-f1-56c" kind="show" id="xgJ-Ed-tGn"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HL7-H9-cld">
                                 <rect key="frame" x="61" y="20" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -524,6 +505,25 @@
                                 <color key="textColor" red="0.59215686270000001" green="0.72549019609999998" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Progressbar" translatesAutoresizingMaskIntoConstraints="NO" id="GA4-B0-XXa">
+                                <rect key="frame" x="208" y="671" width="611" height="62"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Step2" translatesAutoresizingMaskIntoConstraints="NO" id="7Cr-N1-cIa">
+                                <rect key="frame" x="349" y="675" width="52" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gyK-rt-LVD">
+                                <rect key="frame" x="846" y="671" width="117" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="Next">
+                                    <color key="titleColor" red="0.59215686270000001" green="0.72549019609999998" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextButton:" destination="9Mm-g1-SV1" eventType="touchUpInside" id="6Kc-Fz-yWM"/>
+                                    <segue destination="U3L-f1-56c" kind="show" id="xgJ-Ed-tGn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -577,21 +577,26 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Progressbar" translatesAutoresizingMaskIntoConstraints="NO" id="v4X-Fl-qmJ">
-                                <rect key="frame" x="207" y="650" width="611" height="62"/>
+                                <rect key="frame" x="207" y="671" width="611" height="62"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Step3" translatesAutoresizingMaskIntoConstraints="NO" id="l7F-g3-Nwi">
+                                <rect key="frame" x="487" y="675" width="52" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VVW-Dn-ebr">
-                                <rect key="frame" x="846" y="650" width="117" height="46"/>
+                                <rect key="frame" x="846" y="671" width="117" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="Next">
                                     <color key="titleColor" red="0.59215686270000001" green="0.72549019609999998" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="nextButton:" destination="9Mm-g1-SV1" eventType="touchUpInside" id="9uA-Ow-SgI"/>
+                                    <segue destination="xjX-RV-sdY" kind="show" id="YTo-zQ-nD9"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7km-Te-UZE">
-                                <rect key="frame" x="61" y="650" width="117" height="46"/>
+                                <rect key="frame" x="61" y="671" width="117" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="Back_button">
                                     <color key="titleColor" red="0.59215686270000001" green="0.72549019609999998" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -601,10 +606,6 @@
                                     <segue destination="Vz9-d1-FJN" kind="show" id="Meh-QT-AgJ"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Step3" translatesAutoresizingMaskIntoConstraints="NO" id="l7F-g3-Nwi">
-                                <rect key="frame" x="487" y="654" width="52" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -612,6 +613,81 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5pf-ps-cOd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="772.8515625" y="132.8125"/>
+        </scene>
+        <!--Precautions-->
+        <scene sceneID="IVp-DN-Mq7">
+            <objects>
+                <viewController storyboardIdentifier="PrecautionsViewController" title="Precautions" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xjX-RV-sdY" customClass="PrecautionsViewController" customModule="Permit_to_work" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tYF-5g-r72"/>
+                        <viewControllerLayoutGuide type="bottom" id="5er-0f-RjL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rSy-3m-Yre">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="dhl-bT-Jsy">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Progressbar" translatesAutoresizingMaskIntoConstraints="NO" id="DjQ-OQ-wyd">
+                                <rect key="frame" x="207" y="671" width="611" height="62"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Apo-Kw-9eE">
+                                <rect key="frame" x="846" y="671" width="117" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="Next">
+                                    <color key="titleColor" red="0.59215686270000001" green="0.72549019609999998" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextButton:" destination="9Mm-g1-SV1" eventType="touchUpInside" id="CKR-1g-FfW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VI1-AQ-OJN">
+                                <rect key="frame" x="62" y="671" width="117" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="Back_button">
+                                    <color key="titleColor" red="0.59215686270000001" green="0.72549019609999998" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextButton:" destination="9Mm-g1-SV1" eventType="touchUpInside" id="dqB-Zp-Gkp"/>
+                                    <segue destination="U3L-f1-56c" kind="show" id="Lx0-oa-70s"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qkG-Zd-1rB">
+                                <rect key="frame" x="893" y="20" width="70" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Help"/>
+                                <connections>
+                                    <action selector="helpButton:" destination="9Mm-g1-SV1" eventType="touchUpInside" id="eyy-cu-IXD"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PRECAUTIONS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7A3-Xj-17p">
+                                <rect key="frame" x="418" y="28" width="189" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="textColor" red="1" green="0.99626988169999997" blue="0.98774594069999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select the precautions related to the task" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1D-vy-8EH">
+                                <rect key="frame" x="378" y="59" width="269" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.59215686270000001" green="0.72549019609999998" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Step4" translatesAutoresizingMaskIntoConstraints="NO" id="IRo-vq-vEI">
+                                <rect key="frame" x="624" y="675" width="52" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UBd-Tg-2B6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1517.578125" y="132.8125"/>
         </scene>
     </scenes>
     <resources>
@@ -628,10 +704,12 @@
         <image name="Step1" width="52" height="54"/>
         <image name="Step2" width="52" height="54"/>
         <image name="Step3" width="52" height="54"/>
+        <image name="Step4" width="52" height="54"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="45I-Cg-1XT"/>
         <segue reference="6kE-pI-hFK"/>
         <segue reference="Meh-QT-AgJ"/>
+        <segue reference="Lx0-oa-70s"/>
     </inferredMetricsTieBreakers>
 </document>
