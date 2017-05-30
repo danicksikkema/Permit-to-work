@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "ipad",
-      "filename" : "Start_Permit@1x.png",
+      "filename" : "Start Permit.png",
       "scale" : "1x"
     },
     {
       "idiom" : "ipad",
-      "filename" : "Start_Permit@2x.png",
+      "filename" : "Start Permit@2x.png",
       "scale" : "2x"
     }
   ],

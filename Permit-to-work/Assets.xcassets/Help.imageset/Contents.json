@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "ipad",
-      "filename" : "Active Feedback.png",
+      "filename" : "Help Button.png",
       "scale" : "1x"
     },
     {
       "idiom" : "ipad",
-      "filename" : "Active Feedback@2x.png",
+      "filename" : "Help Button@2x.png",
       "scale" : "2x"
     }
   ],

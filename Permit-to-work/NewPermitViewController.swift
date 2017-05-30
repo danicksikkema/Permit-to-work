@@ -15,11 +15,18 @@ class NewPermitViewController : UIViewController, UITextFieldDelegate, UITextVie
     var permits = Permits.instance
     var templates = Templates.instance
     
+    @IBOutlet weak var textFieldTime: UITextField!
+    @IBOutlet weak var textFieldDate: UITextField!
+    @IBOutlet weak var textFieldStep: UITextField!
     @IBOutlet weak var textfieldName: UITextField!
     @IBOutlet weak var textFieldType: UITextField!
     @IBOutlet weak var textFieldDescription: UITextView!
     
     @IBOutlet weak var nextButton: UIButton!
+    
+    @IBAction func helpButton(_ sender: Any) {
+        
+    }
     
     @IBAction func nextButton(_ sender: Any) {
         let name = textfieldName.text
@@ -74,17 +81,30 @@ class NewPermitViewController : UIViewController, UITextFieldDelegate, UITextVie
         
         let myColor : UIColor = UIColor(red: 0.3725, green: 0.5216, blue: 0.7529, alpha: 1.0)
         
+        textfieldName.layer.borderWidth = 1.0
         textfieldName.layer.borderColor = myColor.cgColor
         textfieldName.layer.cornerRadius = 8;
+        
+        textFieldType.layer.borderWidth = 1.0
         textFieldType.layer.borderColor = myColor.cgColor
         textFieldType.layer.cornerRadius = 8;
+        
+        textFieldDescription.layer.borderWidth = 1.0
         textFieldDescription.layer.borderColor = myColor.cgColor
         textFieldDescription.layer.cornerRadius = 8;
         
-        textfieldName.layer.borderWidth = 1.0
-        textFieldType.layer.borderWidth = 1.0
-        textFieldDescription.layer.borderWidth = 1.0
-        
+        textFieldDate.layer.borderWidth = 1.0
+        textFieldDate.layer.borderColor = myColor.cgColor
+        textFieldDate.layer.cornerRadius = 8;
+
+        textFieldStep.layer.borderWidth = 1.0
+        textFieldStep.layer.borderColor = myColor.cgColor
+        textFieldStep.layer.cornerRadius = 8;
+
+        textFieldTime.layer.borderWidth = 1.0
+        textFieldTime.layer.borderColor = myColor.cgColor
+        textFieldTime.layer.cornerRadius = 8;
+
         textFieldDescription.text = "Type your work description"
     }
     
