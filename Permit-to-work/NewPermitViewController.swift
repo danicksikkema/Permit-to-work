@@ -11,7 +11,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class NewPermitViewController : UIViewController, UITextFieldDelegate {
+class NewPermitViewController : UIViewController, UITextFieldDelegate, UITextViewDelegate {
     var permits = Permits.instance
     var templates = Templates.instance
     
@@ -62,11 +62,13 @@ class NewPermitViewController : UIViewController, UITextFieldDelegate {
                 performSegue(withIdentifier: "goToProtection", sender: sender)
             }
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         //Setting the Delegate for the TextField
         textfieldName.delegate = self
+        textFieldType.delegate = self
+        textFieldDescription.delegate = self
         
         // Setting TextField styling
         
@@ -83,6 +85,18 @@ class NewPermitViewController : UIViewController, UITextFieldDelegate {
         textFieldType.layer.borderWidth = 1.0
         textFieldDescription.layer.borderWidth = 1.0
         
-        textFieldType.placeholder = ""
+        textFieldDescription.text = "Type your work description"
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.text == "Type your work description" {
+            textView.text = ""
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "Type your work description"
+        }
     }
 }
