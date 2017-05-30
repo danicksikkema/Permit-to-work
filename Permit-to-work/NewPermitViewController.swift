@@ -67,5 +67,22 @@ class NewPermitViewController : UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         //Setting the Delegate for the TextField
         textfieldName.delegate = self
+        
+        // Setting TextField styling
+        
+        let myColor : UIColor = UIColor(red: 0.3725, green: 0.5216, blue: 0.7529, alpha: 1.0)
+        
+        textfieldName.layer.borderColor = myColor.cgColor
+        textfieldName.layer.cornerRadius = 8;
+        textFieldType.layer.borderColor = myColor.cgColor
+        textFieldType.layer.cornerRadius = 8;
+        textFieldDescription.layer.borderColor = myColor.cgColor
+        textFieldDescription.layer.cornerRadius = 8;
+        
+        textfieldName.layer.borderWidth = 1.0
+        textFieldType.layer.borderWidth = 1.0
+        textFieldDescription.layer.borderWidth = 1.0
+        
+        textFieldType.placeholder = ""
     }
 }
