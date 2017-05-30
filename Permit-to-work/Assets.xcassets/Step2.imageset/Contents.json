@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "ipad",
-      "filename" : "Progressbar_stap1.png",
+      "filename" : "Step 2.png",
       "scale" : "1x"
     },
     {
       "idiom" : "ipad",
-      "filename" : "Progressbar_stap1@2x.png",
+      "filename" : "Steps 2@2x.png",
       "scale" : "2x"
     }
   ],
