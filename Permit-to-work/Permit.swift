@@ -28,9 +28,9 @@ class Permit {
         // 4: Als er een array is dan wordt dit opgesagen als een dictionary met [String : Any]
         if let permitAsDictionary = fromJSON as? [String: Any] {
             
-            self.id = permitAsDictionary ["id"] as! Int
+            self.id = permitAsDictionary ["permitId"] as! Int
             self.permitName = permitAsDictionary ["permitName"] as! String
-            self.permitType = permitAsDictionary ["permitType"] as! Int
+            self.permitType = permitAsDictionary ["type"] as! Int
             self.permitStep = permitAsDictionary ["permitSteps"] as? PermitStep
         }
     }
@@ -47,7 +47,7 @@ class Permits {
     
     // 1: If json data is picked up from server, save it in json variable.
     func getPermitsFromServer () {
-        Alamofire.request("https://api-permittowork.herokuapp.com/api/v1/permits").responseJSON { response in
+        Alamofire.request("http://avhx.com/api/v1/permits").responseJSON { response in
             
             if let json = response.result.value {
                 
@@ -81,12 +81,12 @@ class Permits {
     }
     
     func editPermit (permit : Permit) {
-        allPermits.remove(at: permit.id)
-        allPermits.insert(permit, at: permit.id)
+//        allPermits.remove(at: permit.id)
+//        allPermits.insert(permit, at: permit.id)
     }
     
     func deletePermit (permit : Permit) {
-        let permitId = permit.id
+//        let permitId = permit.id
 //        allPermits.remove(at: permitId)
     }
 }

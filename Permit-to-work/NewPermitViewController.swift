@@ -33,19 +33,22 @@ class NewPermitViewController : UIViewController, UITextFieldDelegate {
                 
                 present(alertController, animated: true, completion: nil)
             } else {
-                let newPermitParameters: [String : Any] = ["permitName": textfieldName.text!, "permitType": Int((textFieldType?.text!)!)!]
+                let newPermitParameters: [String : Any] = ["permitId": 0, "permitName": textfieldName.text!, "type": Int((textFieldType?.text!)!)!]
                 
                 print(newPermitParameters)
                 
-                Alamofire.request("https://api-permittowork.herokuapp.com/api/v1/permits", method: .post, parameters: newPermitParameters, encoding: JSONEncoding.default).responseString { response in
+                Alamofire.request("http://avhx.com/api/v1/permits", method: .post, parameters: newPermitParameters, encoding: JSONEncoding.default).responseString { response in
                     
-                    print(response)
-                    print(response.result)
-                    print(response.result.isSuccess)
-                    
+                    if response.result.value != nil {
+                        print(response)
+                        print(response.result)
+                        print(response.result.isSuccess)
+                    } else {
+                        print("error")
+                    }
                 }
                 
-                let newPermit = Permit (id: 0, permitName: self.textfieldName.text!, permitType: 0)
+                let newPermit = Permit (fromJSON: newPermitParameters)
                 
                 let permits = Permits.instance
                 permits.addNewPermit(permit: newPermit)
