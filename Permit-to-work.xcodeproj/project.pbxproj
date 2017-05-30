@@ -9,12 +9,10 @@
 /* Begin PBXBuildFile section */
 		07342A031E9BF91400BAE46F /* Permit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07342A021E9BF91400BAE46F /* Permit.swift */; };
 		074806FA1EC06A4000D4B576 /* PermitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074806F91EC06A4000D4B576 /* PermitViewController.swift */; };
-		074806FC1EC093AF00D4B576 /* PermitStepsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074806FB1EC093AF00D4B576 /* PermitStepsViewController.swift */; };
 		074DB6EA1EBA7D6600B665AF /* Template.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074DB6E91EBA7D6600B665AF /* Template.swift */; };
 		074DB6EC1EBB2E4100B665AF /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074DB6EB1EBB2E4100B665AF /* MainNavigationController.swift */; };
 		074DB6EE1EBB317500B665AF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074DB6ED1EBB317500B665AF /* LoginViewController.swift */; };
 		074DB6F01EBB4B8700B665AF /* NewPermitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074DB6EF1EBB4B8700B665AF /* NewPermitViewController.swift */; };
-		074DB6F21EBB4B9F00B665AF /* newPermitStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074DB6F11EBB4B9F00B665AF /* newPermitStepViewController.swift */; };
 		074DB6F41EBB56C500B665AF /* PermitsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074DB6F31EBB56C500B665AF /* PermitsTableViewController.swift */; };
 		07706BF01EDD686A00212C1D /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07706BEF1EDD686A00212C1D /* StartViewController.swift */; };
 		07AC7D2F1E7870640082412C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AC7D2E1E7870640082412C /* AppDelegate.swift */; };
@@ -24,7 +22,7 @@
 		07AC7D391E7870640082412C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07AC7D371E7870640082412C /* LaunchScreen.storyboard */; };
 		07AC7D441E7870640082412C /* Permit_to_workTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AC7D431E7870640082412C /* Permit_to_workTests.swift */; };
 		07AC7D4F1E7870640082412C /* Permit_to_workUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AC7D4E1E7870640082412C /* Permit_to_workUITests.swift */; };
-		07B5954D1ECCEC0200AA54BC /* PermitSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B5954C1ECCEC0200AA54BC /* PermitSteps.swift */; };
+		07DBA9731EDD81DB002E797C /* ProtectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DBA9721EDD81DB002E797C /* ProtectionViewController.swift */; };
 		3E9E69AF3DBD4BEA6B5C3C76 /* Pods_Permit_to_work.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABFDE749E747AC21F2EF755A /* Pods_Permit_to_work.framework */; };
 		650BA5DDCFDC54BDA6589B93 /* Pods_Permit_to_workTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD3AD2DE6FCF8D68EDEFE843 /* Pods_Permit_to_workTests.framework */; };
 		FCE78AA04FB80F2FEED9ADF9 /* Pods_Permit_to_workUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5C5C592CC23AEBECA0EA6C2 /* Pods_Permit_to_workUITests.framework */; };
@@ -50,12 +48,10 @@
 /* Begin PBXFileReference section */
 		07342A021E9BF91400BAE46F /* Permit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Permit.swift; sourceTree = "<group>"; };
 		074806F91EC06A4000D4B576 /* PermitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermitViewController.swift; sourceTree = "<group>"; };
-		074806FB1EC093AF00D4B576 /* PermitStepsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermitStepsViewController.swift; sourceTree = "<group>"; };
 		074DB6E91EBA7D6600B665AF /* Template.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Template.swift; sourceTree = "<group>"; };
 		074DB6EB1EBB2E4100B665AF /* MainNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		074DB6ED1EBB317500B665AF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		074DB6EF1EBB4B8700B665AF /* NewPermitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPermitViewController.swift; sourceTree = "<group>"; };
-		074DB6F11EBB4B9F00B665AF /* newPermitStepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newPermitStepViewController.swift; sourceTree = "<group>"; };
 		074DB6F31EBB56C500B665AF /* PermitsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermitsTableViewController.swift; sourceTree = "<group>"; };
 		07706BEF1EDD686A00212C1D /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		07AC7D2B1E7870640082412C /* Permit-to-work.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Permit-to-work.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,7 +67,7 @@
 		07AC7D4A1E7870640082412C /* Permit-to-workUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Permit-to-workUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07AC7D4E1E7870640082412C /* Permit_to_workUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Permit_to_workUITests.swift; sourceTree = "<group>"; };
 		07AC7D501E7870640082412C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		07B5954C1ECCEC0200AA54BC /* PermitSteps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermitSteps.swift; sourceTree = "<group>"; };
+		07DBA9721EDD81DB002E797C /* ProtectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtectionViewController.swift; sourceTree = "<group>"; };
 		5B18F46094A18B8CE638E8BB /* Pods-Permit-to-workTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Permit-to-workTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Permit-to-workTests/Pods-Permit-to-workTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5E732A5A36014B3EAC1DA267 /* Pods-Permit-to-workUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Permit-to-workUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Permit-to-workUITests/Pods-Permit-to-workUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6911568266A32F7AE43C6349 /* Pods-Permit-to-workUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Permit-to-workUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Permit-to-workUITests/Pods-Permit-to-workUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -118,10 +114,9 @@
 				074DB6EB1EBB2E4100B665AF /* MainNavigationController.swift */,
 				074DB6EF1EBB4B8700B665AF /* NewPermitViewController.swift */,
 				074806F91EC06A4000D4B576 /* PermitViewController.swift */,
-				074DB6F11EBB4B9F00B665AF /* newPermitStepViewController.swift */,
 				074DB6F31EBB56C500B665AF /* PermitsTableViewController.swift */,
-				074806FB1EC093AF00D4B576 /* PermitStepsViewController.swift */,
 				07706BEF1EDD686A00212C1D /* StartViewController.swift */,
+				07DBA9721EDD81DB002E797C /* ProtectionViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -153,7 +148,6 @@
 			children = (
 				0709C4921EC60F460029AC35 /* Controllers */,
 				07342A021E9BF91400BAE46F /* Permit.swift */,
-				07B5954C1ECCEC0200AA54BC /* PermitSteps.swift */,
 				074DB6E91EBA7D6600B665AF /* Template.swift */,
 				07AC7D2E1E7870640082412C /* AppDelegate.swift */,
 				07AC7D301E7870640082412C /* ViewController.swift */,
@@ -495,13 +489,11 @@
 				074DB6EC1EBB2E4100B665AF /* MainNavigationController.swift in Sources */,
 				074806FA1EC06A4000D4B576 /* PermitViewController.swift in Sources */,
 				07AC7D311E7870640082412C /* ViewController.swift in Sources */,
+				07DBA9731EDD81DB002E797C /* ProtectionViewController.swift in Sources */,
 				074DB6EA1EBA7D6600B665AF /* Template.swift in Sources */,
 				074DB6F01EBB4B8700B665AF /* NewPermitViewController.swift in Sources */,
 				07AC7D2F1E7870640082412C /* AppDelegate.swift in Sources */,
 				07706BF01EDD686A00212C1D /* StartViewController.swift in Sources */,
-				07B5954D1ECCEC0200AA54BC /* PermitSteps.swift in Sources */,
-				074806FC1EC093AF00D4B576 /* PermitStepsViewController.swift in Sources */,
-				074DB6F21EBB4B9F00B665AF /* newPermitStepViewController.swift in Sources */,
 				07342A031E9BF91400BAE46F /* Permit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

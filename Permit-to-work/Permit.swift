@@ -11,16 +11,16 @@ import Alamofire
 import SwiftyJSON
 
 class Permit {
-    var id         : Int = 0
-    var permitName : String = ""
-    var permitType : Int = 0
-    var permitStep : PermitStep?
+    var id                  : Int = 0
+    var permitName          : String = ""
+    var permitType          : Int = 0
+    var permitDescription   : String = ""
     
-    init (id: Int, permitName: String, permitType: Int, permitStep : PermitStep? = nil) {
+    init (id: Int, permitName: String, permitType: Int, permitDescription: String) {
         self.id = id
         self.permitName = permitName
         self.permitType = permitType
-        self.permitStep = permitStep
+        self.permitDescription = permitDescription
     }
     
     // MELDING: json kan fout zijn, foutmeldingen afhandelen en wat als er een andere waarde is.
@@ -31,7 +31,7 @@ class Permit {
             self.id = permitAsDictionary ["permitId"] as! Int
             self.permitName = permitAsDictionary ["permitName"] as! String
             self.permitType = permitAsDictionary ["type"] as! Int
-            self.permitStep = permitAsDictionary ["permitSteps"] as? PermitStep
+            self.permitDescription = permitAsDictionary ["workDescription"] as! String
         }
     }
 }

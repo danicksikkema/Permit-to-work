@@ -17,6 +17,7 @@ class NewPermitViewController : UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var textfieldName: UITextField!
     @IBOutlet weak var textFieldType: UITextField!
+    @IBOutlet weak var textFieldDescription: UITextView!
     
     @IBOutlet weak var nextButton: UIButton!
     
@@ -33,7 +34,7 @@ class NewPermitViewController : UIViewController, UITextFieldDelegate {
                 
                 present(alertController, animated: true, completion: nil)
             } else {
-                let newPermitParameters: [String : Any] = ["permitId": 0, "permitName": textfieldName.text!, "type": Int((textFieldType?.text!)!)!]
+                let newPermitParameters: [String : Any] = ["permitId": 0, "permitName": textfieldName.text!, "type": Int((textFieldType?.text!)!)!, "workDescription": textFieldDescription.text!]
                 
                 print(newPermitParameters)
                 
@@ -57,7 +58,7 @@ class NewPermitViewController : UIViewController, UITextFieldDelegate {
                 self.textfieldName.text = ""
                 self.textFieldType.text = ""
 
-                performSegue(withIdentifier: "showPermitStep", sender: sender)
+                performSegue(withIdentifier: "goToProtection", sender: sender)
             }
     }
     
