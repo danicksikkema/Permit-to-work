@@ -8,8 +8,14 @@
 
 import Foundation
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class ProtectionViewController : UIViewController {
+    
+    let permits = Permits.instance
+    var activePermit : Permit?
+
     
     @IBOutlet weak var headProtectionButton: UIButton!
     @IBOutlet weak var earProtectionButton: UIButton!
@@ -78,6 +84,21 @@ class ProtectionViewController : UIViewController {
     func findSelected () {
         if headProtectionButton.isSelected == true {
             selected.append("Hard Hat")
+            
+            let headProtectionParameters: [String: Any] = ["protectionId": 0, "protectionName": "Hard Hat", "permitId": 4]
+                
+                print(headProtectionParameters)
+                
+                Alamofire.request("http://avhx.com/api/v1/permits/4", method: .post, parameters: headProtectionParameters, encoding: JSONEncoding.default).responseString { response in
+                    
+                    if response.result.value != nil {
+                        print(response)
+                        print(response.result)
+                        print(response.result.isSuccess)
+                    } else {
+                        print("error")
+                    }
+                }
         } else {
             headProtectionButton.isSelected = false
         }
