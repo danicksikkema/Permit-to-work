@@ -33,41 +33,42 @@ class NewPermitViewController : UIViewController, UITextFieldDelegate, UITextVie
         let type = textFieldType.text
         let description = textFieldDescription.text
         
-            if (name?.isEmpty)! || (type?.isEmpty)! || (description?.isEmpty)! {
-                
-                let alertController = UIAlertController(title: "Missing input", message: "Alle velden moeten ingevuld worden", preferredStyle: .alert)
-                
-                let defaultAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
-                alertController.addAction(defaultAction)
-                
-                present(alertController, animated: true, completion: nil)
-            } else {
-                let newPermitParameters: [String : Any] = ["permitId": 0, "permitName": textfieldName.text!, "type": Int((textFieldType?.text!)!)!, "workDescription": textFieldDescription.text!]
-                
-                print(newPermitParameters)
-                
-                Alamofire.request("http://avhx.com/api/v1/permits", method: .post, parameters: newPermitParameters, encoding: JSONEncoding.default).responseString { response in
-                    
-                    if response.result.value != nil {
-                        print(response)
-                        print(response.result)
-                        print(response.result.isSuccess)
-                    } else {
-                        print("error")
-                    }
-                }
-                
-                let newPermit = Permit (fromJSON: newPermitParameters)
-                
-                let permits = Permits.instance
-                permits.addNewPermit(permit: newPermit)
-        
-                // Empty textfields
-                self.textfieldName.text = ""
-                self.textFieldType.text = ""
+//            if (name?.isEmpty)! || (type?.isEmpty)! || (description?.isEmpty)! {
+//                
+//                let alertController = UIAlertController(title: "Missing input", message: "Alle velden moeten ingevuld worden", preferredStyle: .alert)
+//                
+//                let defaultAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+//                alertController.addAction(defaultAction)
+//                
+//                present(alertController, animated: true, completion: nil)
+//            } else {
+//                let newPermitParameters: [String : Any] = ["permitId": 0, "permitName": textfieldName.text!, "type": Int((textFieldType?.text!)!)!, "workDescription": textFieldDescription.text!]
+//                
+//                print(newPermitParameters)
+//                
+//                Alamofire.request("http://avhx.com/api/v1/permits", method: .post, parameters: newPermitParameters, encoding: JSONEncoding.default).responseString { response in
+//                    
+//                    if response.result.value != nil {
+//                        print(response)
+//                        print(response.result)
+//                        print(response.result.isSuccess)
+//                    } else {
+//                        print("error")
+//                    }
+//                }
+//                
+//                let newPermit = Permit (fromJSON: newPermitParameters)
+//                
+//                let permits = Permits.instance
+//                permits.addNewPermit(permit: newPermit)
+//        
+//                // Empty textfields
+//                self.textfieldName.text = ""
+//                self.textFieldType.text = ""
 
-                performSegue(withIdentifier: "goToProtection", sender: sender)
-            }
+//                performSegue(withIdentifier: "goToProtection", sender: sender)
+//            }
+    performSegue(withIdentifier: "goToProtection", sender: sender)
     }
 
     override func viewDidLoad() {
@@ -84,18 +85,22 @@ class NewPermitViewController : UIViewController, UITextFieldDelegate, UITextVie
         textfieldName.layer.borderWidth = 1.0
         textfieldName.layer.borderColor = myColor.cgColor
         textfieldName.layer.cornerRadius = 8;
+        textfieldName.layer.sublayerTransform = CATransform3DMakeTranslation(20, 0, 0)
         
         textFieldType.layer.borderWidth = 1.0
         textFieldType.layer.borderColor = myColor.cgColor
         textFieldType.layer.cornerRadius = 8;
+        textFieldType.layer.sublayerTransform = CATransform3DMakeTranslation(20, 0, 0)
         
         textFieldDescription.layer.borderWidth = 1.0
         textFieldDescription.layer.borderColor = myColor.cgColor
         textFieldDescription.layer.cornerRadius = 8;
+        textFieldDescription.layer.sublayerTransform = CATransform3DMakeTranslation(20, 20, 0)
         
         textFieldDate.layer.borderWidth = 1.0
         textFieldDate.layer.borderColor = myColor.cgColor
         textFieldDate.layer.cornerRadius = 8;
+        textFieldDate.layer.sublayerTransform = CATransform3DMakeTranslation(20, 0, 0)
 
         textFieldStep.layer.borderWidth = 1.0
         textFieldStep.layer.borderColor = myColor.cgColor
@@ -104,6 +109,7 @@ class NewPermitViewController : UIViewController, UITextFieldDelegate, UITextVie
         textFieldTime.layer.borderWidth = 1.0
         textFieldTime.layer.borderColor = myColor.cgColor
         textFieldTime.layer.cornerRadius = 8;
+        textFieldTime.layer.sublayerTransform = CATransform3DMakeTranslation(20, 0, 0)
 
         textFieldDescription.text = "Type your work description"
     }

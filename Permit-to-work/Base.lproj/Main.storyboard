@@ -521,7 +521,21 @@
                                 </state>
                                 <connections>
                                     <action selector="nextButton:" destination="9Mm-g1-SV1" eventType="touchUpInside" id="6Kc-Fz-yWM"/>
+                                    <action selector="nextButton:" destination="Vz9-d1-FJN" eventType="touchUpInside" id="BHt-uB-rX8"/>
                                     <segue destination="U3L-f1-56c" kind="show" id="xgJ-Ed-tGn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0zK-x6-Tc3">
+                                <rect key="frame" x="228" y="216" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xjA-Yb-g1Z">
+                                <rect key="frame" x="272" y="350" width="207" height="215"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="HeadGearNormal"/>
+                                <connections>
+                                    <action selector="headProtectionButton:" destination="Vz9-d1-FJN" eventType="touchUpInside" id="3le-OW-b2K"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -533,6 +547,10 @@
                             <constraint firstItem="ZYQ-1e-QuU" firstAttribute="top" secondItem="631-vJ-ugg" secondAttribute="top" id="tw7-WD-h3G"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="earProtectionButton" destination="0zK-x6-Tc3" id="Haa-cK-T1x"/>
+                        <outlet property="headProtectionButton" destination="xjA-Yb-g1Z" id="ZLP-a8-CgY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MTc-Ga-n7e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -798,6 +816,7 @@
         <image name="Background" width="1024" height="768"/>
         <image name="Feedback" width="122" height="120"/>
         <image name="Finish" width="125" height="54"/>
+        <image name="HeadGearNormal" width="207" height="215"/>
         <image name="Help" width="70" height="70"/>
         <image name="Next" width="125" height="54"/>
         <image name="Overview" width="118" height="120"/>
@@ -812,9 +831,9 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="PmH-5W-fKl"/>
-        <segue reference="6kE-pI-hFK"/>
-        <segue reference="Meh-QT-AgJ"/>
-        <segue reference="Lx0-oa-70s"/>
         <segue reference="ffJ-Qb-PrS"/>
+        <segue reference="Meh-QT-AgJ"/>
+        <segue reference="xgJ-Ed-tGn"/>
+        <segue reference="6kE-pI-hFK"/>
     </inferredMetricsTieBreakers>
 </document>
