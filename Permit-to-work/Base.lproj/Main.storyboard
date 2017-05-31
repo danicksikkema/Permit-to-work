@@ -525,13 +525,24 @@
                                     <segue destination="U3L-f1-56c" kind="show" id="xgJ-Ed-tGn"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0zK-x6-Tc3">
-                                <rect key="frame" x="228" y="216" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0zK-x6-Tc3">
+                                <rect key="frame" x="61" y="138" width="207" height="215"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" image="EarProtectionNormal"/>
+                                <connections>
+                                    <action selector="earProtectionButton:" destination="Vz9-d1-FJN" eventType="touchUpInside" id="xZf-Rr-2jT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nZc-G7-88x">
+                                <rect key="frame" x="756" y="138" width="207" height="215"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="ClothingNormal"/>
+                                <connections>
+                                    <action selector="clothingProtectionButton:" destination="Vz9-d1-FJN" eventType="touchUpInside" id="ShQ-KZ-r92"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xjA-Yb-g1Z">
-                                <rect key="frame" x="272" y="350" width="207" height="215"/>
+                                <rect key="frame" x="541" y="138" width="207" height="215"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="HeadGearNormal"/>
                                 <connections>
@@ -548,8 +559,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="clothingProtectionButton" destination="nZc-G7-88x" id="zlD-fU-Nnp"/>
                         <outlet property="earProtectionButton" destination="0zK-x6-Tc3" id="Haa-cK-T1x"/>
-                        <outlet property="headProtectionButton" destination="xjA-Yb-g1Z" id="ZLP-a8-CgY"/>
+                        <outlet property="headProtectionButton" destination="xjA-Yb-g1Z" id="Yh1-h8-lVn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MTc-Ga-n7e" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -814,6 +826,8 @@
         <image name="Back" width="70" height="70"/>
         <image name="Back_button" width="125" height="54"/>
         <image name="Background" width="1024" height="768"/>
+        <image name="ClothingNormal" width="207" height="215"/>
+        <image name="EarProtectionNormal" width="207" height="215"/>
         <image name="Feedback" width="122" height="120"/>
         <image name="Finish" width="125" height="54"/>
         <image name="HeadGearNormal" width="207" height="215"/>

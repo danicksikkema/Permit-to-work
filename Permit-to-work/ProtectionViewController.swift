@@ -11,41 +11,90 @@ import UIKit
 
 class ProtectionViewController : UIViewController {
     
-    
     @IBOutlet weak var headProtectionButton: UIButton!
     @IBOutlet weak var earProtectionButton: UIButton!
+    @IBOutlet weak var clothingProtectionButton: UIButton!
     
-    @IBAction func headProtectionButton(_ sender: AnyObject) {
-        checkSelected()
-    }
+    var statusHeadProtection = true
+    var statusEarProtection = true
+    var statusclothingProtection = true
     
-    @IBAction func nextButton(_ sender: Any) {
-        findSelected ()
-    }
-    var status = true
     var selected: [String] = []
     
-    func checkSelected () {
-        switch status {
+    @IBAction func earProtectionButton(_ sender: UIButton) {
+        switch statusEarProtection {
+        case false:
+            earProtectionButton.setImage( UIImage.init(named: "EarProtectionNormal"), for: .normal)
+            print ("false")
+            earProtectionButton.isSelected = false
+            statusEarProtection = true
+            
+        case true:
+            earProtectionButton.setImage( UIImage.init(named: "EarProtectionActive"), for: .selected)
+            print("true")
+            earProtectionButton.isSelected = true
+            statusEarProtection = false
+        }
+    }
+    
+    @IBAction func headProtectionButton(_ sender: UIButton) {
+        switch statusHeadProtection {
         case false:
             headProtectionButton.setImage( UIImage.init(named: "HeadGearNormal"), for: .normal)
             print ("false")
             headProtectionButton.isSelected = false
-            status = true
+            statusHeadProtection = true
             
         case true:
             headProtectionButton.setImage( UIImage.init(named: "HeadGearActive"), for: .selected)
             print("true")
             headProtectionButton.isSelected = true
-            status = false
+            statusHeadProtection = false
         }
     }
     
+    @IBAction func clothingProtectionButton(_ sender: UIButton) {
+        switch statusclothingProtection {
+        case false:
+            clothingProtectionButton.setImage( UIImage.init(named: "ClothingNormal"), for: .normal)
+            print ("false")
+            clothingProtectionButton.isSelected = false
+            statusclothingProtection = true
+            
+        case true:
+            clothingProtectionButton.setImage( UIImage.init(named: "ClothingActive"), for: .selected)
+            print("true")
+            clothingProtectionButton.isSelected = true
+            statusclothingProtection = false
+        }
+
+    }
+    
+    
+    @IBAction func nextButton(_ sender: Any) {
+        findSelected ()
+    }
+
     func findSelected () {
         if headProtectionButton.isSelected == true {
             selected.append("Hard Hat")
-            print(selected)
+        } else {
+            headProtectionButton.isSelected = false
         }
+        
+        if earProtectionButton.isSelected == true {
+            selected.append("Ear Protection")
+        } else {
+            earProtectionButton.isSelected = false
+        }
+        
+        if clothingProtectionButton.isSelected == true {
+            selected.append("Reflective gear")
+        } else {
+            clothingProtectionButton.isSelected = false
+        }
+        
+        print(selected)
     }
     
     override func viewDidLoad() {
