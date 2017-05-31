@@ -11,13 +11,13 @@ import Alamofire
 import SwiftyJSON
 
 class Permit {
-    var id                  : Int = 0
+    var permitId            : Int = 0
     var permitName          : String = ""
     var permitType          : Int = 0
     var permitDescription   : String = ""
     
-    init (id: Int, permitName: String, permitType: Int, permitDescription: String) {
-        self.id = id
+    init (permitId: Int, permitName: String, permitType: Int, permitDescription: String) {
+        self.permitId = permitId
         self.permitName = permitName
         self.permitType = permitType
         self.permitDescription = permitDescription
@@ -28,13 +28,38 @@ class Permit {
         // 4: Als er een array is dan wordt dit opgesagen als een dictionary met [String : Any]
         if let permitAsDictionary = fromJSON as? [String: Any] {
             
-            self.id = permitAsDictionary ["permitId"] as! Int
+            self.permitId = permitAsDictionary ["permitId"] as! Int
             self.permitName = permitAsDictionary ["permitName"] as! String
             self.permitType = permitAsDictionary ["type"] as! Int
             self.permitDescription = permitAsDictionary ["workDescription"] as! String
         }
     }
 }
+
+class Protection {
+    var protectionId            : Int = 0
+    var protectionName          : String = ""
+    var permitId                : Permit?
+    
+    init (protectionId: Int, protectionName: String, permitId : Permit? = nil) {
+        self.protectionId = protectionId
+        self.protectionName = protectionName
+        self.permitId = permitId
+    }
+}
+
+class Envirionment {
+    
+}
+
+class Precaution {
+
+}
+
+class Equipment {
+
+}
+
 
 class Permits {
     var allPermits : [Permit] = []

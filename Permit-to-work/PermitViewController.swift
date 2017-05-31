@@ -38,7 +38,7 @@ class PermitViewController: UIViewController {
     @IBAction func EditPermitButton(_ sender: Any) {
         
         if let permit = activePermit {
-            let permitId = permit.id
+            let permitId = permit.permitId
             
             let editPermitParameters: [String : Any] = ["permitId": permitId, "permitName": namePermitTextField.text!, "type": Int((typePermitTextField?.text!)!)!]
             
@@ -73,7 +73,7 @@ class PermitViewController: UIViewController {
     
     @IBAction func deletePermitButton(_ sender: Any) {
         if let permit = activePermit {
-            let permitId = permit.id
+            let permitId = permit.permitId
             
             Alamofire.request("http://avhx.com/api/v1/permits/\(permitId)", method: .delete, encoding: JSONEncoding.default).responseString { response in
                 
