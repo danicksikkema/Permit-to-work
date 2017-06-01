@@ -1,0 +1,18 @@
+{
+  "images" : [
+    {
+      "idiom" : "ipad",
+      "filename" : "Hands - Active.png",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "ipad",
+      "filename" : "Hands - Active@2x.png",
+      "scale" : "2x"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}

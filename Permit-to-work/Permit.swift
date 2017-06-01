@@ -13,10 +13,10 @@ import SwiftyJSON
 class Permit {
     var permitId            : Int = 0
     var permitName          : String = ""
-    var permitType          : Int = 0
+    var permitType          : String = ""
     var permitDescription   : String = ""
     
-    init (permitId: Int, permitName: String, permitType: Int, permitDescription: String) {
+    init (permitId: Int, permitName: String, permitType: String, permitDescription: String) {
         self.permitId = permitId
         self.permitName = permitName
         self.permitType = permitType
@@ -30,7 +30,7 @@ class Permit {
             
             self.permitId = permitAsDictionary ["permitId"] as! Int
             self.permitName = permitAsDictionary ["permitName"] as! String
-            self.permitType = permitAsDictionary ["type"] as! Int
+            self.permitType = permitAsDictionary ["type"] as! String
             self.permitDescription = permitAsDictionary ["workDescription"] as! String
         }
     }
@@ -39,14 +39,13 @@ class Permit {
 class Protection {
     var protectionId            : Int = 0
     var protectionName          : String = ""
-    var permitId                : Permit?
     
-    init (protectionId: Int, protectionName: String, permitId : Permit? = nil) {
+    init (protectionId: Int, protectionName: String) {
         self.protectionId = protectionId
         self.protectionName = protectionName
-        self.permitId = permitId
     }
 }
+
 
 class Envirionment {
     

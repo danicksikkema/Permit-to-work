@@ -431,7 +431,7 @@
                                 <rect key="frame" x="211" y="675" width="52" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Step1" translatesAutoresizingMaskIntoConstraints="NO" id="Pr1-le-EMR">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="StepActive1" translatesAutoresizingMaskIntoConstraints="NO" id="Pr1-le-EMR">
                                         <rect key="frame" x="0.0" y="0.0" width="52" height="54"/>
                                     </imageView>
                                 </subviews>
@@ -509,8 +509,12 @@
                                 <rect key="frame" x="208" y="671" width="611" height="62"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Step2" translatesAutoresizingMaskIntoConstraints="NO" id="7Cr-N1-cIa">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="StepActive2" translatesAutoresizingMaskIntoConstraints="NO" id="7Cr-N1-cIa">
                                 <rect key="frame" x="349" y="675" width="52" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="stepNormal1" translatesAutoresizingMaskIntoConstraints="NO" id="fVE-f3-EvE">
+                                <rect key="frame" x="212" y="675" width="52" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gyK-rt-LVD">
@@ -526,15 +530,23 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0zK-x6-Tc3">
-                                <rect key="frame" x="61" y="138" width="207" height="215"/>
+                                <rect key="frame" x="61" y="153" width="207" height="215"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="EarProtectionNormal"/>
                                 <connections>
                                     <action selector="earProtectionButton:" destination="Vz9-d1-FJN" eventType="touchUpInside" id="xZf-Rr-2jT"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Hh-ci-HcY">
+                                <rect key="frame" x="291" y="153" width="207" height="215"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="weldingNormal"/>
+                                <connections>
+                                    <action selector="weldingHelmetButton:" destination="Vz9-d1-FJN" eventType="touchUpInside" id="Vrr-eX-s3e"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nZc-G7-88x">
-                                <rect key="frame" x="756" y="138" width="207" height="215"/>
+                                <rect key="frame" x="756" y="153" width="207" height="215"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="ClothingNormal"/>
                                 <connections>
@@ -542,11 +554,43 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xjA-Yb-g1Z">
-                                <rect key="frame" x="541" y="138" width="207" height="215"/>
+                                <rect key="frame" x="526" y="153" width="207" height="215"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="HeadGearNormal"/>
                                 <connections>
                                     <action selector="headProtectionButton:" destination="Vz9-d1-FJN" eventType="touchUpInside" id="3le-OW-b2K"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ibq-LR-9B2">
+                                <rect key="frame" x="285" y="416" width="213" height="228"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="FireNormal"/>
+                                <connections>
+                                    <action selector="fireProtectionButton:" destination="Vz9-d1-FJN" eventType="touchUpInside" id="mdK-j2-Ra8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2X7-JC-N3k">
+                                <rect key="frame" x="756" y="416" width="207" height="215"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="GlovesNormal"/>
+                                <connections>
+                                    <action selector="glovesProtectionButton:" destination="Vz9-d1-FJN" eventType="touchUpInside" id="GUZ-eL-IjZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bXB-bo-9S4">
+                                <rect key="frame" x="526" y="416" width="207" height="215"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="BootsNormal"/>
+                                <connections>
+                                    <action selector="bootsProtectionButton:" destination="Vz9-d1-FJN" eventType="touchUpInside" id="Hey-vQ-IL5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lPG-Xj-Xra">
+                                <rect key="frame" x="61" y="416" width="207" height="215"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="HandsNormal"/>
+                                <connections>
+                                    <action selector="cleanHandsButton:" destination="Vz9-d1-FJN" eventType="touchUpInside" id="x3P-3p-ZrS"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -559,9 +603,14 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bootsProtectionButton" destination="bXB-bo-9S4" id="Tyd-2s-hvc"/>
+                        <outlet property="cleanHandsButton" destination="lPG-Xj-Xra" id="lXQ-Ye-Bq2"/>
                         <outlet property="clothingProtectionButton" destination="nZc-G7-88x" id="zlD-fU-Nnp"/>
                         <outlet property="earProtectionButton" destination="0zK-x6-Tc3" id="Haa-cK-T1x"/>
+                        <outlet property="fireProtectionButton" destination="ibq-LR-9B2" id="NDl-uo-He6"/>
+                        <outlet property="glovesProtectionButton" destination="2X7-JC-N3k" id="yoD-ax-afO"/>
                         <outlet property="headProtectionButton" destination="xjA-Yb-g1Z" id="Yh1-h8-lVn"/>
+                        <outlet property="weldingHelmetButton" destination="6Hh-ci-HcY" id="f2z-22-SHo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MTc-Ga-n7e" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -610,8 +659,12 @@
                                 <rect key="frame" x="207" y="671" width="611" height="62"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Step3" translatesAutoresizingMaskIntoConstraints="NO" id="l7F-g3-Nwi">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="StepActive3" translatesAutoresizingMaskIntoConstraints="NO" id="l7F-g3-Nwi">
                                 <rect key="frame" x="487" y="675" width="52" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="stepNormal2" translatesAutoresizingMaskIntoConstraints="NO" id="71f-9v-eFa">
+                                <rect key="frame" x="348.5" y="675" width="52" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VVW-Dn-ebr">
@@ -644,6 +697,10 @@
                                     <action selector="helpButton:" destination="9Mm-g1-SV1" eventType="touchUpInside" id="YYD-c0-QB9"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="stepNormal1" translatesAutoresizingMaskIntoConstraints="NO" id="Yrw-uB-ap4">
+                                <rect key="frame" x="211" y="675" width="52" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -668,12 +725,24 @@
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="StepActive4" translatesAutoresizingMaskIntoConstraints="NO" id="ODP-vg-Pfe">
+                                <rect key="frame" x="10" y="10" width="52" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Progressbar" translatesAutoresizingMaskIntoConstraints="NO" id="DjQ-OQ-wyd">
                                 <rect key="frame" x="207" y="671" width="611" height="62"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Step4" translatesAutoresizingMaskIntoConstraints="NO" id="IRo-vq-vEI">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="StepActive4" translatesAutoresizingMaskIntoConstraints="NO" id="IRo-vq-vEI">
                                 <rect key="frame" x="624" y="675" width="52" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="stepNormal3" translatesAutoresizingMaskIntoConstraints="NO" id="pHn-SI-3xe">
+                                <rect key="frame" x="487" y="675" width="52" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="stepNormal2" translatesAutoresizingMaskIntoConstraints="NO" id="YkT-N0-hEZ">
+                                <rect key="frame" x="348.5" y="675" width="52" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Apo-Kw-9eE">
@@ -728,6 +797,10 @@
                                     <action selector="helpButton:" destination="9Mm-g1-SV1" eventType="touchUpInside" id="2xX-uy-AUT"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="stepNormal1" translatesAutoresizingMaskIntoConstraints="NO" id="c5r-2R-mTv">
+                                <rect key="frame" x="211" y="675" width="52" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -808,8 +881,24 @@
                                 <color key="textColor" red="0.59215686270000001" green="0.72549019609999998" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Step5" translatesAutoresizingMaskIntoConstraints="NO" id="3pQ-Bu-QD8">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="StepActive5" translatesAutoresizingMaskIntoConstraints="NO" id="3pQ-Bu-QD8">
                                 <rect key="frame" x="761.5" y="675" width="52" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="stepNormal4" translatesAutoresizingMaskIntoConstraints="NO" id="O09-BA-3Go">
+                                <rect key="frame" x="624" y="675" width="52" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="stepNormal3" translatesAutoresizingMaskIntoConstraints="NO" id="AWA-pv-9aR">
+                                <rect key="frame" x="487" y="675" width="52" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="stepNormal2" translatesAutoresizingMaskIntoConstraints="NO" id="Zl3-tU-kaQ">
+                                <rect key="frame" x="348.5" y="675" width="52" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="stepNormal1" translatesAutoresizingMaskIntoConstraints="NO" id="ma8-VV-xNk">
+                                <rect key="frame" x="211" y="675" width="52" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -826,10 +915,14 @@
         <image name="Back" width="70" height="70"/>
         <image name="Back_button" width="125" height="54"/>
         <image name="Background" width="1024" height="768"/>
+        <image name="BootsNormal" width="207" height="215"/>
         <image name="ClothingNormal" width="207" height="215"/>
         <image name="EarProtectionNormal" width="207" height="215"/>
         <image name="Feedback" width="122" height="120"/>
         <image name="Finish" width="125" height="54"/>
+        <image name="FireNormal" width="213" height="228"/>
+        <image name="GlovesNormal" width="207" height="215"/>
+        <image name="HandsNormal" width="207" height="215"/>
         <image name="HeadGearNormal" width="207" height="215"/>
         <image name="Help" width="70" height="70"/>
         <image name="Next" width="125" height="54"/>
@@ -837,17 +930,22 @@
         <image name="Profile" width="70" height="70"/>
         <image name="Progressbar" width="611" height="62"/>
         <image name="Start" width="98" height="120"/>
-        <image name="Step1" width="52" height="54"/>
-        <image name="Step2" width="52" height="54"/>
-        <image name="Step3" width="52" height="54"/>
-        <image name="Step4" width="52" height="54"/>
-        <image name="Step5" width="52" height="54"/>
+        <image name="StepActive1" width="52" height="54"/>
+        <image name="StepActive2" width="52" height="54"/>
+        <image name="StepActive3" width="52" height="54"/>
+        <image name="StepActive4" width="52" height="54"/>
+        <image name="StepActive5" width="52" height="54"/>
+        <image name="stepNormal1" width="52" height="54"/>
+        <image name="stepNormal2" width="52" height="54"/>
+        <image name="stepNormal3" width="52" height="54"/>
+        <image name="stepNormal4" width="52" height="54"/>
+        <image name="weldingNormal" width="207" height="215"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="NxU-eE-aYt"/>
         <segue reference="6kE-pI-hFK"/>
-        <segue reference="45I-Cg-1XT"/>
+        <segue reference="Meh-QT-AgJ"/>
         <segue reference="xgJ-Ed-tGn"/>
+        <segue reference="a3h-OE-xzD"/>
         <segue reference="ffJ-Qb-PrS"/>
     </inferredMetricsTieBreakers>
 </document>
