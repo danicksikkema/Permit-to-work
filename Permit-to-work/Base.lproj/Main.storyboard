@@ -675,6 +675,7 @@
                                 </state>
                                 <connections>
                                     <action selector="nextButton:" destination="9Mm-g1-SV1" eventType="touchUpInside" id="9uA-Ow-SgI"/>
+                                    <action selector="nextButton:" destination="U3L-f1-56c" eventType="touchUpInside" id="aDP-JV-iDz"/>
                                     <segue destination="xjX-RV-sdY" kind="show" id="YTo-zQ-nD9"/>
                                 </connections>
                             </button>
@@ -705,31 +706,49 @@
                                 <rect key="frame" x="193" y="154" width="207" height="215"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="ToxicNormal"/>
+                                <connections>
+                                    <action selector="ToxicFumesButton:" destination="U3L-f1-56c" eventType="touchUpInside" id="XuI-ee-9ks"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GF1-T7-PD6">
                                 <rect key="frame" x="408" y="154" width="207" height="215"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="SpilledWaterNormal"/>
+                                <state key="normal" image="WaterNormal"/>
+                                <connections>
+                                    <action selector="SpilledWaterButton:" destination="U3L-f1-56c" eventType="touchUpInside" id="gBo-Zz-x5K"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gu2-gX-9iR">
                                 <rect key="frame" x="623" y="154" width="207" height="215"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="FireDangerNormal"/>
+                                <connections>
+                                    <action selector="FireDangerButton:" destination="U3L-f1-56c" eventType="touchUpInside" id="QTK-cO-2dO"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yUd-AE-T7u">
                                 <rect key="frame" x="195" y="416" width="207" height="215"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="LoadNoiseNormal"/>
+                                <connections>
+                                    <action selector="LoudNoiseButton:" destination="U3L-f1-56c" eventType="touchUpInside" id="Bgs-I7-Nny"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ssj-fK-kl7">
                                 <rect key="frame" x="410" y="416" width="207" height="215"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="SpilledWasteNormal"/>
+                                <connections>
+                                    <action selector="SpilledWasteButton:" destination="U3L-f1-56c" eventType="touchUpInside" id="DJZ-QA-JVp"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8T-Dt-bWr">
                                 <rect key="frame" x="625" y="416" width="207" height="215"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="SlipperyFloorNormal"/>
+                                <connections>
+                                    <action selector="SlipperyFloorButton:" destination="U3L-f1-56c" eventType="touchUpInside" id="zxw-30-oLE"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -967,7 +986,6 @@
         <image name="Progressbar" width="611" height="62"/>
         <image name="SlipperyFloorNormal" width="207" height="215"/>
         <image name="SpilledWasteNormal" width="207" height="215"/>
-        <image name="SpilledWaterNormal" width="207" height="215"/>
         <image name="Start" width="98" height="120"/>
         <image name="StepActive1" width="52" height="54"/>
         <image name="StepActive2" width="52" height="54"/>
@@ -975,6 +993,7 @@
         <image name="StepActive4" width="52" height="54"/>
         <image name="StepActive5" width="52" height="54"/>
         <image name="ToxicNormal" width="207" height="215"/>
+        <image name="WaterNormal" width="207" height="215"/>
         <image name="stepNormal1" width="52" height="54"/>
         <image name="stepNormal2" width="52" height="54"/>
         <image name="stepNormal3" width="52" height="54"/>
