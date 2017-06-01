@@ -13,7 +13,6 @@ import SwiftyJSON
 
 class NewPermitViewController : UIViewController, UITextFieldDelegate, UITextViewDelegate {
     var permits = Permits.instance
-    var templates = Templates.instance
     
     @IBOutlet weak var textFieldTime: UITextField!
     @IBOutlet weak var textFieldDate: UITextField!
@@ -21,6 +20,8 @@ class NewPermitViewController : UIViewController, UITextFieldDelegate, UITextVie
     @IBOutlet weak var textfieldName: UITextField!
     @IBOutlet weak var textFieldType: UITextField!
     @IBOutlet weak var textFieldDescription: UITextView!
+    
+    @IBOutlet weak var nextButton: UIButton!
     
     // If datePicker changes update textfield
     func datePickerValueChanged(sender:UIDatePicker) {
@@ -37,12 +38,63 @@ class NewPermitViewController : UIViewController, UITextFieldDelegate, UITextVie
         closekeyboard()
     }
     
-    @IBOutlet weak var nextButton: UIButton!
-    
     @IBAction func helpButton(_ sender: Any) {
 
     }
     
+    // Empty textfields
+    func clearTextFields () {
+        self.textfieldName.text = ""
+        self.textFieldType.text = ""
+    }
+    
+    // Saving data
+    func savePermitData () {
+        let newPermitParameters: [String : Any] = ["permitId": 0, "permitName": textfieldName.text!, "type": textFieldType.text!, "workDescription": textFieldDescription.text!]
+        
+        Alamofire.request("http://avhx.com/api/v1/permits", method: .post, parameters: newPermitParameters, encoding: JSONEncoding.default).responseString { response in
+            
+            if response.result.value != nil {
+                print(response)
+                print(response.result)
+                print(response.result.isSuccess)
+            } else {
+                print("error")
+            }
+        }
+        
+        let newPermit = Permit (fromJSON: newPermitParameters)
+        
+        let permits = Permits.instance
+        permits.addNewPermit(permit: newPermit)
+    }
+    
+    // Create permit
+    func createPermit () {
+        let status = ConnectionCheck().connectionStatus()
+        
+        switch status {
+        case .unknown, .offline:
+            print("Not connected")
+            
+            let alertController = UIAlertController(title: "No Internet connection", message: "Er is geen internet conncectie, maak opnieuw verbinding om door te gaan.", preferredStyle: .alert)
+            
+            let defaultAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            alertController.addAction(defaultAction)
+            
+            present(alertController, animated: true, completion: nil)
+            
+        case .online(.wwan):
+            savePermitData ()
+            clearTextFields ()
+
+        case .online(.wiFi):
+            savePermitData ()
+            clearTextFields ()
+        }
+    }
+    
+    // Next button to protection page
     @IBAction func nextButton(_ sender: Any) {
         let name = textfieldName.text
         let type = textFieldType.text
@@ -57,69 +109,8 @@ class NewPermitViewController : UIViewController, UITextFieldDelegate, UITextVie
                 
                 present(alertController, animated: true, completion: nil)
             } else {
-                let newPermitParameters: [String : Any] = ["permitId": 0, "permitName": textfieldName.text!, "type": textFieldType.text!, "workDescription": textFieldDescription.text!]
-                
-                print(newPermitParameters)
-                
-                let status = ConnectionCheck().connectionStatus()
-                
-                switch status {
-                case .unknown, .offline:
-                    print("Not connected")
-                    
-                    let alertController = UIAlertController(title: "No Internet connection", message: "Er is geen internet conncectie, maak opnieuw verbinding om door te gaan.", preferredStyle: .alert)
-                    
-                    let defaultAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
-                    alertController.addAction(defaultAction)
-                    
-                    present(alertController, animated: true, completion: nil)
-                    
-                case .online(.wwan):
-                    Alamofire.request("http://avhx.com/api/v1/permits", method: .post, parameters: newPermitParameters, encoding: JSONEncoding.default).responseString { response in
-                        
-                        if response.result.value != nil {
-                            print(response)
-                            print(response.result)
-                            print(response.result.isSuccess)
-                        } else {
-                            print("error")
-                        }
-                    }
-                    
-                    let newPermit = Permit (fromJSON: newPermitParameters)
-                    
-                    let permits = Permits.instance
-                    permits.addNewPermit(permit: newPermit)
-                    
-                    // Empty textfields
-                    self.textfieldName.text = ""
-                    self.textFieldType.text = ""
-                    
-                    performSegue(withIdentifier: "goToProtection", sender: sender)
-                    
-                case .online(.wiFi):
-                    Alamofire.request("http://avhx.com/api/v1/permits", method: .post, parameters: newPermitParameters, encoding: JSONEncoding.default).responseString { response in
-                        
-                        if response.result.value != nil {
-                            print(response)
-                            print(response.result)
-                            print(response.result.isSuccess)
-                        } else {
-                            print("error")
-                        }
-                    }
-                    
-                    let newPermit = Permit (fromJSON: newPermitParameters)
-                    
-                    let permits = Permits.instance
-                    permits.addNewPermit(permit: newPermit)
-                    
-                    // Empty textfields
-                    self.textfieldName.text = ""
-                    self.textFieldType.text = ""
-                    
-                    performSegue(withIdentifier: "goToProtection", sender: sender)
-                }
+                createPermit ()
+                performSegue(withIdentifier: "goToProtection", sender: sender)
             }
     }
     
