@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class EnvironmentViewController : UIViewController {
     override func viewDidLoad() {

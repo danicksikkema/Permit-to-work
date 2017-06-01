@@ -701,6 +701,36 @@
                                 <rect key="frame" x="211" y="675" width="52" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G1z-Gn-U9q">
+                                <rect key="frame" x="193" y="154" width="207" height="215"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="ToxicNormal"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GF1-T7-PD6">
+                                <rect key="frame" x="408" y="154" width="207" height="215"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="SpilledWaterNormal"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gu2-gX-9iR">
+                                <rect key="frame" x="623" y="154" width="207" height="215"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="FireDangerNormal"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yUd-AE-T7u">
+                                <rect key="frame" x="195" y="416" width="207" height="215"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="LoadNoiseNormal"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ssj-fK-kl7">
+                                <rect key="frame" x="410" y="416" width="207" height="215"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="SpilledWasteNormal"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8T-Dt-bWr">
+                                <rect key="frame" x="625" y="416" width="207" height="215"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="SlipperyFloorNormal"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -920,21 +950,27 @@
         <image name="EarProtectionNormal" width="207" height="215"/>
         <image name="Feedback" width="122" height="120"/>
         <image name="Finish" width="125" height="54"/>
+        <image name="FireDangerNormal" width="207" height="215"/>
         <image name="FireNormal" width="213" height="228"/>
         <image name="GlovesNormal" width="207" height="215"/>
         <image name="HandsNormal" width="207" height="215"/>
         <image name="HeadGearNormal" width="207" height="215"/>
         <image name="Help" width="70" height="70"/>
+        <image name="LoadNoiseNormal" width="207" height="215"/>
         <image name="Next" width="125" height="54"/>
         <image name="Overview" width="118" height="120"/>
         <image name="Profile" width="70" height="70"/>
         <image name="Progressbar" width="611" height="62"/>
+        <image name="SlipperyFloorNormal" width="207" height="215"/>
+        <image name="SpilledWasteNormal" width="207" height="215"/>
+        <image name="SpilledWaterNormal" width="207" height="215"/>
         <image name="Start" width="98" height="120"/>
         <image name="StepActive1" width="52" height="54"/>
         <image name="StepActive2" width="52" height="54"/>
         <image name="StepActive3" width="52" height="54"/>
         <image name="StepActive4" width="52" height="54"/>
         <image name="StepActive5" width="52" height="54"/>
+        <image name="ToxicNormal" width="207" height="215"/>
         <image name="stepNormal1" width="52" height="54"/>
         <image name="stepNormal2" width="52" height="54"/>
         <image name="stepNormal3" width="52" height="54"/>
@@ -942,10 +978,10 @@
         <image name="weldingNormal" width="207" height="215"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6kE-pI-hFK"/>
         <segue reference="Meh-QT-AgJ"/>
         <segue reference="xgJ-Ed-tGn"/>
+        <segue reference="YTo-zQ-nD9"/>
         <segue reference="a3h-OE-xzD"/>
-        <segue reference="ffJ-Qb-PrS"/>
+        <segue reference="6kE-pI-hFK"/>
     </inferredMetricsTieBreakers>
 </document>
