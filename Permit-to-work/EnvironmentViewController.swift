@@ -12,6 +12,14 @@ import Alamofire
 import SwiftyJSON
 
 class EnvironmentViewController : UIViewController {
+    @IBOutlet weak var ToxicFumesButton: UIButton!
+    @IBOutlet weak var SpilledWaterButton: UIButton!
+    @IBOutlet weak var FireDangerButton: UIButton!
+    
+    @IBOutlet weak var LoudNoiseButton: UIButton!
+    @IBOutlet weak var SpilledWasteButton: UIButton!
+    @IBOutlet weak var SlipperyFloorButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

@@ -734,6 +734,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="FireDangerButton" destination="Gu2-gX-9iR" id="doN-ea-vB1"/>
+                        <outlet property="LoudNoiseButton" destination="yUd-AE-T7u" id="dR4-pj-Ehw"/>
+                        <outlet property="SlipperyFloorButton" destination="g8T-Dt-bWr" id="nTc-Zd-usF"/>
+                        <outlet property="SpilledWasteButton" destination="Ssj-fK-kl7" id="sel-26-Cbn"/>
+                        <outlet property="SpilledWaterButton" destination="GF1-T7-PD6" id="HFx-Cu-qj1"/>
+                        <outlet property="ToxicFumesButton" destination="G1z-Gn-U9q" id="Mhc-Wk-e1U"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5pf-ps-cOd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -753,10 +761,6 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="dhl-bT-Jsy">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="StepActive4" translatesAutoresizingMaskIntoConstraints="NO" id="ODP-vg-Pfe">
-                                <rect key="frame" x="10" y="10" width="52" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Progressbar" translatesAutoresizingMaskIntoConstraints="NO" id="DjQ-OQ-wyd">
@@ -979,7 +983,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Meh-QT-AgJ"/>
-        <segue reference="xgJ-Ed-tGn"/>
+        <segue reference="Lx0-oa-70s"/>
         <segue reference="YTo-zQ-nD9"/>
         <segue reference="a3h-OE-xzD"/>
         <segue reference="6kE-pI-hFK"/>

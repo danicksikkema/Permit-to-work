@@ -28,7 +28,7 @@ class NewPermitViewController : UIViewController, UITextFieldDelegate, UITextVie
         dateFormatter.dateStyle = DateFormatter.Style.medium
         textFieldDate.text = dateFormatter.string(from: sender.date)
     }
-        
+    
     func closekeyboard() {
         self.view.endEditing(true)
     }
@@ -85,6 +85,30 @@ class NewPermitViewController : UIViewController, UITextFieldDelegate, UITextVie
 //            }
         performSegue(withIdentifier: "goToProtection", sender: sender)
     }
+    
+    func displayDate() {
+        // Set current day as a standard.
+        let date = Date()
+        let formatter = DateFormatter()
+        
+        formatter.dateStyle = DateFormatter.Style.medium
+        let dateResult = formatter.string(from: date)
+        
+        textFieldDate.text = dateResult
+    }
+    
+    func displayTime() {
+        // Set current time as standard.
+        let date = Date()
+        let calendar = Calendar.current
+        
+        let hour = calendar.component(.hour, from: date)
+        let minutes = calendar.component(.minute, from: date)
+        let seconds = calendar.component(.second, from: date)
+        let timeResult = ("\(hour):\(minutes):\(seconds)")
+        
+        textFieldTime.text = timeResult
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,14 +119,8 @@ class NewPermitViewController : UIViewController, UITextFieldDelegate, UITextVie
         textFieldDate.delegate = self
         textFieldTime.delegate = self
         
-        // Set current day as a standard.
-        let date = Date()
-        let formatter = DateFormatter()
-        
-        formatter.dateStyle = DateFormatter.Style.medium
-        let result = formatter.string(from: date)
-        
-        textFieldDate.text = result
+        displayDate()
+        displayTime()
         
         // Use datepicker instead of keyboard for textFieldDate
         let datePickerView  : UIDatePicker = UIDatePicker()
