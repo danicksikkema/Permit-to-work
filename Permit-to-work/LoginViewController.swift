@@ -13,10 +13,10 @@ class LoginViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
     @IBAction func loginTapped(_ sender: Any) {
         let mainNavigationController = storyboard?.instantiateViewController(withIdentifier: "MainNavigationController") as! MainNavigationController
         
         present(mainNavigationController, animated: true, completion: nil)
-        
     }
 }

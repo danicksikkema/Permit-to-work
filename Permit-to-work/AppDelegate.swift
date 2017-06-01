@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         Permits.instance.getPermitsFromServer ()
         return true
+        
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

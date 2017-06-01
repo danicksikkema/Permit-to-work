@@ -75,7 +75,6 @@ class Permits {
             
             if let json = response.result.value {
                 
-                print(json)
                 self.getPermitsFromJSON (json: json)
 
             }
@@ -85,7 +84,6 @@ class Permits {
 //     2: Als het lukt om hieruit een array op te halen, dan wordt dit in de variable klanten opgeslagen.
     func getPermitsFromJSON (json: Any) {
         if let permits = json as? [Any] {
-            print ("Er zijn \(permits.count) permits")
             
             // 3: Loop door de array van permits en haal ze er uit en sla op als dictionary in variable newPermit.
             for permitAsJSON in permits {
