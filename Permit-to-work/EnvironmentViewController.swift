@@ -147,6 +147,101 @@ class EnvironmentViewController : UIViewController {
         } else {
             ToxicFumesButton.isSelected = false
         }
+        
+        if SpilledWaterButton.isSelected == true {
+            let spilledWaterParameters: [String: Any] = ["feedback": "Spilled Water"]
+            
+            print(spilledWaterParameters)
+            
+            Alamofire.request("http://avhx.com/api/v1/environment", method: .post, parameters: spilledWaterParameters, encoding: JSONEncoding.default).responseString { response in
+                
+                if response.result.value != nil {
+                    debugPrint(response)
+                    print(response.result)
+                    print(response.result.isSuccess)
+                } else {
+                    print("error")
+                }
+            }
+        } else {
+            SpilledWaterButton.isSelected = false
+        }
+        
+        if FireDangerButton.isSelected == true {
+            let fireDangerParameters: [String: Any] = ["feedback": "Fire Danger"]
+            
+            print(fireDangerParameters)
+            
+            Alamofire.request("http://avhx.com/api/v1/environment", method: .post, parameters: fireDangerParameters, encoding: JSONEncoding.default).responseString { response in
+                
+                if response.result.value != nil {
+                    debugPrint(response)
+                    print(response.result)
+                    print(response.result.isSuccess)
+                } else {
+                    print("error")
+                }
+            }
+        } else {
+            FireDangerButton.isSelected = false
+        }
+        
+        if LoudNoiseButton.isSelected == true {
+            let loudNoiseParameters: [String: Any] = ["feedback": "Loud Noise"]
+            
+            print(loudNoiseParameters)
+            
+            Alamofire.request("http://avhx.com/api/v1/environment", method: .post, parameters: loudNoiseParameters, encoding: JSONEncoding.default).responseString { response in
+                
+                if response.result.value != nil {
+                    debugPrint(response)
+                    print(response.result)
+                    print(response.result.isSuccess)
+                } else {
+                    print("error")
+                }
+            }
+        } else {
+            LoudNoiseButton.isSelected = false
+        }
+        
+        if SpilledWasteButton.isSelected == true {
+            let spilledWasteParameters: [String: Any] = ["feedback": "Spilled Waste"]
+            
+            print(spilledWasteParameters)
+            
+            Alamofire.request("http://avhx.com/api/v1/environment", method: .post, parameters: spilledWasteParameters, encoding: JSONEncoding.default).responseString { response in
+                
+                if response.result.value != nil {
+                    debugPrint(response)
+                    print(response.result)
+                    print(response.result.isSuccess)
+                } else {
+                    print("error")
+                }
+            }
+        } else {
+            SpilledWasteButton.isSelected = false
+        }
+        
+        if SlipperyFloorButton.isSelected == true {
+            let slipperyFloorParameters: [String: Any] = ["feedback": "Slippery Floor"]
+            
+            print(slipperyFloorParameters)
+            
+            Alamofire.request("http://avhx.com/api/v1/environment", method: .post, parameters: slipperyFloorParameters, encoding: JSONEncoding.default).responseString { response in
+                
+                if response.result.value != nil {
+                    debugPrint(response)
+                    print(response.result)
+                    print(response.result.isSuccess)
+                } else {
+                    print("error")
+                }
+            }
+        } else {
+            SlipperyFloorButton.isSelected = false
+        }
     }
     
     override func viewDidLoad() {

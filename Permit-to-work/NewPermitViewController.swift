@@ -151,6 +151,9 @@ class NewPermitViewController : UIViewController, UITextFieldDelegate, UITextVie
         displayDate()
         displayTime()
         
+        // Disable textFieldStep
+        textFieldStep.isUserInteractionEnabled = false
+        
         // Use datepicker instead of keyboard for textFieldDate
         let datePickerView  : UIDatePicker = UIDatePicker()
         datePickerView.datePickerMode = UIDatePickerMode.date
