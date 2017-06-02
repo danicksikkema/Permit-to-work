@@ -129,7 +129,24 @@ class EnvironmentViewController : UIViewController {
     }
     
     func findSelected () {
-        
+        if ToxicFumesButton.isSelected == true {
+            let toxicFumesParameters: [String: Any] = ["feedback": "Toxic Fumes"]
+            
+            print(toxicFumesParameters)
+            
+            Alamofire.request("http://avhx.com/api/v1/environment", method: .post, parameters: toxicFumesParameters, encoding: JSONEncoding.default).responseString { response in
+                
+                if response.result.value != nil {
+                    debugPrint(response)
+                    print(response.result)
+                    print(response.result.isSuccess)
+                } else {
+                    print("error")
+                }
+            }
+        } else {
+            ToxicFumesButton.isSelected = false
+        }
     }
     
     override func viewDidLoad() {
