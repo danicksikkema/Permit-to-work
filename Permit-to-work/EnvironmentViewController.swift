@@ -129,118 +129,102 @@ class EnvironmentViewController : UIViewController {
     }
     
     func findSelected () {
-        if ToxicFumesButton.isSelected == true {
-            let toxicFumesParameters: [String: Any] = ["feedback": "Toxic Fumes"]
-            
-            print(toxicFumesParameters)
-            
-            Alamofire.request("http://avhx.com/api/v1/environment", method: .post, parameters: toxicFumesParameters, encoding: JSONEncoding.default).responseString { response in
-                
-                if response.result.value != nil {
-                    debugPrint(response)
-                    print(response.result)
-                    print(response.result.isSuccess)
-                } else {
-                    print("error")
+        let buttons: [UIButton] = [ToxicFumesButton, SpilledWaterButton, FireDangerButton, LoudNoiseButton, SpilledWasteButton, SlipperyFloorButton]
+
+        for button in buttons {
+            if button.isSelected == true {
+                if button == ToxicFumesButton {
+                    let parameters: [String: Any] = ["feedback": "Toxic Fumes"]
+                    
+                    Alamofire.request("http://avhx.com/api/v1/environment", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseString { response in
+                        
+                        if response.result.value != nil {
+                            debugPrint(response)
+                            print(response.result)
+                            print(response.result.isSuccess)
+                        } else {
+                            print("error")
+                        }
+                    }
                 }
-            }
-        } else {
-            ToxicFumesButton.isSelected = false
-        }
-        
-        if SpilledWaterButton.isSelected == true {
-            let spilledWaterParameters: [String: Any] = ["feedback": "Spilled Water"]
-            
-            print(spilledWaterParameters)
-            
-            Alamofire.request("http://avhx.com/api/v1/environment", method: .post, parameters: spilledWaterParameters, encoding: JSONEncoding.default).responseString { response in
                 
-                if response.result.value != nil {
-                    debugPrint(response)
-                    print(response.result)
-                    print(response.result.isSuccess)
-                } else {
-                    print("error")
+                if button == SpilledWaterButton {
+                    let parameters: [String: Any] = ["feedback": "Spilled Water"]
+                    
+                    Alamofire.request("http://avhx.com/api/v1/environment", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseString { response in
+                        
+                        if response.result.value != nil {
+                            debugPrint(response)
+                            print(response.result)
+                            print(response.result.isSuccess)
+                        } else {
+                            print("error")
+                        }
+                    }
                 }
-            }
-        } else {
-            SpilledWaterButton.isSelected = false
-        }
-        
-        if FireDangerButton.isSelected == true {
-            let fireDangerParameters: [String: Any] = ["feedback": "Fire Danger"]
-            
-            print(fireDangerParameters)
-            
-            Alamofire.request("http://avhx.com/api/v1/environment", method: .post, parameters: fireDangerParameters, encoding: JSONEncoding.default).responseString { response in
                 
-                if response.result.value != nil {
-                    debugPrint(response)
-                    print(response.result)
-                    print(response.result.isSuccess)
-                } else {
-                    print("error")
+                if button == FireDangerButton {
+                    let parameters: [String: Any] = ["feedback": "Fire Danger"]
+                    
+                    Alamofire.request("http://avhx.com/api/v1/environment", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseString { response in
+                        
+                        if response.result.value != nil {
+                            debugPrint(response)
+                            print(response.result)
+                            print(response.result.isSuccess)
+                        } else {
+                            print("error")
+                        }
+                    }
                 }
-            }
-        } else {
-            FireDangerButton.isSelected = false
-        }
-        
-        if LoudNoiseButton.isSelected == true {
-            let loudNoiseParameters: [String: Any] = ["feedback": "Loud Noise"]
-            
-            print(loudNoiseParameters)
-            
-            Alamofire.request("http://avhx.com/api/v1/environment", method: .post, parameters: loudNoiseParameters, encoding: JSONEncoding.default).responseString { response in
                 
-                if response.result.value != nil {
-                    debugPrint(response)
-                    print(response.result)
-                    print(response.result.isSuccess)
-                } else {
-                    print("error")
+                if button == LoudNoiseButton {
+                    let parameters: [String: Any] = ["feedback": "Loud Noise"]
+                    
+                    Alamofire.request("http://avhx.com/api/v1/environment", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseString { response in
+                        
+                        if response.result.value != nil {
+                            debugPrint(response)
+                            print(response.result)
+                            print(response.result.isSuccess)
+                        } else {
+                            print("error")
+                        }
+                    }
                 }
-            }
-        } else {
-            LoudNoiseButton.isSelected = false
-        }
-        
-        if SpilledWasteButton.isSelected == true {
-            let spilledWasteParameters: [String: Any] = ["feedback": "Spilled Waste"]
-            
-            print(spilledWasteParameters)
-            
-            Alamofire.request("http://avhx.com/api/v1/environment", method: .post, parameters: spilledWasteParameters, encoding: JSONEncoding.default).responseString { response in
                 
-                if response.result.value != nil {
-                    debugPrint(response)
-                    print(response.result)
-                    print(response.result.isSuccess)
-                } else {
-                    print("error")
+                if button == SpilledWasteButton {
+                    let parameters: [String: Any] = ["feedback": "Spilled Waste"]
+                    
+                    Alamofire.request("http://avhx.com/api/v1/environment", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseString { response in
+                        
+                        if response.result.value != nil {
+                            debugPrint(response)
+                            print(response.result)
+                            print(response.result.isSuccess)
+                        } else {
+                            print("error")
+                        }
+                    }
                 }
-            }
-        } else {
-            SpilledWasteButton.isSelected = false
-        }
-        
-        if SlipperyFloorButton.isSelected == true {
-            let slipperyFloorParameters: [String: Any] = ["feedback": "Slippery Floor"]
-            
-            print(slipperyFloorParameters)
-            
-            Alamofire.request("http://avhx.com/api/v1/environment", method: .post, parameters: slipperyFloorParameters, encoding: JSONEncoding.default).responseString { response in
-                
-                if response.result.value != nil {
-                    debugPrint(response)
-                    print(response.result)
-                    print(response.result.isSuccess)
-                } else {
-                    print("error")
+
+                if button == SlipperyFloorButton {
+                    let parameters: [String: Any] = ["feedback": "Slippery Floor"]
+                    
+                    Alamofire.request("http://avhx.com/api/v1/environment", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseString { response in
+                        
+                        if response.result.value != nil {
+                            debugPrint(response)
+                            print(response.result)
+                            print(response.result.isSuccess)
+                        } else {
+                            print("error")
+                        }
+                    }
                 }
+            } else {
+                break
             }
-        } else {
-            SlipperyFloorButton.isSelected = false
         }
     }
     
