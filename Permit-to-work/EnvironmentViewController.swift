@@ -221,6 +221,8 @@ class EnvironmentViewController : UIViewController {
                             print("error")
                         }
                     }
+                } else {
+                    break
                 }
             } else {
                 break

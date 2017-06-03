@@ -181,137 +181,119 @@ class ProtectionViewController : UIViewController {
     }
 
     func findSelected () {
-        if headProtectionButton.isSelected == true {
-            let headProtectionParameters: [String: Any] = ["personalProtection": "Hard Hat"]
-                
-                print(headProtectionParameters)
-                
-                Alamofire.request("http://avhx.com/api/v1/protection", method: .post, parameters: headProtectionParameters, encoding: JSONEncoding.default).responseString { response in
+        let buttons: [UIButton] = [headProtectionButton, earProtectionButton, clothingProtectionButton, weldingHelmetButton, cleanHandsButton, fireProtectionButton, bootsProtectionButton, glovesProtectionButton]
+        
+        for button in buttons {
+            if button.isSelected == true {
+                if button == headProtectionButton {
+                    let parameters: [String: Any] = ["personalProtection": "Hard Hat"]
                     
-                    if response.result.value != nil {
-                        debugPrint(response)
-                        print(response.result)
-                        print(response.result.isSuccess)
-                    } else {
-                        print("error")
+                    Alamofire.request("http://avhx.com/api/v1/protection", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseString { response in
+                        
+                        if response.result.value != nil {
+                            debugPrint(response)
+                            print(response.result)
+                            print(response.result.isSuccess)
+                        } else {
+                            print("error")
+                        }
                     }
                 }
-        } else {
-            headProtectionButton.isSelected = false
-        }
-        
-        if earProtectionButton.isSelected == true {
-            let earProtectionParameters: [String: Any] = ["personalProtection": "Ear Protection"]
-            
-            print(earProtectionParameters)
-            
-            Alamofire.request("http://avhx.com/api/v1/protection", method: .post, parameters: earProtectionParameters, encoding: JSONEncoding.default).responseString { response in
                 
-                if response.result.value != nil {
-                    debugPrint(response)
-                    print(response.result)
-                    print(response.result.isSuccess)
-                } else {
-                    print("error")
+                if button == earProtectionButton {
+                    let parameters: [String: Any] = ["personalProtection": "Ear Protection"]
+                    
+                    Alamofire.request("http://avhx.com/api/v1/protection", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseString { response in
+                        
+                        if response.result.value != nil {
+                            debugPrint(response)
+                            print(response.result)
+                            print(response.result.isSuccess)
+                        } else {
+                            print("error")
+                        }
+                    }
                 }
-            }
-        } else {
-            earProtectionButton.isSelected = false
-        }
-        
-        if clothingProtectionButton.isSelected == true {
-            let clothingProtectionParameters: [String: Any] = ["personalProtection": "Reflective Gear"]
-            
-            print(clothingProtectionParameters)
-            
-            Alamofire.request("http://avhx.com/api/v1/protection", method: .post, parameters: clothingProtectionParameters, encoding: JSONEncoding.default).responseString { response in
                 
-                if response.result.value != nil {
-                    debugPrint(response)
-                    print(response.result)
-                    print(response.result.isSuccess)
-                } else {
-                    print("error")
+                if button == clothingProtectionButton {
+                    let parameters: [String: Any] = ["personalProtection": "Reflective Gear"]
+                    
+                    Alamofire.request("http://avhx.com/api/v1/protection", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseString { response in
+                        
+                        if response.result.value != nil {
+                            debugPrint(response)
+                            print(response.result)
+                            print(response.result.isSuccess)
+                        } else {
+                            print("error")
+                        }
+                    }
                 }
-            }
-        } else {
-            clothingProtectionButton.isSelected = false
-        }
-        
-        if cleanHandsButton.isSelected == true {
-            let cleanHandsProtectionParameters: [String: Any] = ["personalProtection": "Clean Hands"]
-            
-            print(cleanHandsProtectionParameters)
-            
-            Alamofire.request("http://avhx.com/api/v1/protection", method: .post, parameters: cleanHandsProtectionParameters, encoding: JSONEncoding.default).responseString { response in
                 
-                if response.result.value != nil {
-                    debugPrint(response)
-                    print(response.result)
-                    print(response.result.isSuccess)
-                } else {
-                    print("error")
+                if button == cleanHandsButton {
+                    let parameters: [String: Any] = ["personalProtection": "Clean Hands"]
+                    
+                    Alamofire.request("http://avhx.com/api/v1/protection", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseString { response in
+                        
+                        if response.result.value != nil {
+                            debugPrint(response)
+                            print(response.result)
+                            print(response.result.isSuccess)
+                        } else {
+                            print("error")
+                        }
+                    }
                 }
-            }
-        } else {
-            cleanHandsButton.isSelected = false
-        }
-        
-        if fireProtectionButton.isSelected == true {
-            let fireProtectionParameters: [String: Any] = ["personalProtection": "Fire Extinguisher"]
-            
-            print(fireProtectionParameters)
-            
-            Alamofire.request("http://avhx.com/api/v1/protection", method: .post, parameters: fireProtectionParameters, encoding: JSONEncoding.default).responseString { response in
                 
-                if response.result.value != nil {
-                    debugPrint(response)
-                    print(response.result)
-                    print(response.result.isSuccess)
-                } else {
-                    print("error")
+                if button == fireProtectionButton {
+                    let parameters: [String: Any] = ["personalProtection": "Fire Extinguisher"]
+                    
+                    Alamofire.request("http://avhx.com/api/v1/protection", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseString { response in
+                        
+                        if response.result.value != nil {
+                            debugPrint(response)
+                            print(response.result)
+                            print(response.result.isSuccess)
+                        } else {
+                            print("error")
+                        }
+                    }
                 }
-            }
-        } else {
-            fireProtectionButton.isSelected = false
-        }
-        
-        if bootsProtectionButton.isSelected == true {
-            let bootsProtectionParameters: [String: Any] = ["personalProtection": "Protective Boots"]
-            
-            print(bootsProtectionParameters)
-            
-            Alamofire.request("http://avhx.com/api/v1/protection", method: .post, parameters: bootsProtectionParameters, encoding: JSONEncoding.default).responseString { response in
                 
-                if response.result.value != nil {
-                    debugPrint(response)
-                    print(response.result)
-                    print(response.result.isSuccess)
-                } else {
-                    print("error")
+                if button == bootsProtectionButton {
+                    let parameters: [String: Any] = ["personalProtection": "Protective Boots"]
+                    
+                    Alamofire.request("http://avhx.com/api/v1/protection", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseString { response in
+                        
+                        if response.result.value != nil {
+                            debugPrint(response)
+                            print(response.result)
+                            print(response.result.isSuccess)
+                        } else {
+                            print("error")
+                        }
+                    }
                 }
-            }
-        } else {
-            bootsProtectionButton.isSelected = false
-        }
-        
-        if glovesProtectionButton.isSelected == true {
-            let glovesProtectionParameters: [String: Any] = ["personalProtection": "Protective Boots"]
-            
-            print(glovesProtectionParameters)
-            
-            Alamofire.request("http://avhx.com/api/v1/protection", method: .post, parameters: glovesProtectionParameters, encoding: JSONEncoding.default).responseString { response in
                 
-                if response.result.value != nil {
-                    debugPrint(response)
-                    print(response.result)
-                    print(response.result.isSuccess)
+                if button == glovesProtectionButton {
+                    let parameters: [String: Any] = ["personalProtection": "Protective Boots"]
+                    
+                    Alamofire.request("http://avhx.com/api/v1/protection", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseString { response in
+                        
+                        if response.result.value != nil {
+                            debugPrint(response)
+                            print(response.result)
+                            print(response.result.isSuccess)
+                        } else {
+                            print("error")
+                        }
+                    }
                 } else {
-                    print("error")
+                    break
                 }
+            } else {
+                break
             }
-        } else {
-            glovesProtectionButton.isSelected = false
         }
     }
     

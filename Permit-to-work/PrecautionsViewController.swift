@@ -72,7 +72,7 @@ class PrecautionsViewController : UIViewController {
                     }
                 }
             } else {
-                button.isSelected = false
+                break
             }
         }
     }
