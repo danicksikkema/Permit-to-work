@@ -51,10 +51,6 @@ class Envirionment {
     
 }
 
-class Precaution {
-
-}
-
 class Equipment {
 
 }
