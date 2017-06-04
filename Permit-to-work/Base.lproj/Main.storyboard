@@ -440,8 +440,9 @@
                                 </subviews>
                             </stackView>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BgF-4h-Edr">
-                                <rect key="frame" x="0.0" y="276" width="1024" height="216"/>
+                                <rect key="frame" x="355" y="319" width="314" height="130"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.2428913414478302" green="0.34190583229064941" blue="0.49964922666549683" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="9Mm-g1-SV1" id="Zhu-xV-U8K"/>
                                     <outlet property="delegate" destination="9Mm-g1-SV1" id="9QQ-U9-NGj"/>

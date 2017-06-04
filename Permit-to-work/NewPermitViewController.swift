@@ -30,8 +30,9 @@ class NewPermitViewController : UIViewController, UITextFieldDelegate, UITextVie
         return 1
     }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return permitTypes[row]
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        
+        return NSAttributedString(string: "\(permitTypes[row])", attributes: [NSForegroundColorAttributeName:UIColor.white])
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
@@ -48,6 +49,8 @@ class NewPermitViewController : UIViewController, UITextFieldDelegate, UITextVie
             pickerView.isHidden = false
             
             textField.endEditing(true)
+        } else {
+            pickerView.isHidden = true
         }
     }
     
@@ -60,6 +63,7 @@ class NewPermitViewController : UIViewController, UITextFieldDelegate, UITextVie
     
     func closekeyboard() {
         self.view.endEditing(true)
+        pickerView.isHidden = true
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -169,8 +173,13 @@ class NewPermitViewController : UIViewController, UITextFieldDelegate, UITextVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let myColor : UIColor = UIColor(red: 0.3725, green: 0.5216, blue: 0.7529, alpha: 1.0)
+        
         // Hide pickerView
         pickerView.isHidden = true
+        pickerView.layer.cornerRadius = 8
+        pickerView.layer.borderWidth = 1.0
+        pickerView.layer.borderColor = myColor.cgColor
         
         // Set default value of permitTypes
         textFieldType.text = permitTypes[0]
@@ -195,8 +204,6 @@ class NewPermitViewController : UIViewController, UITextFieldDelegate, UITextVie
         datePickerView.addTarget(self, action: #selector(NewPermitViewController.datePickerValueChanged), for: UIControlEvents.valueChanged)
 
         // Setting TextField styling
-        let myColor : UIColor = UIColor(red: 0.3725, green: 0.5216, blue: 0.7529, alpha: 1.0)
-        
         textfieldName.layer.borderWidth = 1.0
         textfieldName.layer.borderColor = myColor.cgColor
         textfieldName.layer.cornerRadius = 8;
