@@ -50,12 +50,12 @@ class NewPermitViewController : UIViewController, UITextFieldDelegate, UITextVie
     
     // Saving data
     func savePermitData () {
-        let newPermitParameters: [String : Any] = ["permitId": 0, "permitName": textfieldName.text!, "type": textFieldType.text!, "workDescription": textFieldDescription.text!]
+        let newPermitParameters: [String : Any] = ["permitName": textfieldName.text!, "type": textFieldType.text!, "workDescription": textFieldDescription.text!]
         
         Alamofire.request("http://avhx.com/api/v1/permits", method: .post, parameters: newPermitParameters, encoding: JSONEncoding.default).responseString { response in
             
             if response.result.value != nil {
-                print(response)
+                debugPrint(response)
                 print(response.result)
                 print(response.result.isSuccess)
             } else {
@@ -63,7 +63,7 @@ class NewPermitViewController : UIViewController, UITextFieldDelegate, UITextVie
             }
         }
         
-        let newPermit = Permit (fromJSON: newPermitParameters)
+        let newPermit = Permit (permitId: 0, permitName: textfieldName.text!, permitType: textFieldType.text!, permitDescription: textFieldDescription.text!)
         
         let permits = Permits.instance
         permits.addNewPermit(permit: newPermit)
