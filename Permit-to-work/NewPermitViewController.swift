@@ -11,7 +11,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class NewPermitViewController : UIViewController, UITextFieldDelegate, UITextViewDelegate {
+class NewPermitViewController : UIViewController, UITextFieldDelegate, UITextViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
     var permits = Permits.instance
     
     @IBOutlet weak var textFieldTime: UITextField!
@@ -22,6 +22,34 @@ class NewPermitViewController : UIViewController, UITextFieldDelegate, UITextVie
     @IBOutlet weak var textFieldDescription: UITextView!
     
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var pickerView: UIPickerView!
+    
+    let permitTypes = ["Hot Work", "Cold Work", "Enclosed Spaces"]
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return permitTypes[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return permitTypes.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        textFieldType.text = permitTypes[row]
+        pickerView.isHidden = true
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if (textField == textFieldType) {
+            pickerView.isHidden = false
+            
+            textField.endEditing(true)
+        }
+    }
     
     // If datePicker changes update textfield
     func datePickerValueChanged(sender:UIDatePicker) {
@@ -140,6 +168,12 @@ class NewPermitViewController : UIViewController, UITextFieldDelegate, UITextVie
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Hide pickerView
+        pickerView.isHidden = true
+        
+        // Set default value of permitTypes
+        textFieldType.text = permitTypes[0]
         
         //Setting the Delegates for the TextFields
         textfieldName.delegate = self
