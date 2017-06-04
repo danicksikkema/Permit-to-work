@@ -185,114 +185,20 @@ class ProtectionViewController : UIViewController {
         
         for button in buttons {
             if button.isSelected == true {
-                if button == headProtectionButton {
-                    let parameters: [String: Any] = ["personalProtection": "Hard Hat"]
+                let parameters = ["personalProtection": (button.titleLabel?.text!)!]
                     
-                    Alamofire.request("http://avhx.com/api/v1/protection", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseString { response in
+                Alamofire.request("http://avhx.com/api/v1/protection", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseString { response in
                         
-                        if response.result.value != nil {
-                            debugPrint(response)
-                            print(response.result)
-                            print(response.result.isSuccess)
-                        } else {
-                            print("error")
-                        }
+                    if response.result.value != nil {
+                        debugPrint(response)
+                        print(response.result)
+                        print(response.result.isSuccess)
+                    } else {
+                        print("error")
                     }
-                }
-                
-                if button == earProtectionButton {
-                    let parameters: [String: Any] = ["personalProtection": "Ear Protection"]
-                    
-                    Alamofire.request("http://avhx.com/api/v1/protection", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseString { response in
-                        
-                        if response.result.value != nil {
-                            debugPrint(response)
-                            print(response.result)
-                            print(response.result.isSuccess)
-                        } else {
-                            print("error")
-                        }
-                    }
-                }
-                
-                if button == clothingProtectionButton {
-                    let parameters: [String: Any] = ["personalProtection": "Reflective Gear"]
-                    
-                    Alamofire.request("http://avhx.com/api/v1/protection", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseString { response in
-                        
-                        if response.result.value != nil {
-                            debugPrint(response)
-                            print(response.result)
-                            print(response.result.isSuccess)
-                        } else {
-                            print("error")
-                        }
-                    }
-                }
-                
-                if button == cleanHandsButton {
-                    let parameters: [String: Any] = ["personalProtection": "Clean Hands"]
-                    
-                    Alamofire.request("http://avhx.com/api/v1/protection", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseString { response in
-                        
-                        if response.result.value != nil {
-                            debugPrint(response)
-                            print(response.result)
-                            print(response.result.isSuccess)
-                        } else {
-                            print("error")
-                        }
-                    }
-                }
-                
-                if button == fireProtectionButton {
-                    let parameters: [String: Any] = ["personalProtection": "Fire Extinguisher"]
-                    
-                    Alamofire.request("http://avhx.com/api/v1/protection", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseString { response in
-                        
-                        if response.result.value != nil {
-                            debugPrint(response)
-                            print(response.result)
-                            print(response.result.isSuccess)
-                        } else {
-                            print("error")
-                        }
-                    }
-                }
-                
-                if button == bootsProtectionButton {
-                    let parameters: [String: Any] = ["personalProtection": "Protective Boots"]
-                    
-                    Alamofire.request("http://avhx.com/api/v1/protection", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseString { response in
-                        
-                        if response.result.value != nil {
-                            debugPrint(response)
-                            print(response.result)
-                            print(response.result.isSuccess)
-                        } else {
-                            print("error")
-                        }
-                    }
-                }
-                
-                if button == glovesProtectionButton {
-                    let parameters: [String: Any] = ["personalProtection": "Protective Boots"]
-                    
-                    Alamofire.request("http://avhx.com/api/v1/protection", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseString { response in
-                        
-                        if response.result.value != nil {
-                            debugPrint(response)
-                            print(response.result)
-                            print(response.result.isSuccess)
-                        } else {
-                            print("error")
-                        }
-                    }
-                } else {
-                    break
                 }
             } else {
-                break
+                print("niet geselecteerd")
             }
         }
     }

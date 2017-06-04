@@ -264,7 +264,7 @@ class PrecautionsViewController : UIViewController {
                     }
                 }
             } else {
-                print("geen selectie")
+                print("niet geselecteerd")
             }
         }
     }

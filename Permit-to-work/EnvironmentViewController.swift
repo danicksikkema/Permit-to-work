@@ -146,7 +146,7 @@ class EnvironmentViewController : UIViewController {
                     }
                 }
             } else {
-                break
+                print("niet geselecteerd")
             }
         }
     }

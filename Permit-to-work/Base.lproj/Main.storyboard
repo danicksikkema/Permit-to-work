@@ -532,7 +532,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0zK-x6-Tc3">
                                 <rect key="frame" x="61" y="153" width="207" height="215"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="EarProtectionNormal"/>
+                                <state key="normal" title="Ear Protection" image="EarProtectionNormal"/>
                                 <connections>
                                     <action selector="earProtectionButton:" destination="Vz9-d1-FJN" eventType="touchUpInside" id="xZf-Rr-2jT"/>
                                 </connections>
@@ -540,7 +540,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Hh-ci-HcY">
                                 <rect key="frame" x="291" y="153" width="207" height="215"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="weldingNormal"/>
+                                <state key="normal" title="Welding Helmet" image="weldingNormal"/>
                                 <connections>
                                     <action selector="weldingHelmetButton:" destination="Vz9-d1-FJN" eventType="touchUpInside" id="Vrr-eX-s3e"/>
                                 </connections>
@@ -548,7 +548,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nZc-G7-88x">
                                 <rect key="frame" x="756" y="153" width="207" height="215"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="ClothingNormal"/>
+                                <state key="normal" title="Reflective Gear" image="ClothingNormal"/>
                                 <connections>
                                     <action selector="clothingProtectionButton:" destination="Vz9-d1-FJN" eventType="touchUpInside" id="ShQ-KZ-r92"/>
                                 </connections>
@@ -556,7 +556,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xjA-Yb-g1Z">
                                 <rect key="frame" x="526" y="153" width="207" height="215"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="HeadGearNormal"/>
+                                <state key="normal" title="Hard Hat" image="HeadGearNormal"/>
                                 <connections>
                                     <action selector="headProtectionButton:" destination="Vz9-d1-FJN" eventType="touchUpInside" id="3le-OW-b2K"/>
                                 </connections>
@@ -564,7 +564,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ibq-LR-9B2">
                                 <rect key="frame" x="285" y="416" width="213" height="228"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="FireNormal"/>
+                                <state key="normal" title="Fire Extinguisher" image="FireNormal"/>
                                 <connections>
                                     <action selector="fireProtectionButton:" destination="Vz9-d1-FJN" eventType="touchUpInside" id="mdK-j2-Ra8"/>
                                 </connections>
@@ -572,7 +572,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2X7-JC-N3k">
                                 <rect key="frame" x="756" y="416" width="207" height="215"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="GlovesNormal"/>
+                                <state key="normal" title="Protective Gloves" image="GlovesNormal"/>
                                 <connections>
                                     <action selector="glovesProtectionButton:" destination="Vz9-d1-FJN" eventType="touchUpInside" id="GUZ-eL-IjZ"/>
                                 </connections>
@@ -580,7 +580,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bXB-bo-9S4">
                                 <rect key="frame" x="526" y="416" width="207" height="215"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="BootsNormal"/>
+                                <state key="normal" title="Protective Boots" image="BootsNormal"/>
                                 <connections>
                                     <action selector="bootsProtectionButton:" destination="Vz9-d1-FJN" eventType="touchUpInside" id="Hey-vQ-IL5"/>
                                 </connections>
@@ -588,7 +588,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lPG-Xj-Xra">
                                 <rect key="frame" x="61" y="416" width="207" height="215"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="HandsNormal"/>
+                                <state key="normal" title="Clean Hands" image="HandsNormal"/>
                                 <connections>
                                     <action selector="cleanHandsButton:" destination="Vz9-d1-FJN" eventType="touchUpInside" id="x3P-3p-ZrS"/>
                                 </connections>
@@ -1258,7 +1258,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Meh-QT-AgJ"/>
-        <segue reference="Lx0-oa-70s"/>
+        <segue reference="xgJ-Ed-tGn"/>
         <segue reference="YTo-zQ-nD9"/>
         <segue reference="a3h-OE-xzD"/>
         <segue reference="6kE-pI-hFK"/>
