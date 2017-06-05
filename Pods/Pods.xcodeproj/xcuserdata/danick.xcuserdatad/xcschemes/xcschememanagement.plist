@@ -9,6 +9,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>ConcentricProgressRingView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>LionheartExtensions.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Permit-to-work.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,7 +42,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>4D21AFDE292E3B23079DDE19A9E16E3E</key>
+		<key>4F9CA4B69FB313E5FDC7929D4B97EDFB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -47,12 +57,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BBFF3CF6DE5C958F516C0ECFAC795470</key>
+		<key>9C5A254C0BEBC74C762A9DE2E5223BD1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>C2E182B57F618F5A08557DF4AA92EFF1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CEAE6162A76F76569EB25CBEE92C1666</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E77EF14912DF67633D19DD6F09DB88EF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
