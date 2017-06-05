@@ -128,22 +128,23 @@ class NewPermitViewController : UIViewController, UITextFieldDelegate, UITextVie
     
     // Next button to protection page
     @IBAction func nextButton(_ sender: Any) {
-        let name = textfieldName.text
-        let type = textFieldType.text
-        let description = textFieldDescription.text
-        
-            if (name?.isEmpty)! || (type?.isEmpty)! || (description?.isEmpty)! {
-                
-                let alertController = UIAlertController(title: "Missing input", message: "Alle velden moeten ingevuld worden", preferredStyle: .alert)
-                
-                let defaultAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
-                alertController.addAction(defaultAction)
-                
-                present(alertController, animated: true, completion: nil)
-            } else {
-                createPermit ()
-                performSegue(withIdentifier: "goToProtection", sender: sender)
-            }
+//        let name = textfieldName.text
+//        let type = textFieldType.text
+//        let description = textFieldDescription.text
+//        
+//            if (name?.isEmpty)! || (type?.isEmpty)! || (description?.isEmpty)! {
+//                
+//                let alertController = UIAlertController(title: "Missing input", message: "Alle velden moeten ingevuld worden", preferredStyle: .alert)
+//                
+//                let defaultAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+//                alertController.addAction(defaultAction)
+//                
+//                present(alertController, animated: true, completion: nil)
+//            } else {
+//                createPermit ()
+//                performSegue(withIdentifier: "goToProtection", sender: sender)
+//            }
+        performSegue(withIdentifier: "goToProtection", sender: sender)
     }
     
     func displayDate() {
@@ -206,31 +207,31 @@ class NewPermitViewController : UIViewController, UITextFieldDelegate, UITextVie
         // Setting TextField styling
         textfieldName.layer.borderWidth = 1.0
         textfieldName.layer.borderColor = myColor.cgColor
-        textfieldName.layer.cornerRadius = 8;
+        textfieldName.layer.cornerRadius = 8
         textfieldName.layer.sublayerTransform = CATransform3DMakeTranslation(20, 0, 0)
         
         textFieldType.layer.borderWidth = 1.0
         textFieldType.layer.borderColor = myColor.cgColor
-        textFieldType.layer.cornerRadius = 8;
+        textFieldType.layer.cornerRadius = 8
         textFieldType.layer.sublayerTransform = CATransform3DMakeTranslation(20, 0, 0)
         
         textFieldDescription.layer.borderWidth = 1.0
         textFieldDescription.layer.borderColor = myColor.cgColor
-        textFieldDescription.layer.cornerRadius = 8;
+        textFieldDescription.layer.cornerRadius = 8
         textFieldDescription.layer.sublayerTransform = CATransform3DMakeTranslation(20, 20, 0)
         
         textFieldDate.layer.borderWidth = 1.0
         textFieldDate.layer.borderColor = myColor.cgColor
-        textFieldDate.layer.cornerRadius = 8;
+        textFieldDate.layer.cornerRadius = 8
         textFieldDate.layer.sublayerTransform = CATransform3DMakeTranslation(20, 0, 0)
 
         textFieldStep.layer.borderWidth = 1.0
         textFieldStep.layer.borderColor = myColor.cgColor
-        textFieldStep.layer.cornerRadius = 8;
+        textFieldStep.layer.cornerRadius = 8
 
         textFieldTime.layer.borderWidth = 1.0
         textFieldTime.layer.borderColor = myColor.cgColor
-        textFieldTime.layer.cornerRadius = 8;
+        textFieldTime.layer.cornerRadius = 8
         textFieldTime.layer.sublayerTransform = CATransform3DMakeTranslation(20, 0, 0)
 
         textFieldDescription.text = "Type your work description"
