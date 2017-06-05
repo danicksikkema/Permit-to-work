@@ -23,6 +23,9 @@
 		07AC7D391E7870640082412C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07AC7D371E7870640082412C /* LaunchScreen.storyboard */; };
 		07AC7D441E7870640082412C /* Permit_to_workTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AC7D431E7870640082412C /* Permit_to_workTests.swift */; };
 		07AC7D4F1E7870640082412C /* Permit_to_workUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AC7D4E1E7870640082412C /* Permit_to_workUITests.swift */; };
+		07C006A31EE590B40078A94C /* Protection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C006A21EE590B40078A94C /* Protection.swift */; };
+		07C006A51EE590E40078A94C /* Envirionment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C006A41EE590E40078A94C /* Envirionment.swift */; };
+		07C006A71EE590FA0078A94C /* Equipment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C006A61EE590FA0078A94C /* Equipment.swift */; };
 		07D3312C1EE0824800691A37 /* ConnectionCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D3312B1EE0824800691A37 /* ConnectionCheck.swift */; };
 		07DBA9731EDD81DB002E797C /* ProtectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DBA9721EDD81DB002E797C /* ProtectionViewController.swift */; };
 		07DBA9751EDE025F002E797C /* EnvironmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DBA9741EDE025F002E797C /* EnvironmentViewController.swift */; };
@@ -73,6 +76,9 @@
 		07AC7D4A1E7870640082412C /* Permit-to-workUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Permit-to-workUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07AC7D4E1E7870640082412C /* Permit_to_workUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Permit_to_workUITests.swift; sourceTree = "<group>"; };
 		07AC7D501E7870640082412C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		07C006A21EE590B40078A94C /* Protection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protection.swift; sourceTree = "<group>"; };
+		07C006A41EE590E40078A94C /* Envirionment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Envirionment.swift; sourceTree = "<group>"; };
+		07C006A61EE590FA0078A94C /* Equipment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Equipment.swift; sourceTree = "<group>"; };
 		07D3312B1EE0824800691A37 /* ConnectionCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionCheck.swift; sourceTree = "<group>"; };
 		07DBA9721EDD81DB002E797C /* ProtectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtectionViewController.swift; sourceTree = "<group>"; };
 		07DBA9741EDE025F002E797C /* EnvironmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentViewController.swift; sourceTree = "<group>"; };
@@ -161,6 +167,9 @@
 			children = (
 				0709C4921EC60F460029AC35 /* Controllers */,
 				07342A021E9BF91400BAE46F /* Permit.swift */,
+				07C006A61EE590FA0078A94C /* Equipment.swift */,
+				07C006A41EE590E40078A94C /* Envirionment.swift */,
+				07C006A21EE590B40078A94C /* Protection.swift */,
 				0783AAE81EE3475E00500B9B /* Precaution.swift */,
 				074DB6E91EBA7D6600B665AF /* Template.swift */,
 				07D3312B1EE0824800691A37 /* ConnectionCheck.swift */,
@@ -504,12 +513,15 @@
 				07DBA9771EDE0ADC002E797C /* PrecautionsViewController.swift in Sources */,
 				07DBA9791EDE0EA2002E797C /* FeedbackViewController.swift in Sources */,
 				07DBA9751EDE025F002E797C /* EnvironmentViewController.swift in Sources */,
+				07C006A51EE590E40078A94C /* Envirionment.swift in Sources */,
 				0783AAE91EE3475F00500B9B /* Precaution.swift in Sources */,
 				074DB6EC1EBB2E4100B665AF /* MainNavigationController.swift in Sources */,
 				074806FA1EC06A4000D4B576 /* PermitViewController.swift in Sources */,
 				07AC7D311E7870640082412C /* ViewController.swift in Sources */,
+				07C006A31EE590B40078A94C /* Protection.swift in Sources */,
 				07DBA9731EDD81DB002E797C /* ProtectionViewController.swift in Sources */,
 				07D3312C1EE0824800691A37 /* ConnectionCheck.swift in Sources */,
+				07C006A71EE590FA0078A94C /* Equipment.swift in Sources */,
 				074DB6EA1EBA7D6600B665AF /* Template.swift in Sources */,
 				074DB6F01EBB4B8700B665AF /* NewPermitViewController.swift in Sources */,
 				07AC7D2F1E7870640082412C /* AppDelegate.swift in Sources */,

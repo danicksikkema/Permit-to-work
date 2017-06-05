@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Alamofire
 
 class FeedbackViewController : UIViewController {
     
@@ -29,7 +30,7 @@ class FeedbackViewController : UIViewController {
     var statusSafetyPrecautionsButton = true
     var statusPersonalSafetyButton = true
     var statusEnvironmentSafetyButton = true
-
+    
     @IBAction func scoringButton(_ sender: UIButton) {
         switch statusScoringButton {
         case false:
@@ -53,6 +54,8 @@ class FeedbackViewController : UIViewController {
     }
     
     @IBAction func riskButton(_ sender: UIButton) {
+        let riskFeedback = "Je bent dit risico vergeten"
+        
         switch statusRiskButton {
         case false:
             riskButton.setImage( UIImage.init(named: "RiskNormal"), for: .normal)
@@ -63,6 +66,8 @@ class FeedbackViewController : UIViewController {
             riskButton.isSelected = false
             statusRiskButton = true
             
+            textViewFeedback.text = ""
+            
         case true:
             riskButton.setImage( UIImage.init(named: "RiskActive"), for: .selected)
             riskButton.layer.backgroundColor = buttonActiveBackgroundColor.cgColor
@@ -71,6 +76,8 @@ class FeedbackViewController : UIViewController {
             print("true")
             riskButton.isSelected = true
             statusRiskButton = false
+            
+            textViewFeedback.text = riskFeedback
         }
     }
     
@@ -180,5 +187,6 @@ class FeedbackViewController : UIViewController {
         textViewFeedback.layer.cornerRadius = 8
         textViewFeedback.layer.borderWidth = 1.0
         textViewFeedback.layer.borderColor = textviewBorderColor.cgColor
+        textViewFeedback.isUserInteractionEnabled = false
     }
 }

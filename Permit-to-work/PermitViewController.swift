@@ -40,7 +40,7 @@ class PermitViewController: UIViewController {
         if let permit = activePermit {
             let permitId = permit.permitId
             
-            let editPermitParameters: [String : Any] = ["permitId": permitId, "permitName": namePermitTextField.text!, "type": Int((typePermitTextField?.text!)!)!]
+            let editPermitParameters: [String : Any] = ["permitId": permitId, "permitName": namePermitTextField.text!, "type": typePermitTextField.text!]
             
             Alamofire.request("http://avhx.com/api/v1/permits/\(permitId)", method: .put, parameters: editPermitParameters, encoding: JSONEncoding.default).responseString { response in
                 
@@ -55,10 +55,11 @@ class PermitViewController: UIViewController {
                 }
                 
                 if response.result.isSuccess {
-                    let editPermit = Permit (fromJSON: editPermitParameters)
+                    let editPermit = Permit (permitId: permitId, permitName: self.namePermitTextField.text!, permitType: self.typePermitTextField.text!, permitDescription: "Description")
                     
                     let permits = Permits.instance
                     permits.editPermit(permit: editPermit)
+
                 } else {
                     print("error")
                 }

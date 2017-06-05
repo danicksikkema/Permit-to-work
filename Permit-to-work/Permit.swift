@@ -36,26 +36,6 @@ class Permit {
     }
 }
 
-class Protection {
-    var protectionId            : Int = 0
-    var protectionName          : String = ""
-    
-    init (protectionId: Int, protectionName: String) {
-        self.protectionId = protectionId
-        self.protectionName = protectionName
-    }
-}
-
-
-class Envirionment {
-    
-}
-
-class Equipment {
-
-}
-
-
 class Permits {
     var allPermits : [Permit] = []
     
@@ -85,11 +65,11 @@ class Permits {
             for permitAsJSON in permits {
                 let newPermit = Permit (fromJSON: permitAsJSON)
 
-                // 5: Voeg aan de lijst met klanten, nieuwe klant toe.
+                // 5: Voeg aan de lijst met klanten, nieuwe permit toe.
                 allPermits.append(newPermit)
             }
 
-            // 6: Wordt gekoppeld aan de table view en stuurt een sender als er nieuwe klanten zijn.
+            // 6: Wordt gekoppeld aan de table view en stuurt een sender als er nieuwe permits zijn.
             NotificationCenter.default.post(name: Notification.Name("NewPermits"), object: nil)
         }
     }
@@ -99,8 +79,8 @@ class Permits {
     }
     
     func editPermit (permit : Permit) {
-//        allPermits.remove(at: permit.id)
-//        allPermits.insert(permit, at: permit.id)
+            allPermits.remove(at: permit.permitId)
+            allPermits.insert(permit, at: permit.permitId)
     }
     
     func deletePermit (permit : Permit) {

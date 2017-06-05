@@ -11,7 +11,6 @@ import UIKit
 import Alamofire
 
 class PrecautionsViewController : UIViewController {
-    var precautions = Precautions.instance
     
     // row 1
     @IBOutlet weak var button1: UIButton!

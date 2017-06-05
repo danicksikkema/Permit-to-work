@@ -9,23 +9,18 @@
 import Foundation
 
 class Precaution {
+    var precautionId    : Int = 0
     var precautionName  : String = ""
     
-    init (precautionName: String) {
+    init (precautionId: Int, precautionName: String) {
+        self.precautionId = precautionId
         self.precautionName = precautionName
     }
 }
 
-class Precautions {
-    var allPrecautions : [Precaution] = []
+class PrecautionFeedback {
     
-    static let instance : Precautions = Precautions()
-    
-    private init() {
-        
-    }
-    
-    func addNewPrecaution (precaution : Precaution) {
-        allPrecautions.append (precaution)
-    }
 }
+
+
+
