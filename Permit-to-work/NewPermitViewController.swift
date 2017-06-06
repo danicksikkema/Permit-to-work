@@ -94,7 +94,7 @@ class NewPermitViewController : UIViewController, UITextFieldDelegate, UITextVie
             }
         }
         
-        let newPermit = Permit (permitId: 0, permitName: textfieldName.text!, permitType: textFieldType.text!, permitDescription: textFieldDescription.text!)
+        let newPermit = Permit (id: 0, permitName: textfieldName.text!, permitType: textFieldType.text!, permitDescription: textFieldDescription.text!)
         
         let permits = Permits.instance
         permits.addNewPermit(permit: newPermit)

@@ -11,13 +11,13 @@ import Alamofire
 import SwiftyJSON
 
 class Permit {
-    var permitId            : Int = 0
+    var id                  : Int = 0
     var permitName          : String = ""
     var permitType          : String = ""
     var permitDescription   : String = ""
     
-    init (permitId: Int, permitName: String, permitType: String, permitDescription: String) {
-        self.permitId = permitId
+    init (id: Int, permitName: String, permitType: String, permitDescription: String) {
+        self.id = id
         self.permitName = permitName
         self.permitType = permitType
         self.permitDescription = permitDescription
@@ -28,7 +28,7 @@ class Permit {
         // 4: Als er een array is dan wordt dit opgesagen als een dictionary met [String : Any]
         if let permitAsDictionary = fromJSON as? [String: Any] {
             
-            self.permitId = permitAsDictionary ["permitId"] as! Int
+            self.id = permitAsDictionary ["permitId"] as! Int
             self.permitName = permitAsDictionary ["permitName"] as! String
             self.permitType = permitAsDictionary ["type"] as! String
             self.permitDescription = permitAsDictionary ["workDescription"] as! String
@@ -69,8 +69,6 @@ class Permits {
                 allPermits.append(newPermit)
             }
             
-            
-
             // 6: Wordt gekoppeld aan de table view en stuurt een sender als er nieuwe permits zijn.
             NotificationCenter.default.post(name: Notification.Name("NewPermits"), object: nil)
         }
@@ -81,8 +79,8 @@ class Permits {
     }
     
     func editPermit (permit : Permit) {
-            allPermits.remove(at: permit.permitId)
-            allPermits.insert(permit, at: permit.permitId)
+            allPermits.remove(at: permit.id)
+            allPermits.insert(permit, at: permit.id)
     }
     
     func deletePermit (permit : Permit) {

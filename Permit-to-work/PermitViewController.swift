@@ -35,10 +35,9 @@ class PermitViewController: UIViewController {
         
     }
     
-    @IBAction func EditPermitButton(_ sender: Any) {
-        
+    func savePermitData () {
         if let permit = activePermit {
-            let permitId = permit.permitId
+            let permitId = permit.id
             
             let editPermitParameters: [String : Any] = ["permitId": permitId, "permitName": namePermitTextField.text!, "type": typePermitTextField.text!]
             
@@ -49,32 +48,43 @@ class PermitViewController: UIViewController {
                     print(response)
                     print(response.result)
                     print(response.result.isSuccess)
-                
+                    
                 } else {
                     print("error")
                 }
                 
                 if response.result.isSuccess {
-                    let editPermit = Permit (permitId: permitId, permitName: self.namePermitTextField.text!, permitType: self.typePermitTextField.text!, permitDescription: "Description")
+                    let editPermit = Permit (id: permitId, permitName: self.namePermitTextField.text!, permitType: self.typePermitTextField.text!, permitDescription: "Description")
                     
                     let permits = Permits.instance
                     permits.editPermit(permit: editPermit)
-
+                    
                 } else {
                     print("error")
                 }
             }
             
+            // Save as object
+            let editPermit = Permit (id: permitId, permitName: self.namePermitTextField.text!, permitType: self.typePermitTextField.text!, permitDescription: "Description")
+            permits.editPermit(permit: editPermit)
+            
+            NotificationCenter.default.post(name: Notification.Name("EditPermits"), object: nil)
+        }
+    }
+    
+    @IBAction func EditPermitButton(_ sender: Any) {
+        
+        savePermitData()
+        
             // Go back to
             let mainNavigationController = storyboard?.instantiateViewController(withIdentifier: "MainNavigationController") as! MainNavigationController
             
             present(mainNavigationController, animated: true, completion: nil)
-        }
     }
     
     @IBAction func deletePermitButton(_ sender: Any) {
         if let permit = activePermit {
-            let permitId = permit.permitId
+            let permitId = permit.id
             
             Alamofire.request("http://avhx.com/api/v1/permits/\(permitId)", method: .delete, encoding: JSONEncoding.default).responseString { response in
                 

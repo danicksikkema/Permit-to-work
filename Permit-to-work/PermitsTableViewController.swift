@@ -21,6 +21,7 @@ class PermitsTableViewController : UITableViewController {
         
         // Als er nieuwe klanten zijn worden die ingeladen door de verversTabel functie.
         NotificationCenter.default.addObserver(self, selector: #selector(verversTabel), name: Notification.Name("NewPermits"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(verversTabel), name: Notification.Name("EditPermits"), object: nil)
     }
     
     func verversTabel () {
