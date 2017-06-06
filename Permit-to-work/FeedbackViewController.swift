@@ -27,46 +27,36 @@ class FeedbackViewController : UIViewController {
     @IBOutlet weak var personalSafetyButton: UIButton!
     @IBOutlet weak var environmentSafetyButton: UIButton!
     
-    var statusScoringButton = true
-    var statusRiskButton = true
-    var statusSafetyPrecautionsButton = true
-    var statusPersonalSafetyButton = true
-    var statusEnvironmentSafetyButton = true
-    
     @IBAction func scoringButton(_ sender: UIButton) {
-        switch statusScoringButton {
+        
+        sender.isSelected = !sender.isSelected
+        
+        switch sender.isSelected {
         case false:
             scoringButton.setImage( UIImage.init(named: "ScoringNormal"), for: .normal)
             scoringButton.layer.backgroundColor = buttonBackgroundColor.cgColor
             scoringButton.layer.borderWidth = 1.0
             scoringButton.layer.borderColor = buttonBorderColor.cgColor
-            print ("false")
-            scoringButton.isSelected = false
-            statusScoringButton = true
             
         case true:
             scoringButton.setImage( UIImage.init(named: "ScoringActive"), for: .selected)
             scoringButton.layer.backgroundColor = buttonActiveBackgroundColor.cgColor
             scoringButton.layer.borderWidth = 1.0
             scoringButton.layer.borderColor = textviewBorderColor.cgColor
-            print("true")
-            scoringButton.isSelected = true
-            statusScoringButton = false
         }
     }
     
     @IBAction func riskButton(_ sender: UIButton) {
         let riskFeedback = "Je bent dit risico vergeten"
         
-        switch statusRiskButton {
+        sender.isSelected = !sender.isSelected
+        
+        switch sender.isSelected {
         case false:
             riskButton.setImage( UIImage.init(named: "RiskNormal"), for: .normal)
             riskButton.layer.backgroundColor = buttonBackgroundColor.cgColor
             riskButton.layer.borderWidth = 1.0
             riskButton.layer.borderColor = buttonBorderColor.cgColor
-            print ("false")
-            riskButton.isSelected = false
-            statusRiskButton = true
             
             textViewFeedback.text = ""
             
@@ -75,77 +65,65 @@ class FeedbackViewController : UIViewController {
             riskButton.layer.backgroundColor = buttonActiveBackgroundColor.cgColor
             riskButton.layer.borderWidth = 1.0
             riskButton.layer.borderColor = textviewBorderColor.cgColor
-            print("true")
-            riskButton.isSelected = true
-            statusRiskButton = false
             
             textViewFeedback.text = riskFeedback
         }
     }
     
     @IBAction func safetyPrecautionsButton(_ sender: UIButton) {
-        switch statusSafetyPrecautionsButton {
+        
+        sender.isSelected = !sender.isSelected
+        
+        switch sender.isSelected {
         case false:
             safetyPrecautionsButton.setImage( UIImage.init(named: "SafetyNormal"), for: .normal)
             safetyPrecautionsButton.layer.backgroundColor = buttonBackgroundColor.cgColor
             safetyPrecautionsButton.layer.borderWidth = 1.0
             safetyPrecautionsButton.layer.borderColor = buttonBorderColor.cgColor
-            print ("false")
-            safetyPrecautionsButton.isSelected = false
-            statusSafetyPrecautionsButton = true
             
         case true:
             safetyPrecautionsButton.setImage( UIImage.init(named: "SafetyActive"), for: .selected)
             safetyPrecautionsButton.layer.backgroundColor = buttonActiveBackgroundColor.cgColor
             safetyPrecautionsButton.layer.borderWidth = 1.0
             safetyPrecautionsButton.layer.borderColor = textviewBorderColor.cgColor
-            print("true")
-            safetyPrecautionsButton.isSelected = true
-            statusSafetyPrecautionsButton = false
         }
     }
     
     @IBAction func personalSafetyButton(_ sender: UIButton) {
-        switch statusPersonalSafetyButton {
+        
+        sender.isSelected = !sender.isSelected
+        
+        switch sender.isSelected {
         case false:
             personalSafetyButton.setImage( UIImage.init(named: "PersonalNormal"), for: .normal)
             personalSafetyButton.layer.backgroundColor = buttonBackgroundColor.cgColor
             personalSafetyButton.layer.borderWidth = 1.0
             personalSafetyButton.layer.borderColor = buttonBorderColor.cgColor
-            print ("false")
-            personalSafetyButton.isSelected = false
-            statusPersonalSafetyButton = true
             
         case true:
             personalSafetyButton.setImage( UIImage.init(named: "PersonalActive"), for: .selected)
             personalSafetyButton.layer.backgroundColor = buttonActiveBackgroundColor.cgColor
             personalSafetyButton.layer.borderWidth = 1.0
             personalSafetyButton.layer.borderColor = textviewBorderColor.cgColor
-            print("true")
-            personalSafetyButton.isSelected = true
-            statusPersonalSafetyButton = false
         }
     }
     
     @IBAction func environmentSafetyButton(_ sender: UIButton) {
-        switch statusEnvironmentSafetyButton {
+        
+        sender.isSelected = !sender.isSelected
+        
+        switch sender.isSelected {
         case false:
             environmentSafetyButton.setImage( UIImage.init(named: "EnvironmentNormal"), for: .normal)
             environmentSafetyButton.layer.backgroundColor = buttonBackgroundColor.cgColor
             environmentSafetyButton.layer.borderWidth = 1.0
             environmentSafetyButton.layer.borderColor = buttonBorderColor.cgColor
-            print ("false")
-            environmentSafetyButton.isSelected = false
-            statusRiskButton = true
             
         case true:
             environmentSafetyButton.setImage( UIImage.init(named: "EnvironmentActive"), for: .selected)
             environmentSafetyButton.layer.backgroundColor = buttonActiveBackgroundColor.cgColor
             environmentSafetyButton.layer.borderWidth = 1.0
             environmentSafetyButton.layer.borderColor = textviewBorderColor.cgColor
-            print("true")
-            environmentSafetyButton.isSelected = true
-            statusEnvironmentSafetyButton = false
         }
     }
     

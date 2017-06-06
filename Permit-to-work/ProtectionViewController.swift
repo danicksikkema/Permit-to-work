@@ -166,6 +166,7 @@ class ProtectionViewController : UIViewController {
     
     func ValidateAndCreateFeedback () {
         
+        // Deze buttons moeten geselecteerd worden
         let buttonValidator: [UIButton] = [weldingHelmetButton, fireProtectionButton]
         
         for button in buttonValidator {
