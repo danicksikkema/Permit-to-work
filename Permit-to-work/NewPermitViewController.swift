@@ -127,22 +127,24 @@ class NewPermitViewController : UIViewController, UITextFieldDelegate, UITextVie
     
     // Next button to protection page
     @IBAction func nextButton(_ sender: Any) {
-        let name = textfieldName.text
-        let type = textFieldType.text
-        let description = textFieldDescription.text
+//        let name = textfieldName.text
+//        let type = textFieldType.text
+//        let description = textFieldDescription.text
+//        
+//            if (name?.isEmpty)! || (type?.isEmpty)! || (description?.isEmpty)! {
+//                
+//                let alertController = UIAlertController(title: "Missing input", message: "Alle velden moeten ingevuld worden", preferredStyle: .alert)
+//                
+//                let defaultAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+//                alertController.addAction(defaultAction)
+//                
+//                present(alertController, animated: true, completion: nil)
+//            } else {
+//                createPermit ()
+//                performSegue(withIdentifier: "goToProtection", sender: sender)
+//            }
         
-            if (name?.isEmpty)! || (type?.isEmpty)! || (description?.isEmpty)! {
-                
-                let alertController = UIAlertController(title: "Missing input", message: "Alle velden moeten ingevuld worden", preferredStyle: .alert)
-                
-                let defaultAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
-                alertController.addAction(defaultAction)
-                
-                present(alertController, animated: true, completion: nil)
-            } else {
-                createPermit ()
-                performSegue(withIdentifier: "goToProtection", sender: sender)
-            }
+        performSegue(withIdentifier: "goToProtection", sender: sender)
     }
     
     func displayDate() {

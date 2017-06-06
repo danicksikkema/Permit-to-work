@@ -8,7 +8,6 @@ target 'Permit-to-work' do
   # Pods for Permit-to-work
   pod 'Alamofire', '~> 4.4'
   pod 'SwiftyJSON'
-  pod 'ConcentricProgressRingView'
 
   target 'Permit-to-workTests' do
     inherit! :search_paths
@@ -19,5 +18,4 @@ target 'Permit-to-work' do
     inherit! :search_paths
     # Pods for testing
   end
-
 end
