@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0724D9EC1EE70CFD0027B53C /* Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0724D9EB1EE70CFD0027B53C /* Feedback.swift */; };
 		07342A031E9BF91400BAE46F /* Permit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07342A021E9BF91400BAE46F /* Permit.swift */; };
 		074806FA1EC06A4000D4B576 /* PermitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074806F91EC06A4000D4B576 /* PermitViewController.swift */; };
 		074DB6EA1EBA7D6600B665AF /* Template.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074DB6E91EBA7D6600B665AF /* Template.swift */; };
@@ -54,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0724D9EB1EE70CFD0027B53C /* Feedback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feedback.swift; sourceTree = "<group>"; };
 		07342A021E9BF91400BAE46F /* Permit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Permit.swift; sourceTree = "<group>"; };
 		074806F91EC06A4000D4B576 /* PermitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermitViewController.swift; sourceTree = "<group>"; };
 		074DB6E91EBA7D6600B665AF /* Template.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Template.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 			children = (
 				0709C4921EC60F460029AC35 /* Controllers */,
 				07342A021E9BF91400BAE46F /* Permit.swift */,
+				0724D9EB1EE70CFD0027B53C /* Feedback.swift */,
 				07C006A61EE590FA0078A94C /* Equipment.swift */,
 				07C006A41EE590E40078A94C /* Envirionment.swift */,
 				07C006A21EE590B40078A94C /* Protection.swift */,
@@ -510,6 +513,7 @@
 			files = (
 				074DB6EE1EBB317500B665AF /* LoginViewController.swift in Sources */,
 				074DB6F41EBB56C500B665AF /* PermitsTableViewController.swift in Sources */,
+				0724D9EC1EE70CFD0027B53C /* Feedback.swift in Sources */,
 				07DBA9771EDE0ADC002E797C /* PrecautionsViewController.swift in Sources */,
 				07DBA9791EDE0EA2002E797C /* FeedbackViewController.swift in Sources */,
 				07DBA9751EDE025F002E797C /* EnvironmentViewController.swift in Sources */,

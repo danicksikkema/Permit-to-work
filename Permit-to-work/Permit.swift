@@ -62,12 +62,14 @@ class Permits {
         if let permits = json as? [Any] {
             
             // 3: Loop door de array van permits en haal ze er uit en sla op als dictionary in variable newPermit.
-            for permitAsJSON in permits {
-                let newPermit = Permit (fromJSON: permitAsJSON)
+            for permit in permits {
+                let newPermit = Permit (fromJSON: permit)
 
                 // 5: Voeg aan de lijst met klanten, nieuwe permit toe.
                 allPermits.append(newPermit)
             }
+            
+            
 
             // 6: Wordt gekoppeld aan de table view en stuurt een sender als er nieuwe permits zijn.
             NotificationCenter.default.post(name: Notification.Name("NewPermits"), object: nil)

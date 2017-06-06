@@ -18,6 +18,3 @@ class Envirionment {
     }
 }
 
-class EnvirionmentFeedback {
-    
-}

@@ -18,8 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         Permits.instance.getPermitsFromServer ()
-        return true
+        RisksFeedback.instance.getRisksFeedbackFromServer ()
         
+        return true
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

@@ -12,6 +12,8 @@ import Alamofire
 
 class FeedbackViewController : UIViewController {
     
+    let risksFeedback = RisksFeedback.instance
+    
     let buttonBorderColor = UIColor(red:0.20, green:0.28, blue:0.42, alpha:1.0)
     let buttonBackgroundColor = UIColor(red:0.16, green:0.23, blue:0.33, alpha:0.8)
     let buttonActiveBackgroundColor = UIColor(red:0.24, green:0.34, blue:0.5, alpha:1.0)
@@ -47,7 +49,8 @@ class FeedbackViewController : UIViewController {
     }
     
     @IBAction func riskButton(_ sender: UIButton) {
-        let riskFeedback = "Je bent dit risico vergeten"
+        
+        let riskFeedback = risksFeedback.allRisksFeedback
         
         sender.isSelected = !sender.isSelected
         
@@ -66,7 +69,9 @@ class FeedbackViewController : UIViewController {
             riskButton.layer.borderWidth = 1.0
             riskButton.layer.borderColor = textviewBorderColor.cgColor
             
-            textViewFeedback.text = riskFeedback
+            let total = risksFeedback.allRisksFeedback.count
+            
+            textViewFeedback.text = riskFeedback[total - 1].feedback
         }
     }
     

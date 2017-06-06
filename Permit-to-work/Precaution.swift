@@ -18,9 +18,6 @@ class Precaution {
     }
 }
 
-class PrecautionFeedback {
-    
-}
 
 
 
