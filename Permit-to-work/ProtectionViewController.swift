@@ -138,7 +138,7 @@ class ProtectionViewController : UIViewController {
     
     @IBAction func nextButton(_ sender: Any) {
         findSelected ()
-        createFeedback ()
+        ValidateAndCreateFeedback ()
     }
 
     func findSelected () {
@@ -164,17 +164,41 @@ class ProtectionViewController : UIViewController {
         }
     }
     
-    func createFeedback () {
-        let parametersFeedback: [String : Any] = ["feedback": "Dit moet je anders doen", "score": 10 ]
+    func ValidateAndCreateFeedback () {
         
-        Alamofire.request("http://avhx.com/api/v1/protectionfb", method: .post, parameters: parametersFeedback, encoding: JSONEncoding.default).responseString { response in
-            
-            if response.result.value != nil {
-                debugPrint(response)
-                print(response.result)
-                print(response.result.isSuccess)
+        let buttonValidator: [UIButton] = [weldingHelmetButton, fireProtectionButton]
+        
+        for button in buttonValidator {
+            if button.isSelected == false {
+                let parametersFeedback: [String : Any] = ["feedback": "Antwoord is fout! Je bent \(button.titleLabel!.text!) vergeten!", "score": 0 ]
+                
+                print(parametersFeedback)
+                
+                Alamofire.request("http://avhx.com/api/v1/protectionfb", method: .post, parameters: parametersFeedback, encoding: JSONEncoding.default).responseString { response in
+                    
+                    if response.result.value != nil {
+                        debugPrint(response)
+                        print(response.result)
+                        print(response.result.isSuccess)
+                    } else {
+                        print("error")
+                    }
+                }
             } else {
-                print("error")
+                let parametersFeedback: [String : Any] = ["feedback": "Antwoord is goed! Je hebt \(button.titleLabel!.text!) gekozen!", "score": 10 ]
+                
+                print(parametersFeedback)
+                
+                Alamofire.request("http://avhx.com/api/v1/protectionfb", method: .post, parameters: parametersFeedback, encoding: JSONEncoding.default).responseString { response in
+                    
+                    if response.result.value != nil {
+                        debugPrint(response)
+                        print(response.result)
+                        print(response.result.isSuccess)
+                    } else {
+                        print("error")
+                    }
+                }
             }
         }
     }
