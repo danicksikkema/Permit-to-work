@@ -20,77 +20,53 @@ class PrecautionsViewController : UIViewController {
     
     @IBAction func button1(_ sender: UIButton) {
         
-        var statusButton1 = !sender.isSelected
+        sender.isSelected = !sender.isSelected
         
-        switch statusButton1 {
-        case false:
-            button1.setBackgroundImage(UIImage.init(named: "PrecautionNormal"), for: .normal)
-            print ("false")
-            button1.isSelected = false
-            statusButton1 = true
+        switch sender.isSelected {
+            case false:
+                button1.setBackgroundImage(UIImage.init(named: "PrecautionNormal"), for: .normal)
             
-        case true:
-            button1.setBackgroundImage( UIImage.init(named: "PrecautionActive"), for: .selected)
-            print("true")
-            button1.isSelected = true
-            statusButton1 = false
+            case true:
+                button1.setBackgroundImage( UIImage.init(named: "PrecautionActive"), for: .selected)
         }
     }
     
     @IBAction func button2(_ sender: UIButton) {
         
-        var statusButton2 = !sender.isSelected
+        sender.isSelected = !sender.isSelected
         
-        switch statusButton2 {
-        case false:
-            button2.setBackgroundImage(UIImage.init(named: "PrecautionNormal"), for: .normal)
-            print ("false")
-            button2.isSelected = false
-            statusButton2 = true
+        switch sender.isSelected {
+            case false:
+                button2.setBackgroundImage(UIImage.init(named: "PrecautionNormal"), for: .normal)
             
-        case true:
-            button2.setBackgroundImage( UIImage.init(named: "PrecautionActive"), for: .selected)
-            print("true")
-            button2.isSelected = true
-            statusButton2 = false
+            case true:
+                button2.setBackgroundImage( UIImage.init(named: "PrecautionActive"), for: .selected)
         }
     }
     
     @IBAction func button3(_ sender: UIButton) {
         
-        var statusButton3 = !sender.isSelected
+        sender.isSelected = !sender.isSelected
         
-        switch statusButton3 {
-        case false:
-            button3.setBackgroundImage(UIImage.init(named: "PrecautionNormal"), for: .normal)
-            print ("false")
-            button3.isSelected = false
-            statusButton3 = true
+        switch sender.isSelected {
+            case false:
+                button3.setBackgroundImage(UIImage.init(named: "PrecautionNormal"), for: .normal)
             
-        case true:
-            button3.setBackgroundImage( UIImage.init(named: "PrecautionActive"), for: .selected)
-            print("true")
-            button3.isSelected = true
-            statusButton3 = false
+            case true:
+                button3.setBackgroundImage( UIImage.init(named: "PrecautionActive"), for: .selected)
         }
     }
     
     @IBAction func button4(_ sender: UIButton) {
         
-        var statusButton4 = !sender.isSelected
+        sender.isSelected = !sender.isSelected
         
-        switch statusButton4 {
-        case false:
-            button4.setBackgroundImage(UIImage.init(named: "PrecautionNormal"), for: .normal)
-            print ("false")
-            button4.isSelected = false
-            statusButton4 = true
+        switch sender.isSelected {
+            case false:
+                button4.setBackgroundImage(UIImage.init(named: "PrecautionNormal"), for: .normal)
             
-        case true:
-            button4.setBackgroundImage( UIImage.init(named: "PrecautionActive"), for: .selected)
-            print("true")
-            button4.isSelected = true
-            statusButton4 = false
+            case true:
+                button4.setBackgroundImage( UIImage.init(named: "PrecautionActive"), for: .selected)
         }
     }
     
@@ -102,77 +78,53 @@ class PrecautionsViewController : UIViewController {
     
     @IBAction func button5(_ sender: UIButton) {
         
-        var statusButton5 = !sender.isSelected
+        sender.isSelected = !sender.isSelected
         
-        switch statusButton5 {
-        case false:
-            button5.setBackgroundImage(UIImage.init(named: "PrecautionNormal"), for: .normal)
-            print ("false")
-            button5.isSelected = false
-            statusButton5 = true
+        switch sender.isSelected {
+            case false:
+                button5.setBackgroundImage(UIImage.init(named: "PrecautionNormal"), for: .normal)
             
-        case true:
-            button5.setBackgroundImage( UIImage.init(named: "PrecautionActive"), for: .selected)
-            print("true")
-            button5.isSelected = true
-            statusButton5 = false
+            case true:
+                button5.setBackgroundImage( UIImage.init(named: "PrecautionActive"), for: .selected)
         }
     }
     
     @IBAction func button6(_ sender: UIButton) {
         
-        var statusButton6 = !sender.isSelected
+        sender.isSelected = !sender.isSelected
         
-        switch statusButton6 {
-        case false:
-            button6.setBackgroundImage(UIImage.init(named: "PrecautionNormal"), for: .normal)
-            print ("false")
-            button6.isSelected = false
-            statusButton6 = true
+        switch sender.isSelected {
+            case false:
+                button6.setBackgroundImage(UIImage.init(named: "PrecautionNormal"), for: .normal)
             
-        case true:
-            button6.setBackgroundImage( UIImage.init(named: "PrecautionActive"), for: .selected)
-            print("true")
-            button6.isSelected = true
-            statusButton6 = false
+            case true:
+                button6.setBackgroundImage( UIImage.init(named: "PrecautionActive"), for: .selected)
         }
     }
     
     @IBAction func button7(_ sender: UIButton) {
         
-        var statusButton7 = !sender.isSelected
+        sender.isSelected = !sender.isSelected
         
-        switch statusButton7 {
-        case false:
-            button7.setBackgroundImage(UIImage.init(named: "PrecautionNormal"), for: .normal)
-            print ("false")
-            button7.isSelected = false
-            statusButton7 = true
+        switch sender.isSelected {
+            case false:
+                button7.setBackgroundImage(UIImage.init(named: "PrecautionNormal"), for: .normal)
             
-        case true:
-            button7.setBackgroundImage( UIImage.init(named: "PrecautionActive"), for: .selected)
-            print("true")
-            button7.isSelected = true
-            statusButton7 = false
+            case true:
+                button7.setBackgroundImage( UIImage.init(named: "PrecautionActive"), for: .selected)
         }
     }
     
     @IBAction func button8(_ sender: UIButton) {
         
-        var statusButton8 = !sender.isSelected
+        sender.isSelected = !sender.isSelected
         
-        switch statusButton8 {
-        case false:
-            button8.setBackgroundImage(UIImage.init(named: "PrecautionNormal"), for: .normal)
-            print ("false")
-            button8.isSelected = false
-            statusButton8 = true
+        switch sender.isSelected {
+            case false:
+                button8.setBackgroundImage(UIImage.init(named: "PrecautionNormal"), for: .normal)
             
-        case true:
-            button8.setBackgroundImage( UIImage.init(named: "PrecautionActive"), for: .selected)
-            print("true")
-            button8.isSelected = true
-            statusButton8 = false
+            case true:
+                button8.setBackgroundImage( UIImage.init(named: "PrecautionActive"), for: .selected)
         }
     }
     
@@ -183,77 +135,53 @@ class PrecautionsViewController : UIViewController {
     
     @IBAction func button9(_ sender: UIButton) {
         
-        var statusButton9 = !sender.isSelected
+        sender.isSelected = !sender.isSelected
         
-        switch statusButton9 {
-        case false:
-            button9.setBackgroundImage(UIImage.init(named: "PrecautionNormal"), for: .normal)
-            print ("false")
-            button9.isSelected = false
-            statusButton9 = true
+        switch sender.isSelected {
+            case false:
+                button9.setBackgroundImage(UIImage.init(named: "PrecautionNormal"), for: .normal)
             
-        case true:
-            button9.setBackgroundImage( UIImage.init(named: "PrecautionActive"), for: .selected)
-            print("true")
-            button9.isSelected = true
-            statusButton9 = false
+            case true:
+                button9.setBackgroundImage( UIImage.init(named: "PrecautionActive"), for: .selected)
         }
     }
     
     @IBAction func button10(_ sender: UIButton) {
         
-        var statusButton10 = !sender.isSelected
+        sender.isSelected = !sender.isSelected
         
-        switch statusButton10 {
-        case false:
-            button10.setBackgroundImage(UIImage.init(named: "PrecautionNormal"), for: .normal)
-            print ("false")
-            button10.isSelected = false
-            statusButton10 = true
+        switch sender.isSelected {
+            case false:
+                button10.setBackgroundImage(UIImage.init(named: "PrecautionNormal"), for: .normal)
             
-        case true:
-            button10.setBackgroundImage( UIImage.init(named: "PrecautionActive"), for: .selected)
-            print("true")
-            button10.isSelected = true
-            statusButton10 = false
+            case true:
+                button10.setBackgroundImage( UIImage.init(named: "PrecautionActive"), for: .selected)
         }
     }
     
     @IBAction func button11(_ sender: UIButton) {
         
-        var statusButton11 = !sender.isSelected
+        sender.isSelected = !sender.isSelected
         
-        switch statusButton11 {
-        case false:
-            button11.setBackgroundImage(UIImage.init(named: "PrecautionNormal"), for: .normal)
-            print ("false")
-            button11.isSelected = false
-            statusButton11 = true
+        switch sender.isSelected {
+            case false:
+                button11.setBackgroundImage(UIImage.init(named: "PrecautionNormal"), for: .normal)
             
-        case true:
-            button11.setBackgroundImage( UIImage.init(named: "PrecautionActive"), for: .selected)
-            print("true")
-            button11.isSelected = true
-            statusButton11 = false
+            case true:
+                button11.setBackgroundImage( UIImage.init(named: "PrecautionActive"), for: .selected)
         }
     }
     
     @IBAction func button12(_ sender: UIButton) {
         
-        var statusButton12 = !sender.isSelected
+        sender.isSelected = !sender.isSelected
         
-        switch statusButton12 {
-        case false:
-            button12.setBackgroundImage(UIImage.init(named: "PrecautionNormal"), for: .normal)
-            print ("false")
-            button12.isSelected = false
-            statusButton12 = true
+        switch sender.isSelected {
+            case false:
+                button12.setBackgroundImage(UIImage.init(named: "PrecautionNormal"), for: .normal)
             
-        case true:
-            button12.setBackgroundImage( UIImage.init(named: "PrecautionActive"), for: .selected)
-            print("true")
-            button12.isSelected = true
-            statusButton12 = false
+            case true:
+                button12.setBackgroundImage( UIImage.init(named: "PrecautionActive"), for: .selected)
         }
     }
     

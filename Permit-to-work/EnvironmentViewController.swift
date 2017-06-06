@@ -17,58 +17,40 @@ class EnvironmentViewController : UIViewController {
     
     @IBAction func ToxicFumesButton(_ sender: UIButton) {
         
-        var statusToxic = !sender.isSelected
-        
-        switch statusToxic {
-        case false:
-            ToxicFumesButton.setImage( UIImage.init(named: "ToxicNormal"), for: .normal)
-            print ("false")
-            ToxicFumesButton.isSelected = false
-            statusToxic = true
+        sender.isSelected = !sender.isSelected
+
+        switch sender.isSelected {
+            case false:
+                ToxicFumesButton.setImage( UIImage.init(named: "ToxicNormal"), for: .normal)
             
-        case true:
-            ToxicFumesButton.setImage( UIImage.init(named: "ToxicActive"), for: .selected)
-            print("true")
-            ToxicFumesButton.isSelected = true
-            statusToxic = false
+            case true:
+                ToxicFumesButton.setImage( UIImage.init(named: "ToxicActive"), for: .selected)
         }
     }
     
     @IBAction func SpilledWaterButton(_ sender: UIButton) {
         
-        var statusWater = !sender.isSelected
+        sender.isSelected = !sender.isSelected
         
-        switch statusWater {
-        case false:
-            SpilledWaterButton.setImage( UIImage.init(named: "WaterNormal"), for: .normal)
-            print ("false")
-            SpilledWaterButton.isSelected = false
-            statusWater = true
+        switch sender.isSelected {
+            case false:
+                SpilledWaterButton.setImage( UIImage.init(named: "WaterNormal"), for: .normal)
             
-        case true:
-            SpilledWaterButton.setImage( UIImage.init(named: "WaterActive"), for: .selected)
-            print("true")
-            SpilledWaterButton.isSelected = true
-            statusWater = false
+            case true:
+                SpilledWaterButton.setImage( UIImage.init(named: "WaterActive"), for: .selected)
         }
     }
     
     @IBAction func FireDangerButton(_ sender: UIButton) {
         
-        var statusFire = !sender.isSelected
+        sender.isSelected = !sender.isSelected
     
-        switch statusFire {
-        case false:
-            FireDangerButton.setImage( UIImage.init(named: "FireDangerNormal"), for: .normal)
-            print ("false")
-            FireDangerButton.isSelected = false
-            statusFire = true
+        switch sender.isSelected {
+            case false:
+                FireDangerButton.setImage( UIImage.init(named: "FireDangerNormal"), for: .normal)
             
-        case true:
-            FireDangerButton.setImage( UIImage.init(named: "FireDangerActive"), for: .selected)
-            print("true")
-            FireDangerButton.isSelected = true
-            statusFire = false
+            case true:
+                FireDangerButton.setImage( UIImage.init(named: "FireDangerActive"), for: .selected)
         }
     }
 
@@ -78,58 +60,40 @@ class EnvironmentViewController : UIViewController {
     
     @IBAction func LoudNoiseButton(_ sender: UIButton) {
         
-        var statusLoudNoise = !sender.isSelected
+        sender.isSelected = !sender.isSelected
         
-        switch statusLoudNoise {
-        case false:
-            LoudNoiseButton.setImage( UIImage.init(named: "LoudNoiseNormal"), for: .normal)
-            print ("false")
-            LoudNoiseButton.isSelected = false
-            statusLoudNoise = true
+        switch sender.isSelected {
+            case false:
+                LoudNoiseButton.setImage( UIImage.init(named: "LoudNoiseNormal"), for: .normal)
             
-        case true:
-            LoudNoiseButton.setImage( UIImage.init(named: "LoudNoiseActive"), for: .selected)
-            print("true")
-            LoudNoiseButton.isSelected = true
-            statusLoudNoise = false
+            case true:
+                LoudNoiseButton.setImage( UIImage.init(named: "LoudNoiseActive"), for: .selected)
         }
     }
     
     @IBAction func SpilledWasteButton(_ sender: UIButton) {
         
-        var statusSpilledWaste = !sender.isSelected
+        sender.isSelected = !sender.isSelected
 
-        switch statusSpilledWaste {
-        case false:
-            SpilledWasteButton.setImage( UIImage.init(named: "SpilledWasteNormal"), for: .normal)
-            print ("false")
-            SpilledWasteButton.isSelected = false
-            statusSpilledWaste = true
+        switch sender.isSelected {
+            case false:
+                SpilledWasteButton.setImage( UIImage.init(named: "SpilledWasteNormal"), for: .normal)
             
-        case true:
-            SpilledWasteButton.setImage( UIImage.init(named: "SpilledWasteActive"), for: .selected)
-            print("true")
-            SpilledWasteButton.isSelected = true
-            statusSpilledWaste = false
+            case true:
+                SpilledWasteButton.setImage( UIImage.init(named: "SpilledWasteActive"), for: .selected)
         }
     }
     
     @IBAction func SlipperyFloorButton(_ sender: UIButton) {
         
-        var statusSlipperyFloor = !sender.isSelected
+        sender.isSelected = !sender.isSelected
         
-        switch statusSlipperyFloor {
-        case false:
-            SlipperyFloorButton.setImage( UIImage.init(named: "SlipperyFloorNormal"), for: .normal)
-            print ("false")
-            SlipperyFloorButton.isSelected = false
-            statusSlipperyFloor = true
+        switch sender.isSelected {
+            case false:
+                SlipperyFloorButton.setImage( UIImage.init(named: "SlipperyFloorNormal"), for: .normal)
             
-        case true:
-            SlipperyFloorButton.setImage( UIImage.init(named: "SlipperyFloorActive"), for: .selected)
-            print("true")
-            SlipperyFloorButton.isSelected = true
-            statusSlipperyFloor = false
+            case true:
+                SlipperyFloorButton.setImage( UIImage.init(named: "SlipperyFloorActive"), for: .selected)
         }
     }
     

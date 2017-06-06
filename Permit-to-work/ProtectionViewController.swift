@@ -23,80 +23,56 @@ class ProtectionViewController : UIViewController {
     // earProtection
     @IBAction func earProtectionButton(_ sender: UIButton) {
         
-        var statusEarProtection = !sender.isSelected
+        sender.isSelected = !sender.isSelected
 
-        switch statusEarProtection {
-        case false:
-            earProtectionButton.setImage( UIImage.init(named: "EarProtectionNormal"), for: .normal)
-            print ("false")
-            earProtectionButton.isSelected = false
-            statusEarProtection = true
+        switch sender.isSelected {
+            case false:
+                earProtectionButton.setImage( UIImage.init(named: "EarProtectionNormal"), for: .normal)
             
-        case true:
-            earProtectionButton.setImage( UIImage.init(named: "EarProtectionActive"), for: .selected)
-            print("true")
-            earProtectionButton.isSelected = true
-            statusEarProtection = false
+            case true:
+                earProtectionButton.setImage( UIImage.init(named: "EarProtectionActive"), for: .selected)
         }
     }
     
     // weldingHelmet
     @IBAction func weldingHelmetButton(_ sender: UIButton) {
         
-        var statusHelmetButton = !sender.isSelected
+        sender.isSelected = !sender.isSelected
         
-        switch statusHelmetButton {
-        case false:
-            weldingHelmetButton.setImage( UIImage.init(named: "weldingNormal"), for: .normal)
-            print ("false")
-            weldingHelmetButton.isSelected = false
-            statusHelmetButton = true
+        switch sender.isSelected {
+            case false:
+                weldingHelmetButton.setImage( UIImage.init(named: "weldingNormal"), for: .normal)
             
-        case true:
-            weldingHelmetButton.setImage( UIImage.init(named: "weldingActive"), for: .selected)
-            print("true")
-            weldingHelmetButton.isSelected = true
-            statusHelmetButton = false
+            case true:
+                weldingHelmetButton.setImage( UIImage.init(named: "weldingActive"), for: .selected)
         }
     }
     
     // headProtection
     @IBAction func headProtectionButton(_ sender: UIButton) {
         
-        var statusHeadProtection = !sender.isSelected
+        sender.isSelected = !sender.isSelected
         
-        switch statusHeadProtection {
-        case false:
-            headProtectionButton.setImage( UIImage.init(named: "HeadGearNormal"), for: .normal)
-            print ("false")
-            headProtectionButton.isSelected = false
-            statusHeadProtection = true
+        switch sender.isSelected {
+            case false:
+                headProtectionButton.setImage( UIImage.init(named: "HeadGearNormal"), for: .normal)
             
-        case true:
-            headProtectionButton.setImage( UIImage.init(named: "HeadGearActive"), for: .selected)
-            print("true")
-            headProtectionButton.isSelected = true
-            statusHeadProtection = false
+            case true:
+                headProtectionButton.setImage( UIImage.init(named: "HeadGearActive"), for: .selected)
         }
     }
     
     // clothingProtection
     @IBAction func clothingProtectionButton(_ sender: UIButton) {
         
-        var statusclothingProtection = !sender.isSelected
+        sender.isSelected = !sender.isSelected
         
-        switch statusclothingProtection {
-        case false:
-            clothingProtectionButton.setImage( UIImage.init(named: "ClothingNormal"), for: .normal)
-            print ("false")
-            clothingProtectionButton.isSelected = false
-            statusclothingProtection = true
+        switch sender.isSelected {
+            case false:
+                clothingProtectionButton.setImage( UIImage.init(named: "ClothingNormal"), for: .normal)
             
-        case true:
-            clothingProtectionButton.setImage( UIImage.init(named: "ClothingActive"), for: .selected)
-            print("true")
-            clothingProtectionButton.isSelected = true
-            statusclothingProtection = false
+            case true:
+                clothingProtectionButton.setImage( UIImage.init(named: "ClothingActive"), for: .selected)
         }
     }
     
@@ -110,78 +86,53 @@ class ProtectionViewController : UIViewController {
     
     @IBAction func cleanHandsButton(_ sender: UIButton) {
         
-        var statusHandsProtection = !sender.isSelected
+        sender.isSelected = !sender.isSelected
 
-        switch statusHandsProtection {
-        case false:
-            cleanHandsButton.setImage( UIImage.init(named: "HandsNormal"), for: .normal)
-            print ("false")
-            cleanHandsButton.isSelected = false
-            statusHandsProtection = true
+        switch sender.isSelected {
+            case false:
+                cleanHandsButton.setImage( UIImage.init(named: "HandsNormal"), for: .normal)
             
-        case true:
-            cleanHandsButton.setImage( UIImage.init(named: "HandsActive"), for: .selected)
-            print("true")
-            cleanHandsButton.isSelected = true
-            statusHandsProtection = false
+            case true:
+                cleanHandsButton.setImage( UIImage.init(named: "HandsActive"), for: .selected)
         }
     }
     
     @IBAction func fireProtectionButton(_ sender: UIButton) {
         
-        var statusFireProtection = !sender.isSelected
+        sender.isSelected = !sender.isSelected
         
-        switch statusFireProtection {
-        case false:
-            fireProtectionButton.setImage( UIImage.init(named: "FireNormal"), for: .normal)
-            print ("false")
-            fireProtectionButton.isSelected = false
-            statusFireProtection = true
+        switch sender.isSelected {
+            case false:
+                fireProtectionButton.setImage( UIImage.init(named: "FireNormal"), for: .normal)
             
-        case true:
-            fireProtectionButton.setImage( UIImage.init(named: "FireActive"), for: .selected)
-            print("true")
-            fireProtectionButton.isSelected = true
-            statusFireProtection = false
+            case true:
+                fireProtectionButton.setImage( UIImage.init(named: "FireActive"), for: .selected)
         }
     }
     
     @IBAction func bootsProtectionButton(_ sender: UIButton) {
         
-        var statusBootsProtection = !sender.isSelected
+        sender.isSelected = !sender.isSelected
         
-        switch statusBootsProtection {
-        case false:
-            bootsProtectionButton.setImage( UIImage.init(named: "BootsNormal"), for: .normal)
-            print ("false")
-            bootsProtectionButton.isSelected = false
-            statusBootsProtection = true
+        switch sender.isSelected {
+            case false:
+                bootsProtectionButton.setImage( UIImage.init(named: "BootsNormal"), for: .normal)
             
-        case true:
-            bootsProtectionButton.setImage( UIImage.init(named: "BootsActive"), for: .selected)
-            print("true")
-            bootsProtectionButton.isSelected = true
-            statusBootsProtection = false
+            case true:
+                bootsProtectionButton.setImage( UIImage.init(named: "BootsActive"), for: .selected)
         }
     }
     
-    
     @IBAction func glovesProtectionButton(_ sender: UIButton) {
         
-        var statusGlovesButton = !sender.isSelected
+        sender.isSelected = !sender.isSelected
 
-        switch statusGlovesButton {
+        switch sender.isSelected {
         case false:
             glovesProtectionButton.setImage( UIImage.init(named: "GlovesNormal"), for: .normal)
-            print ("false")
-            glovesProtectionButton.isSelected = false
-            statusGlovesButton = true
             
         case true:
             glovesProtectionButton.setImage( UIImage.init(named: "GlovesActive"), for: .selected)
-            print("true")
-            glovesProtectionButton.isSelected = true
-            statusGlovesButton = false
         }
     }
     
