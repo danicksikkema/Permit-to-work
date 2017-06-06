@@ -250,7 +250,7 @@ class PrecautionsViewController : UIViewController {
     
         for button in buttons {
             if button.isSelected == true {
-                let parameters = ["feedback": (button.titleLabel?.text!)!]
+                let parameters = ["name": (button.titleLabel?.text!)!]
                 
                 Alamofire.request("http://avhx.com/api/v1/precautions", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseString { response in
                     

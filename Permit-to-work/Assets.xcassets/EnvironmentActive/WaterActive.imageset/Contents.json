@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "ipad",
-      "filename" : "Water - Normal.png",
+      "filename" : "Water - Active.png",
       "scale" : "1x"
     },
     {
       "idiom" : "ipad",
-      "filename" : "Water - Normal@2x.png",
+      "filename" : "Water - Active@2x.png",
       "scale" : "2x"
     }
   ],

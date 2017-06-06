@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "ipad",
-      "filename" : "Noise - Normal.png",
+      "filename" : "Noise - Active.png",
       "scale" : "1x"
     },
     {
       "idiom" : "ipad",
-      "filename" : "Noise - Normal@2x.png",
+      "filename" : "Noise - Active@2x.png",
       "scale" : "2x"
     }
   ],

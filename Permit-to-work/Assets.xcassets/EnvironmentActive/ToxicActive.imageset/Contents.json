@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "ipad",
-      "filename" : "Toxic - Normal.png",
+      "filename" : "Toxic - Active.png",
       "scale" : "1x"
     },
     {
       "idiom" : "ipad",
-      "filename" : "Toxic - Normal@2x.png",
+      "filename" : "Toxic - Active@2x.png",
       "scale" : "2x"
     }
   ],

@@ -20,15 +20,11 @@ class ProtectionViewController : UIViewController {
     @IBOutlet weak var clothingProtectionButton: UIButton!
     @IBOutlet weak var weldingHelmetButton: UIButton!
     
-    var statusHeadProtection = true
-    var statusEarProtection = true
-    var statusclothingProtection = true
-    var statusHelmetButton = true
-    
-    // Setup Action buttons for icons
-    
     // earProtection
     @IBAction func earProtectionButton(_ sender: UIButton) {
+        
+        var statusEarProtection = !sender.isSelected
+
         switch statusEarProtection {
         case false:
             earProtectionButton.setImage( UIImage.init(named: "EarProtectionNormal"), for: .normal)
@@ -46,6 +42,9 @@ class ProtectionViewController : UIViewController {
     
     // weldingHelmet
     @IBAction func weldingHelmetButton(_ sender: UIButton) {
+        
+        var statusHelmetButton = !sender.isSelected
+        
         switch statusHelmetButton {
         case false:
             weldingHelmetButton.setImage( UIImage.init(named: "weldingNormal"), for: .normal)
@@ -63,6 +62,9 @@ class ProtectionViewController : UIViewController {
     
     // headProtection
     @IBAction func headProtectionButton(_ sender: UIButton) {
+        
+        var statusHeadProtection = !sender.isSelected
+        
         switch statusHeadProtection {
         case false:
             headProtectionButton.setImage( UIImage.init(named: "HeadGearNormal"), for: .normal)
@@ -80,6 +82,9 @@ class ProtectionViewController : UIViewController {
     
     // clothingProtection
     @IBAction func clothingProtectionButton(_ sender: UIButton) {
+        
+        var statusclothingProtection = !sender.isSelected
+        
         switch statusclothingProtection {
         case false:
             clothingProtectionButton.setImage( UIImage.init(named: "ClothingNormal"), for: .normal)
@@ -94,7 +99,6 @@ class ProtectionViewController : UIViewController {
             statusclothingProtection = false
         }
     }
-
     
     // BUTTONS SECOND ROW
     
@@ -104,13 +108,10 @@ class ProtectionViewController : UIViewController {
     @IBOutlet weak var bootsProtectionButton: UIButton!
     @IBOutlet weak var glovesProtectionButton: UIButton!
     
-    var statusHandsProtection = true
-    var statusFireProtection = true
-    var statusBootsProtection = true
-    var statusGlovesButton = true
-    
-    
     @IBAction func cleanHandsButton(_ sender: UIButton) {
+        
+        var statusHandsProtection = !sender.isSelected
+
         switch statusHandsProtection {
         case false:
             cleanHandsButton.setImage( UIImage.init(named: "HandsNormal"), for: .normal)
@@ -127,6 +128,9 @@ class ProtectionViewController : UIViewController {
     }
     
     @IBAction func fireProtectionButton(_ sender: UIButton) {
+        
+        var statusFireProtection = !sender.isSelected
+        
         switch statusFireProtection {
         case false:
             fireProtectionButton.setImage( UIImage.init(named: "FireNormal"), for: .normal)
@@ -143,6 +147,9 @@ class ProtectionViewController : UIViewController {
     }
     
     @IBAction func bootsProtectionButton(_ sender: UIButton) {
+        
+        var statusBootsProtection = !sender.isSelected
+        
         switch statusBootsProtection {
         case false:
             bootsProtectionButton.setImage( UIImage.init(named: "BootsNormal"), for: .normal)
@@ -160,6 +167,9 @@ class ProtectionViewController : UIViewController {
     
     
     @IBAction func glovesProtectionButton(_ sender: UIButton) {
+        
+        var statusGlovesButton = !sender.isSelected
+
         switch statusGlovesButton {
         case false:
             glovesProtectionButton.setImage( UIImage.init(named: "GlovesNormal"), for: .normal)
@@ -177,6 +187,7 @@ class ProtectionViewController : UIViewController {
     
     @IBAction func nextButton(_ sender: Any) {
         findSelected ()
+        createFeedback ()
     }
 
     func findSelected () {
@@ -184,9 +195,9 @@ class ProtectionViewController : UIViewController {
         
         for button in buttons {
             if button.isSelected == true {
-                let parameters = ["personalProtection": (button.titleLabel?.text!)!]
-                    
-                Alamofire.request("http://avhx.com/api/v1/protection", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseString { response in
+                let parametersSelectie = ["name": (button.titleLabel?.text!)!]
+                
+                Alamofire.request("http://avhx.com/api/v1/protection", method: .post, parameters: parametersSelectie, encoding: JSONEncoding.default).responseString { response in
                         
                     if response.result.value != nil {
                         debugPrint(response)
@@ -198,6 +209,21 @@ class ProtectionViewController : UIViewController {
                 }
             } else {
                 print("niet geselecteerd")
+            }
+        }
+    }
+    
+    func createFeedback () {
+        let parametersFeedback: [String : Any] = ["feedback": "Dit moet je anders doen", "score": 10 ]
+        
+        Alamofire.request("http://avhx.com/api/v1/protectionfb", method: .post, parameters: parametersFeedback, encoding: JSONEncoding.default).responseString { response in
+            
+            if response.result.value != nil {
+                debugPrint(response)
+                print(response.result)
+                print(response.result.isSuccess)
+            } else {
+                print("error")
             }
         }
     }

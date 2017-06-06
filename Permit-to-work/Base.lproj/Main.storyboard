@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xFF-8R-aMb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xFF-8R-aMb">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -23,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="28" width="1024" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gDa-wY-RFl" id="imw-8c-0JB">
-                                    <rect key="frame" x="0.0" y="0.0" width="1024" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="1024" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -1271,6 +1271,10 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j2a-WZ-WUM">
+                                <rect key="frame" x="508" y="279" width="248" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1278,6 +1282,7 @@
                         <outlet property="environmentSafetyButton" destination="Jjt-h4-pIt" id="kaj-yt-AbM"/>
                         <outlet property="personalSafetyButton" destination="MBl-8G-CvQ" id="dFY-Oc-N1V"/>
                         <outlet property="riskButton" destination="jUC-6L-25G" id="eWE-5C-KDK"/>
+                        <outlet property="riskResultbarView" destination="j2a-WZ-WUM" id="whZ-0D-LW6"/>
                         <outlet property="safetyPrecautionsButton" destination="uyf-mS-U6J" id="lMP-TG-Ut3"/>
                         <outlet property="scoringButton" destination="Aac-fT-Oqm" id="6NC-vB-3qO"/>
                         <outlet property="textViewFeedback" destination="KdQ-Jh-sB7" id="U4n-dN-CwH"/>

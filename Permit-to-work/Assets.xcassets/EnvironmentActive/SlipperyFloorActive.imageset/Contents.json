@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "ipad",
-      "filename" : "Slippery - Normal.png",
+      "filename" : "Slippery - Active.png",
       "scale" : "1x"
     },
     {
       "idiom" : "ipad",
-      "filename" : "Slippery - Normal@2x.png",
+      "filename" : "Slippery - Active@2x.png",
       "scale" : "2x"
     }
   ],
