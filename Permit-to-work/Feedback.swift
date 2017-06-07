@@ -13,10 +13,12 @@ import SwiftyJSON
 class RiskFeedback {
     var id                  : Int = 0
     var feedback            : String = ""
+    var score               : Int = 0
     
-    init (id: Int, feedback: String) {
+    init (id: Int, feedback: String, score: Int) {
         self.id = id
         self.feedback = feedback
+        self.score = score
     }
     
     init (fromJSON: Any) {
@@ -24,6 +26,7 @@ class RiskFeedback {
         if let riskFeedbackAsDictionary = fromJSON as? [String: Any] {
             self.id = riskFeedbackAsDictionary ["protectionId"] as! Int
             self.feedback = riskFeedbackAsDictionary ["feedback"] as! String
+            self.score = riskFeedbackAsDictionary ["score"] as! Int
         }
     }
 }
@@ -65,13 +68,61 @@ class RisksFeedback {
     }
 }
 
-class EnvirionmentFeedback {
+class EnvironmentFeedback {
     var id                  : Int = 0
     var feedback            : String = ""
+    var score               : Int = 0
     
-    init (id: Int, feedback: String) {
+    init (id: Int, feedback: String, score: Int) {
         self.id = id
         self.feedback = feedback
+        self.score = score
+    }
+    
+    init (fromJSON: Any) {
+        // 4: Als er een array is dan wordt dit opgesagen als een dictionary met [String : Any]
+        if let environmentFeedbackAsDictionary = fromJSON as? [String: Any] {
+            self.id = environmentFeedbackAsDictionary ["environmentId"] as! Int
+            self.feedback = environmentFeedbackAsDictionary ["feedback"] as! String
+            self.score = environmentFeedbackAsDictionary ["score"] as! Int
+        }
+    }
+}
+
+class EnvironmentsFeedback {
+    var allEnvironmentsFeedback : [EnvironmentFeedback] = []
+    
+    static let instance : EnvironmentsFeedback = EnvironmentsFeedback()
+    
+    private init() {
+        
+    }
+    
+    // 1: If json data is picked up from server, save it in json variable.
+    func getRisksFeedbackFromServer () {
+        Alamofire.request("http://avhx.com/api/v1/environmentfb").responseJSON { response in
+            
+            if let json = response.result.value {
+                self.getEnvironmentsFeedbackFromJSON (json: json)
+                print (json)
+            }
+        }
+    }
+    
+    //     2: Als het lukt om hieruit een array op te halen, dan wordt dit in de variable klanten opgeslagen.
+    func getEnvironmentsFeedbackFromJSON (json: Any) {
+        if let environmentsFeedback = json as? [Any] {
+            
+            // 3: Loop door de array van permits en haal ze er uit en sla op als dictionary in variable newPermit.
+            for environmentFeedback in environmentsFeedback {
+                let newEnvironmentFeedback = EnvironmentFeedback (fromJSON: environmentFeedback)
+                
+                // 5: Voeg aan de lijst met klanten, nieuwe permit toe.
+                allEnvironmentsFeedback.append(newEnvironmentFeedback)
+            }
+        } else {
+            print ("error")
+        }
     }
 }
 

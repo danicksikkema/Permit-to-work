@@ -12,8 +12,6 @@ import Alamofire
 
 class FeedbackViewController : UIViewController {
     
-    let risksFeedback = RisksFeedback.instance
-    
     let buttonBorderColor = UIColor(red:0.20, green:0.28, blue:0.42, alpha:1.0)
     let buttonBackgroundColor = UIColor(red:0.16, green:0.23, blue:0.33, alpha:0.8)
     let buttonActiveBackgroundColor = UIColor(red:0.24, green:0.34, blue:0.5, alpha:1.0)
@@ -50,6 +48,8 @@ class FeedbackViewController : UIViewController {
     
     @IBAction func riskButton(_ sender: UIButton) {
         
+        let risksFeedback = RisksFeedback.instance
+        
         let riskFeedback = risksFeedback.allRisksFeedback
         
         sender.isSelected = !sender.isSelected
@@ -72,13 +72,17 @@ class FeedbackViewController : UIViewController {
             let total = risksFeedback.allRisksFeedback.count - 1
             
             for index in 0...total {
-//                textViewFeedback.text = riskFeedback[index].feedback
-                print (riskFeedback[index].feedback)
+                textViewFeedback.text.append(riskFeedback[index].feedback)
+//                print (riskFeedback[index].feedback)
             }
         }
     }
     
     @IBAction func safetyPrecautionsButton(_ sender: UIButton) {
+        
+        let environmentsFeedback = EnvironmentsFeedback.instance
+        
+        let environmentFeedback = environmentsFeedback.allEnvironmentsFeedback
         
         sender.isSelected = !sender.isSelected
         
@@ -89,11 +93,20 @@ class FeedbackViewController : UIViewController {
             safetyPrecautionsButton.layer.borderWidth = 1.0
             safetyPrecautionsButton.layer.borderColor = buttonBorderColor.cgColor
             
+            textViewFeedback.text = ""
+
+            
         case true:
             safetyPrecautionsButton.setImage( UIImage.init(named: "SafetyActive"), for: .selected)
             safetyPrecautionsButton.layer.backgroundColor = buttonActiveBackgroundColor.cgColor
             safetyPrecautionsButton.layer.borderWidth = 1.0
             safetyPrecautionsButton.layer.borderColor = textviewBorderColor.cgColor
+            
+            let total = environmentsFeedback.allEnvironmentsFeedback.count - 1
+            
+            for index in 0...total {
+                textViewFeedback.text.append(environmentFeedback[index].feedback)
+            }
         }
     }
     

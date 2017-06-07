@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         Permits.instance.getPermitsFromServer ()
         RisksFeedback.instance.getRisksFeedbackFromServer ()
+        EnvironmentsFeedback.instance.getRisksFeedbackFromServer ()
         
         return true
     }
