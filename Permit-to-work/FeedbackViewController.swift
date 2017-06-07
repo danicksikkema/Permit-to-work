@@ -22,7 +22,6 @@ class FeedbackViewController : UIViewController {
     @IBOutlet weak var textViewFeedback: UITextView!
     
     @IBOutlet weak var scoringButton: UIButton!
-    @IBOutlet weak var riskButton: UIButton!
     @IBOutlet weak var safetyPrecautionsButton: UIButton!
     @IBOutlet weak var personalSafetyButton: UIButton!
     @IBOutlet weak var environmentSafetyButton: UIButton!
@@ -46,43 +45,11 @@ class FeedbackViewController : UIViewController {
         }
     }
     
-    @IBAction func riskButton(_ sender: UIButton) {
-        
-        let risksFeedback = RisksFeedback.instance
-        
-        let riskFeedback = risksFeedback.allRisksFeedback
-        
-        sender.isSelected = !sender.isSelected
-        
-        switch sender.isSelected {
-        case false:
-            riskButton.setImage( UIImage.init(named: "RiskNormal"), for: .normal)
-            riskButton.layer.backgroundColor = buttonBackgroundColor.cgColor
-            riskButton.layer.borderWidth = 1.0
-            riskButton.layer.borderColor = buttonBorderColor.cgColor
-            
-            textViewFeedback.text = ""
-            
-        case true:
-            riskButton.setImage( UIImage.init(named: "RiskActive"), for: .selected)
-            riskButton.layer.backgroundColor = buttonActiveBackgroundColor.cgColor
-            riskButton.layer.borderWidth = 1.0
-            riskButton.layer.borderColor = textviewBorderColor.cgColor
-            
-            let total = risksFeedback.allRisksFeedback.count - 1
-            
-            for index in 0...total {
-                textViewFeedback.text.append(riskFeedback[index].feedback)
-//                print (riskFeedback[index].feedback)
-            }
-        }
-    }
-    
     @IBAction func safetyPrecautionsButton(_ sender: UIButton) {
         
-        let environmentsFeedback = EnvironmentsFeedback.instance
+        let precautionsFeedback = PrecautionsFeedback.instance
         
-        let environmentFeedback = environmentsFeedback.allEnvironmentsFeedback
+        let precautionFeedback = precautionsFeedback.allPrecautionsFeedback
         
         sender.isSelected = !sender.isSelected
         
@@ -102,15 +69,19 @@ class FeedbackViewController : UIViewController {
             safetyPrecautionsButton.layer.borderWidth = 1.0
             safetyPrecautionsButton.layer.borderColor = textviewBorderColor.cgColor
             
-            let total = environmentsFeedback.allEnvironmentsFeedback.count - 1
+            let total = precautionsFeedback.allPrecautionsFeedback.count - 1
             
             for index in 0...total {
-                textViewFeedback.text.append(environmentFeedback[index].feedback)
+                textViewFeedback.text.append(precautionFeedback[index].feedback)
             }
         }
     }
     
     @IBAction func personalSafetyButton(_ sender: UIButton) {
+        
+        let personalsFeedback = PersonalsFeedback.instance
+        
+        let personalFeedback = personalsFeedback.allPersonalsFeedback
         
         sender.isSelected = !sender.isSelected
         
@@ -121,15 +92,27 @@ class FeedbackViewController : UIViewController {
             personalSafetyButton.layer.borderWidth = 1.0
             personalSafetyButton.layer.borderColor = buttonBorderColor.cgColor
             
+            textViewFeedback.text = ""
+            
         case true:
             personalSafetyButton.setImage( UIImage.init(named: "PersonalActive"), for: .selected)
             personalSafetyButton.layer.backgroundColor = buttonActiveBackgroundColor.cgColor
             personalSafetyButton.layer.borderWidth = 1.0
             personalSafetyButton.layer.borderColor = textviewBorderColor.cgColor
+            
+            let total = personalsFeedback.allPersonalsFeedback.count - 1
+            
+            for index in 0...total {
+                textViewFeedback.text.append(personalFeedback[index].feedback)
+            }
         }
     }
     
     @IBAction func environmentSafetyButton(_ sender: UIButton) {
+        
+        let environmentsFeedback = EnvironmentsFeedback.instance
+        
+        let environmentFeedback = environmentsFeedback.allEnvironmentsFeedback
         
         sender.isSelected = !sender.isSelected
         
@@ -140,11 +123,20 @@ class FeedbackViewController : UIViewController {
             environmentSafetyButton.layer.borderWidth = 1.0
             environmentSafetyButton.layer.borderColor = buttonBorderColor.cgColor
             
+            textViewFeedback.text = ""
+            
         case true:
             environmentSafetyButton.setImage( UIImage.init(named: "EnvironmentActive"), for: .selected)
             environmentSafetyButton.layer.backgroundColor = buttonActiveBackgroundColor.cgColor
             environmentSafetyButton.layer.borderWidth = 1.0
             environmentSafetyButton.layer.borderColor = textviewBorderColor.cgColor
+            
+            let total = environmentsFeedback.allEnvironmentsFeedback.count - 1
+            
+            for index in 0...total {
+                textViewFeedback.text.append(environmentFeedback[index].feedback)
+            }
+
         }
     }
     
@@ -152,16 +144,14 @@ class FeedbackViewController : UIViewController {
         super.viewDidLoad()
         
         riskResultbarView.progress = 0.5
-        
         scoringButton.layer.backgroundColor = buttonBackgroundColor.cgColor
         scoringButton.setImage( UIImage.init(named: "ScoringActive"), for: .normal)
-        riskButton.setImage( UIImage.init(named: "RiskNormal"), for: .normal)
         safetyPrecautionsButton.setImage( UIImage.init(named: "SafetyNormal"), for: .normal)
         personalSafetyButton.setImage( UIImage.init(named: "PersonalNormal"), for: .normal)
         environmentSafetyButton.setImage( UIImage.init(named: "EnvironmentNormal"), for: .normal)
         
         // Setting UIButton styling
-        let buttons = [scoringButton, riskButton, safetyPrecautionsButton, personalSafetyButton, environmentSafetyButton]
+        let buttons = [scoringButton, safetyPrecautionsButton, personalSafetyButton, environmentSafetyButton]
         
         for button in buttons {
             button?.layer.borderWidth = 1.0

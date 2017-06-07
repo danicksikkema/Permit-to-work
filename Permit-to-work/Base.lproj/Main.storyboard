@@ -1204,7 +1204,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aac-fT-Oqm">
-                                <rect key="frame" x="80" y="220" width="291" height="60"/>
+                                <rect key="frame" x="80" y="250" width="291" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <inset key="titleEdgeInsets" minX="40" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <inset key="imageEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -1215,20 +1215,8 @@
                                     <action selector="scoringButton:" destination="KT7-zH-NgE" eventType="touchUpInside" id="3yr-m9-wGE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jUC-6L-25G">
-                                <rect key="frame" x="80" y="280" width="291" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <inset key="titleEdgeInsets" minX="40" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <inset key="imageEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="Risks">
-                                    <color key="titleColor" red="0.59215686270000001" green="0.72549019609999998" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="riskButton:" destination="KT7-zH-NgE" eventType="touchUpInside" id="Z2h-AL-cIT"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uyf-mS-U6J">
-                                <rect key="frame" x="80" y="340" width="291" height="60"/>
+                                <rect key="frame" x="80" y="310" width="291" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <inset key="titleEdgeInsets" minX="40" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <inset key="imageEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -1240,7 +1228,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MBl-8G-CvQ">
-                                <rect key="frame" x="80" y="400" width="291" height="60"/>
+                                <rect key="frame" x="80" y="370" width="291" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <inset key="titleEdgeInsets" minX="40" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <inset key="imageEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -1252,7 +1240,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jjt-h4-pIt">
-                                <rect key="frame" x="80" y="460" width="291" height="60"/>
+                                <rect key="frame" x="80" y="430" width="291" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <inset key="titleEdgeInsets" minX="40" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <inset key="imageEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -1272,7 +1260,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j2a-WZ-WUM">
-                                <rect key="frame" x="508" y="279" width="248" height="2"/>
+                                <rect key="frame" x="508" y="634" width="248" height="2"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </progressView>
                         </subviews>
@@ -1281,7 +1269,6 @@
                     <connections>
                         <outlet property="environmentSafetyButton" destination="Jjt-h4-pIt" id="kaj-yt-AbM"/>
                         <outlet property="personalSafetyButton" destination="MBl-8G-CvQ" id="dFY-Oc-N1V"/>
-                        <outlet property="riskButton" destination="jUC-6L-25G" id="eWE-5C-KDK"/>
                         <outlet property="riskResultbarView" destination="j2a-WZ-WUM" id="whZ-0D-LW6"/>
                         <outlet property="safetyPrecautionsButton" destination="uyf-mS-U6J" id="lMP-TG-Ut3"/>
                         <outlet property="scoringButton" destination="Aac-fT-Oqm" id="6NC-vB-3qO"/>

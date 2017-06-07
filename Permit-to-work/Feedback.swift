@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-class RiskFeedback {
+class PrecautionFeedback {
     var id                  : Int = 0
     var feedback            : String = ""
     var score               : Int = 0
@@ -23,44 +23,44 @@ class RiskFeedback {
     
     init (fromJSON: Any) {
         // 4: Als er een array is dan wordt dit opgesagen als een dictionary met [String : Any]
-        if let riskFeedbackAsDictionary = fromJSON as? [String: Any] {
-            self.id = riskFeedbackAsDictionary ["protectionId"] as! Int
-            self.feedback = riskFeedbackAsDictionary ["feedback"] as! String
-            self.score = riskFeedbackAsDictionary ["score"] as! Int
+        if let precautionFeedbackAsDictionary = fromJSON as? [String: Any] {
+            self.id = precautionFeedbackAsDictionary ["precautionsId"] as! Int
+            self.feedback = precautionFeedbackAsDictionary ["feedback"] as! String
+            self.score = precautionFeedbackAsDictionary ["score"] as! Int
         }
     }
 }
 
-class RisksFeedback {
-    var allRisksFeedback : [RiskFeedback] = []
+class PrecautionsFeedback {
+    var allPrecautionsFeedback : [PrecautionFeedback] = []
     
-    static let instance : RisksFeedback = RisksFeedback()
+    static let instance : PrecautionsFeedback = PrecautionsFeedback()
     
     private init() {
         
     }
     
     // 1: If json data is picked up from server, save it in json variable.
-    func getRisksFeedbackFromServer () {
-        Alamofire.request("http://avhx.com/api/v1/protectionfb").responseJSON { response in
+    func getPrecautionsFeedbackFromServer () {
+        Alamofire.request("http://avhx.com/api/v1/precautionfb").responseJSON { response in
             
             if let json = response.result.value {
-                self.getRisksFeedbackFromJSON (json: json)
+                self.getPrecautionsFeedbackFromJSON (json: json)
                 print (json)
             }
         }
     }
     
     //     2: Als het lukt om hieruit een array op te halen, dan wordt dit in de variable klanten opgeslagen.
-    func getRisksFeedbackFromJSON (json: Any) {
-        if let risksFeedback = json as? [Any] {
+    func getPrecautionsFeedbackFromJSON (json: Any) {
+        if let precautionsFeedback = json as? [Any] {
             
             // 3: Loop door de array van permits en haal ze er uit en sla op als dictionary in variable newPermit.
-            for riskFeedback in risksFeedback {
-                let newRiskFeedback = RiskFeedback (fromJSON: riskFeedback)
+            for precautionFeedback in precautionsFeedback {
+                let newPrecautionFeedback = PrecautionFeedback (fromJSON: precautionFeedback)
                 
                 // 5: Voeg aan de lijst met klanten, nieuwe permit toe.
-                allRisksFeedback.append(newRiskFeedback)
+                allPrecautionsFeedback.append(newPrecautionFeedback)
             }
         } else {
             print ("error")
@@ -99,7 +99,7 @@ class EnvironmentsFeedback {
     }
     
     // 1: If json data is picked up from server, save it in json variable.
-    func getRisksFeedbackFromServer () {
+    func getEnvironmentsFeedbackFromServer () {
         Alamofire.request("http://avhx.com/api/v1/environmentfb").responseJSON { response in
             
             if let json = response.result.value {
@@ -129,19 +129,57 @@ class EnvironmentsFeedback {
 class PersonalFeedback {
     var id                  : Int = 0
     var feedback            : String = ""
+    var score               : Int = 0
     
-    init (id: Int, feedback: String) {
+    init (id: Int, feedback: String, score: Int) {
         self.id = id
         self.feedback = feedback
+        self.score = score
+    }
+    
+    init (fromJSON: Any) {
+        // 4: Als er een array is dan wordt dit opgesagen als een dictionary met [String : Any]
+        if let personalFeedbackAsDictionary = fromJSON as? [String: Any] {
+            self.id = personalFeedbackAsDictionary ["protectionId"] as! Int
+            self.feedback = personalFeedbackAsDictionary ["feedback"] as! String
+            self.score = personalFeedbackAsDictionary ["score"] as! Int
+        }
     }
 }
 
-class SafetyFeedback {
-    var id                  : Int = 0
-    var feedback            : String = ""
+class PersonalsFeedback {
+    var allPersonalsFeedback : [PersonalFeedback] = []
     
-    init (id: Int, feedback: String) {
-        self.id = id
-        self.feedback = feedback
+    static let instance : PersonalsFeedback = PersonalsFeedback()
+    
+    private init() {
+        
+    }
+    
+    // 1: If json data is picked up from server, save it in json variable.
+    func getPersonalsFeedbackFromServer () {
+        Alamofire.request("http://avhx.com/api/v1/protectionfb").responseJSON { response in
+            
+            if let json = response.result.value {
+                self.getPersonalsFeedbackFromJSON (json: json)
+                print (json)
+            }
+        }
+    }
+    
+    //     2: Als het lukt om hieruit een array op te halen, dan wordt dit in de variable klanten opgeslagen.
+    func getPersonalsFeedbackFromJSON (json: Any) {
+        if let personalsFeedback = json as? [Any] {
+            
+            // 3: Loop door de array van permits en haal ze er uit en sla op als dictionary in variable newPermit.
+            for personalFeedback in personalsFeedback {
+                let newPersonalFeedback = PersonalFeedback (fromJSON: personalFeedback)
+                
+                // 5: Voeg aan de lijst met klanten, nieuwe permit toe.
+                allPersonalsFeedback.append(newPersonalFeedback)
+            }
+        } else {
+            print ("error")
+        }
     }
 }

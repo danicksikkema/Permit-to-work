@@ -18,8 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         Permits.instance.getPermitsFromServer ()
-        RisksFeedback.instance.getRisksFeedbackFromServer ()
-        EnvironmentsFeedback.instance.getRisksFeedbackFromServer ()
+        EnvironmentsFeedback.instance.getEnvironmentsFeedbackFromServer ()
+        PersonalsFeedback.instance.getPersonalsFeedbackFromServer ()
+        PrecautionsFeedback.instance.getPrecautionsFeedbackFromServer ()
         
         return true
     }
