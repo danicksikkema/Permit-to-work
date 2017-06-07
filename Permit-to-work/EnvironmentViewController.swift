@@ -99,6 +99,7 @@ class EnvironmentViewController : UIViewController {
     
     @IBAction func nextButton(_ sender: Any) {
         findSelected ()
+        ValidateAndCreateFeedback ()
     }
     
     func findSelected () {
@@ -120,6 +121,45 @@ class EnvironmentViewController : UIViewController {
                 }
             } else {
                 print("niet geselecteerd")
+            }
+        }
+    }
+    
+    func ValidateAndCreateFeedback () {
+        // Deze buttons moeten geselecteerd worden
+        let buttonValidator: [UIButton] = [FireDangerButton]
+        
+        for button in buttonValidator {
+            if button.isSelected == false {
+                let parametersFeedback: [String : Any] = ["feedback": "Antwoord is fout! Je bent \(button.titleLabel!.text!) vergeten!", "score": 0 ]
+                
+                print(parametersFeedback)
+                
+                Alamofire.request("http://avhx.com/api/v1/environmentfb", method: .post, parameters: parametersFeedback, encoding: JSONEncoding.default).responseString { response in
+                    
+                    if response.result.value != nil {
+                        debugPrint(response)
+                        print(response.result)
+                        print(response.result.isSuccess)
+                    } else {
+                        print("error")
+                    }
+                }
+            } else {
+                let parametersFeedback: [String : Any] = ["feedback": "Antwoord is goed! Je hebt \(button.titleLabel!.text!) gekozen!", "score": 10 ]
+                
+                print(parametersFeedback)
+                
+                Alamofire.request("http://avhx.com/api/v1/environmentfb", method: .post, parameters: parametersFeedback, encoding: JSONEncoding.default).responseString { response in
+                    
+                    if response.result.value != nil {
+                        debugPrint(response)
+                        print(response.result)
+                        print(response.result.isSuccess)
+                    } else {
+                        print("error")
+                    }
+                }
             }
         }
     }

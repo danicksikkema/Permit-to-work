@@ -69,9 +69,12 @@ class FeedbackViewController : UIViewController {
             riskButton.layer.borderWidth = 1.0
             riskButton.layer.borderColor = textviewBorderColor.cgColor
             
-            let total = risksFeedback.allRisksFeedback.count
+            let total = risksFeedback.allRisksFeedback.count - 1
             
-            textViewFeedback.text = riskFeedback[total - 1].feedback
+            for index in 0...total {
+//                textViewFeedback.text = riskFeedback[index].feedback
+                print (riskFeedback[index].feedback)
+            }
         }
     }
     
