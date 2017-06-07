@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0724D9EC1EE70CFD0027B53C /* Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0724D9EB1EE70CFD0027B53C /* Feedback.swift */; };
+		072623971EE8A0C1000DEE9F /* newPermitViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072623961EE8A0C1000DEE9F /* newPermitViewTest.swift */; };
 		07342A031E9BF91400BAE46F /* Permit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07342A021E9BF91400BAE46F /* Permit.swift */; };
 		074806FA1EC06A4000D4B576 /* PermitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074806F91EC06A4000D4B576 /* PermitViewController.swift */; };
 		074DB6EA1EBA7D6600B665AF /* Template.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074DB6E91EBA7D6600B665AF /* Template.swift */; };
@@ -22,7 +23,6 @@
 		07AC7D341E7870640082412C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07AC7D321E7870640082412C /* Main.storyboard */; };
 		07AC7D361E7870640082412C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07AC7D351E7870640082412C /* Assets.xcassets */; };
 		07AC7D391E7870640082412C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07AC7D371E7870640082412C /* LaunchScreen.storyboard */; };
-		07AC7D441E7870640082412C /* Permit_to_workTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AC7D431E7870640082412C /* Permit_to_workTests.swift */; };
 		07AC7D4F1E7870640082412C /* Permit_to_workUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AC7D4E1E7870640082412C /* Permit_to_workUITests.swift */; };
 		07C006A31EE590B40078A94C /* Protection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C006A21EE590B40078A94C /* Protection.swift */; };
 		07C006A51EE590E40078A94C /* Envirionment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C006A41EE590E40078A94C /* Envirionment.swift */; };
@@ -56,6 +56,7 @@
 
 /* Begin PBXFileReference section */
 		0724D9EB1EE70CFD0027B53C /* Feedback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feedback.swift; sourceTree = "<group>"; };
+		072623961EE8A0C1000DEE9F /* newPermitViewTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newPermitViewTest.swift; sourceTree = "<group>"; };
 		07342A021E9BF91400BAE46F /* Permit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Permit.swift; sourceTree = "<group>"; };
 		074806F91EC06A4000D4B576 /* PermitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermitViewController.swift; sourceTree = "<group>"; };
 		074DB6E91EBA7D6600B665AF /* Template.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Template.swift; sourceTree = "<group>"; };
@@ -73,7 +74,6 @@
 		07AC7D381E7870640082412C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		07AC7D3A1E7870640082412C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07AC7D3F1E7870640082412C /* Permit-to-workTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Permit-to-workTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		07AC7D431E7870640082412C /* Permit_to_workTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Permit_to_workTests.swift; sourceTree = "<group>"; };
 		07AC7D451E7870640082412C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07AC7D4A1E7870640082412C /* Permit-to-workUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Permit-to-workUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07AC7D4E1E7870640082412C /* Permit_to_workUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Permit_to_workUITests.swift; sourceTree = "<group>"; };
@@ -189,8 +189,8 @@
 		07AC7D421E7870640082412C /* Permit-to-workTests */ = {
 			isa = PBXGroup;
 			children = (
-				07AC7D431E7870640082412C /* Permit_to_workTests.swift */,
 				07AC7D451E7870640082412C /* Info.plist */,
+				072623961EE8A0C1000DEE9F /* newPermitViewTest.swift */,
 			);
 			path = "Permit-to-workTests";
 			sourceTree = "<group>";
@@ -310,6 +310,7 @@
 					07AC7D3E1E7870640082412C = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = EBSX6CSZNX;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 07AC7D2A1E7870630082412C;
 					};
@@ -538,7 +539,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07AC7D441E7870640082412C /* Permit_to_workTests.swift in Sources */,
+				072623971EE8A0C1000DEE9F /* newPermitViewTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -712,11 +713,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = EBSX6CSZNX;
 				INFOPLIST_FILE = "Permit-to-workTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Webpixel.Permit-to-workTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Permit-to-work.app/Permit-to-work";
 			};
@@ -728,6 +731,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = EBSX6CSZNX;
 				INFOPLIST_FILE = "Permit-to-workTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
