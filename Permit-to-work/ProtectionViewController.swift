@@ -171,7 +171,7 @@ class ProtectionViewController : UIViewController {
         
         for button in buttonValidator {
             if button.isSelected == false {
-                let parametersFeedback: [String : Any] = ["feedback": "Antwoord is fout! Je bent \(button.titleLabel!.text!) vergeten!", "score": 0 ]
+                let parametersFeedback: [String : Any] = ["feedback": "Antwoord is fout! Je bent \(button.titleLabel!.text!) vergeten!", "score": 0]
                 
                 print(parametersFeedback)
                 
@@ -186,7 +186,7 @@ class ProtectionViewController : UIViewController {
                     }
                 }
             } else {
-                let parametersFeedback: [String : Any] = ["feedback": "Antwoord is goed! Je hebt \(button.titleLabel!.text!) gekozen!", "score": 10 ]
+                let parametersFeedback: [String : Any] = ["feedback": "Antwoord is goed! Je hebt \(button.titleLabel!.text!) gekozen!", "score": 10]
                 
                 print(parametersFeedback)
                 

@@ -27,9 +27,9 @@ class FeedbackViewController : UIViewController {
     @IBOutlet weak var environmentSafetyButton: UIButton!
     
     @IBAction func scoringButton(_ sender: UIButton) {
-        
+    
         sender.isSelected = !sender.isSelected
-        
+    
         switch sender.isSelected {
         case false:
             scoringButton.setImage( UIImage.init(named: "ScoringNormal"), for: .normal)
@@ -37,11 +37,15 @@ class FeedbackViewController : UIViewController {
             scoringButton.layer.borderWidth = 1.0
             scoringButton.layer.borderColor = buttonBorderColor.cgColor
             
+            riskResultbarView.isHidden = true
+            
         case true:
             scoringButton.setImage( UIImage.init(named: "ScoringActive"), for: .selected)
             scoringButton.layer.backgroundColor = buttonActiveBackgroundColor.cgColor
             scoringButton.layer.borderWidth = 1.0
             scoringButton.layer.borderColor = textviewBorderColor.cgColor
+            
+            riskResultbarView.isHidden = false
         }
     }
     
@@ -142,6 +146,8 @@ class FeedbackViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        riskResultbarView.isHidden = true
         
         riskResultbarView.progress = 0.5
         scoringButton.layer.backgroundColor = buttonBackgroundColor.cgColor
