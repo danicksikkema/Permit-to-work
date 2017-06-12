@@ -22,6 +22,7 @@ class NewPermitViewController : UIViewController, UITextFieldDelegate, UITextVie
     
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var pickerView: UIPickerView!
+
     
     let permitTypes = ["Hot Work", "Cold Work", "Enclosed Spaces"]
     
