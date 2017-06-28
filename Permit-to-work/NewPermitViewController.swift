@@ -82,9 +82,9 @@ class NewPermitViewController : UIViewController, UITextFieldDelegate, UITextVie
     
     // Saving data
     func savePermitData () {
-        let newPermitParameters: [String : Any] = ["permitName": textfieldName.text!, "type": textFieldType.text!, "workDescription": textFieldDescription.text!]
+        let newPermitParameters: [String : Any] = ["permitName": textfieldName.text!, "permitType": textFieldType.text!, "permitDescription": textFieldDescription.text!]
         
-        Alamofire.request("http://avhx.com/api/v1/permits", method: .post, parameters: newPermitParameters, encoding: JSONEncoding.default).responseString { response in
+        Alamofire.request("https://api-permittowork.herokuapp.com/api/v1/permits", method: .post, parameters: newPermitParameters, encoding: JSONEncoding.default).responseString { response in
             
             if response.result.value != nil {
                 debugPrint(response)

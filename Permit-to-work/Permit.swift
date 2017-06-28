@@ -23,15 +23,15 @@ class Permit {
         self.permitDescription = permitDescription
     }
     
-    // MELDING: json kan fout zijn, foutmeldingen afhandelen en wat als er een andere waarde is.
+    // MELDING: json  kan fout zijn, foutmeldingen afhandelen en wat als er een andere waarde is.
     init (fromJSON: Any) {
         // 4: Als er een array is dan wordt dit opgesagen als een dictionary met [String : Any]
         if let permitAsDictionary = fromJSON as? [String: Any] {
             
-            self.id = permitAsDictionary ["permitId"] as! Int
+            self.id = permitAsDictionary ["id"] as! Int
             self.permitName = permitAsDictionary ["permitName"] as! String
-            self.permitType = permitAsDictionary ["type"] as! String
-            self.permitDescription = permitAsDictionary ["workDescription"] as! String
+            self.permitType = permitAsDictionary ["permitType"] as! String
+            self.permitDescription = permitAsDictionary ["permitDescription"] as! String
         }
     }
 }
@@ -47,7 +47,7 @@ class Permits {
     
     // 1: If json data is picked up from server, save it in json variable.
     func getPermitsFromServer () {
-        Alamofire.request("http://avhx.com/api/v1/permits").responseJSON { response in
+        Alamofire.request("https://api-permittowork.herokuapp.com/api/v1/permits").responseJSON { response in
             
             if let json = response.result.value {
                 

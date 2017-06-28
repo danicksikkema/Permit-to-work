@@ -146,9 +146,9 @@ class ProtectionViewController : UIViewController {
         
         for button in buttons {
             if button.isSelected == true {
-                let parametersSelectie = ["name": (button.titleLabel?.text!)!]
+                let parametersSelectie: [String : Any] = ["name": (button.titleLabel?.text!)!, "permit_id": 1]
                 
-                Alamofire.request("http://avhx.com/api/v1/protection", method: .post, parameters: parametersSelectie, encoding: JSONEncoding.default).responseString { response in
+                Alamofire.request("https://api-permittowork.herokuapp.com/api/v1/permits/1/protections", method: .post, parameters: parametersSelectie, encoding: JSONEncoding.default).responseString { response in
                         
                     if response.result.value != nil {
                         debugPrint(response)

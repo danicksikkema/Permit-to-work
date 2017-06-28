@@ -41,7 +41,7 @@ class PermitViewController: UIViewController {
             
             let editPermitParameters: [String : Any] = ["permitId": permitId, "permitName": namePermitTextField.text!, "type": typePermitTextField.text!]
             
-            Alamofire.request("http://avhx.com/api/v1/permits/\(permitId)", method: .put, parameters: editPermitParameters, encoding: JSONEncoding.default).responseString { response in
+            Alamofire.request("https://api-permittowork.herokuapp.com/api/v1/permits/\(permitId)", method: .put, parameters: editPermitParameters, encoding: JSONEncoding.default).responseString { response in
                 
                 if response.result.value != nil {
                     
@@ -86,7 +86,7 @@ class PermitViewController: UIViewController {
         if let permit = activePermit {
             let permitId = permit.id
             
-            Alamofire.request("http://avhx.com/api/v1/permits/\(permitId)", method: .delete, encoding: JSONEncoding.default).responseString { response in
+            Alamofire.request("https://api-permittowork.herokuapp.com/api/v1/permits/\(permitId)", method: .delete, encoding: JSONEncoding.default).responseString { response in
                 
                 if response.result.value != nil {
                     
