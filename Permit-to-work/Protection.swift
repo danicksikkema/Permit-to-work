@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-class Protection {
+struct Protection {
     var protectionId            : Int = 0
     var protectionName          : String = ""
     

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Precaution {
+struct Precaution {
     var precautionId    : Int = 0
     var precautionName  : String = ""
     

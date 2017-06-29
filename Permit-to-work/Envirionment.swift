@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Envirionment {
+struct Envirionment {
     var envirionmentId            : Int = 0
     var envirionmentName          : String = ""
     

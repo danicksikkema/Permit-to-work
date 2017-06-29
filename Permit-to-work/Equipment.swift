@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Equipment {
+struct Equipment {
     var equipmentId            : Int = 0
     var equipmentName          : String = ""
     
